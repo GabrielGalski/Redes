@@ -1,0 +1,209 @@
+NOTE: This is only a simulation!
+      apt-get needs root privileges for real execution.
+      Keep also in mind that locking is deactivated,
+      so don't depend on the relevance to the real current situation!
+Reading package lists...
+Building dependency tree...
+Reading state information...
+apt is already the newest version (3.2.0).
+apt set to manually installed.
+bash is already the newest version (5.3-2ubuntu1).
+bash set to manually installed.
+build-essential is already the newest version (12.12ubuntu2.26.04.2).
+ca-certificates is already the newest version (20260816ubuntu0.26.04.1).
+coreutils is already the newest version (9.5-1ubuntu2+0.0.0~ubuntu25).
+coreutils set to manually installed.
+curl is already the newest version (8.18.0-1ubuntu2.8).
+debconf is already the newest version (1.5.92).
+debconf set to manually installed.
+dpkg is already the newest version (1.23.7ubuntu1).
+dpkg set to manually installed.
+git is already the newest version (1:2.53.0-1ubuntu1.1).
+graphviz is already the newest version (14.1.2-1ubuntu1).
+grep is already the newest version (3.12-1).
+iproute2 is already the newest version (6.19.0-1ubuntu1.1).
+iproute2 set to manually installed.
+iputils-ping is already the newest version (3:20250605-1ubuntu1).
+iputils-ping set to manually installed.
+kmod is already the newest version (34.2-2ubuntu2).
+kmod set to manually installed.
+libc-bin is already the newest version (2.43-2ubuntu2.4).
+libc-bin set to manually installed.
+openssh-client is already the newest version (1:10.2p1-2ubuntu3.8).
+openssh-client set to manually installed.
+sed is already the newest version (4.9-2ubuntu1).
+sed set to manually installed.
+sudo is already the newest version (1.9.17p2-1ubuntu3.2).
+sudo set to manually installed.
+tar is already the newest version (1.35+dfsg-4ubuntu0.4).
+tar set to manually installed.
+linux-headers-7.0.0-38-generic is already the newest version (7.0.0-38.38).
+linux-headers-7.0.0-38-generic set to manually installed.
+Solving dependencies...
+The following additional packages will be installed:
+  libb2-1 libbcg729-0 libfalcosecurity0t64 libgrpc++1.51t64 libgrpc29t64
+  libgsoap-2.8.139 libhwloc-plugins libhwloc15 liblzf1 libminizip1t64
+  libnghttp3-9 libopencore-amrnb0 libprotoc32t64 libqt6core5compat6
+  libqt6core6t64 libqt6dbus6 libqt6gui6 libqt6help6 libqt6multimedia6
+  libqt6network6 libqt6opengl6 libqt6printsupport6 libqt6qml6 libqt6qmlmeta6
+  libqt6qmlmodels6 libqt6qmlworkerscript6 libqt6quick6 libqt6sql6
+  libqt6sql6-sqlite libqt6statemachine6 libqt6svg6 libqt6waylandclient6
+  libqt6waylandcompositor6 libqt6widgets6 libqt6wlshellintegration6 libqt6xml6
+  libsmi2t64 libtbb12 libtbbbind-2-5 libtbbmalloc2 libtpms0 libts0t64
+  libvncserver1 libwireshark-data libwireshark19 libwiretap16 libwsutil17
+  libxcb-cursor0 libze1 pandoc-data qt6-gtk-platformtheme qt6-qpa-plugins
+  qt6-svg-plugins qt6-translations-l10n qt6-wayland
+Suggested packages:
+  menu gawk-doc libhwloc-contrib-plugins qt6-qmltooling-plugins
+  snmp-mibs-downloader geoipupdate geoip-database geoip-database-extra
+  libjs-leaflet libjs-leaflet.markercluster wireshark-doc
+  citation-style-language-styles context groff libjs-katex libjs-mathjax
+  librsvg2-bin nodejs pandoc-citeproc php r-base-core ruby texlive-latex-extra
+  texlive-latex-recommended texlive-luatex texlive-xetex wkhtmltopdf vde2
+  virtualbox-guest-additions-iso
+The following NEW packages will be installed:
+  dkms gawk libb2-1 libbcg729-0 libfalcosecurity0t64 libgrpc++1.51t64
+  libgrpc29t64 libgsoap-2.8.139 libhwloc-plugins libhwloc15 liblzf1
+  libminizip1t64 libnghttp3-9 libopencore-amrnb0 libprotoc32t64
+  libqt6core5compat6 libqt6core6t64 libqt6dbus6 libqt6gui6 libqt6help6
+  libqt6multimedia6 libqt6network6 libqt6opengl6 libqt6printsupport6
+  libqt6qml6 libqt6qmlmeta6 libqt6qmlmodels6 libqt6qmlworkerscript6
+  libqt6quick6 libqt6sql6 libqt6sql6-sqlite libqt6statemachine6 libqt6svg6
+  libqt6waylandclient6 libqt6waylandcompositor6 libqt6widgets6
+  libqt6wlshellintegration6 libqt6xml6 libsmi2t64 libtbb12 libtbbbind-2-5
+  libtbbmalloc2 libtpms0 libts0t64 libvncserver1 libwireshark-data
+  libwireshark19 libwiretap16 libwsutil17 libxcb-cursor0 libze1 pandoc
+  pandoc-data qt6-gtk-platformtheme qt6-qpa-plugins qt6-svg-plugins
+  qt6-translations-l10n qt6-wayland shellcheck tshark virtualbox
+  virtualbox-dkms virtualbox-qt wireshark wireshark-common
+0 upgraded, 65 newly installed, 0 to remove and 148 not upgraded.
+Inst gawk (1:5.3.2-1ubuntu1.1 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Inst dkms (3.2.2-1ubuntu1 Ubuntu:26.04/resolute [all])
+Inst libb2-1 (0.98.1-1.1build2 Ubuntu:26.04/resolute [amd64])
+Inst libbcg729-0 (1.1.1-3build1 Ubuntu:26.04/resolute [amd64])
+Inst libprotoc32t64 (3.21.12-15ubuntu1.1 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Inst libgrpc29t64 (1.51.1-8ubuntu1 Ubuntu:26.04/resolute [amd64])
+Inst libgrpc++1.51t64 (1.51.1-8ubuntu1 Ubuntu:26.04/resolute [amd64])
+Inst libhwloc15 (2.13.0-2 Ubuntu:26.04/resolute [amd64])
+Inst libtbbbind-2-5 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Inst libtbbmalloc2 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Inst libtbb12 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Inst libfalcosecurity0t64 (0.20.0-4ubuntu0.1 Ubuntu:26.04/resolute-updates [amd64])
+Inst libgsoap-2.8.139 (2.8.139-1 Ubuntu:26.04/resolute [amd64])
+Inst liblzf1 (3.6-4build1 Ubuntu:26.04/resolute [amd64])
+Inst libminizip1t64 (1:1.3.dfsg+really1.3.1-1ubuntu3.2 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Inst libnghttp3-9 (1.12.0-1 Ubuntu:26.04/resolute [amd64])
+Inst libopencore-amrnb0 (0.1.6-1build2 Ubuntu:26.04/resolute [amd64])
+Inst libqt6core6t64 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6core5compat6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Inst libqt6dbus6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libts0t64 (1.22-1.1build2 Ubuntu:26.04/resolute [amd64])
+Inst libxcb-cursor0 (0.1.6-1 Ubuntu:26.04/resolute [amd64])
+Inst libqt6gui6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6sql6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6widgets6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6help6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Inst libqt6network6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6opengl6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6qml6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Inst libqt6qmlmodels6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Inst libqt6qmlworkerscript6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Inst libqt6qmlmeta6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Inst libqt6quick6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Inst libqt6multimedia6 (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Inst libqt6printsupport6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6sql6-sqlite (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6statemachine6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Inst libqt6svg6 (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Inst libqt6waylandclient6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6waylandcompositor6 (6.10.2-4 Ubuntu:26.04/resolute [amd64])
+Inst libqt6wlshellintegration6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libqt6xml6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst libsmi2t64 (0.4.8+dfsg2-18 Ubuntu:26.04/resolute [amd64])
+Inst libtpms0 (0.10.2-2ubuntu1 Ubuntu:26.04/resolute [amd64])
+Inst libvncserver1 (0.9.15+dfsg-3ubuntu0.2 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Inst libwireshark-data (4.6.4-1 Ubuntu:26.04/resolute [all])
+Inst libwsutil17 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst libwiretap16 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst libwireshark19 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst libze1 (1.28.2-2 Ubuntu:26.04/resolute [amd64])
+Inst pandoc-data (3.7.0.2-1build1 Ubuntu:26.04/resolute [all])
+Inst pandoc (3.7.0.2+ds-1 Ubuntu:26.04/resolute [amd64])
+Inst qt6-gtk-platformtheme (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst qt6-qpa-plugins (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Inst qt6-svg-plugins (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Inst qt6-translations-l10n (6.10.2-1 Ubuntu:26.04/resolute [all])
+Inst qt6-wayland (6.10.2-4 Ubuntu:26.04/resolute [amd64])
+Inst wireshark-common (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst tshark (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst virtualbox-dkms (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Inst virtualbox (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Inst virtualbox-qt (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Inst wireshark (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Inst libhwloc-plugins (2.13.0-2 Ubuntu:26.04/resolute [amd64])
+Inst shellcheck (0.11.0-2 Ubuntu:26.04/resolute [amd64])
+Conf gawk (1:5.3.2-1ubuntu1.1 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Conf dkms (3.2.2-1ubuntu1 Ubuntu:26.04/resolute [all])
+Conf libb2-1 (0.98.1-1.1build2 Ubuntu:26.04/resolute [amd64])
+Conf libbcg729-0 (1.1.1-3build1 Ubuntu:26.04/resolute [amd64])
+Conf libprotoc32t64 (3.21.12-15ubuntu1.1 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Conf libgrpc29t64 (1.51.1-8ubuntu1 Ubuntu:26.04/resolute [amd64])
+Conf libgrpc++1.51t64 (1.51.1-8ubuntu1 Ubuntu:26.04/resolute [amd64])
+Conf libhwloc15 (2.13.0-2 Ubuntu:26.04/resolute [amd64])
+Conf libtbbbind-2-5 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Conf libtbbmalloc2 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Conf libtbb12 (2022.3.0-2 Ubuntu:26.04/resolute [amd64])
+Conf libfalcosecurity0t64 (0.20.0-4ubuntu0.1 Ubuntu:26.04/resolute-updates [amd64])
+Conf libgsoap-2.8.139 (2.8.139-1 Ubuntu:26.04/resolute [amd64])
+Conf liblzf1 (3.6-4build1 Ubuntu:26.04/resolute [amd64])
+Conf libminizip1t64 (1:1.3.dfsg+really1.3.1-1ubuntu3.2 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Conf libnghttp3-9 (1.12.0-1 Ubuntu:26.04/resolute [amd64])
+Conf libopencore-amrnb0 (0.1.6-1build2 Ubuntu:26.04/resolute [amd64])
+Conf libqt6core6t64 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6core5compat6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Conf libqt6dbus6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libts0t64 (1.22-1.1build2 Ubuntu:26.04/resolute [amd64])
+Conf libxcb-cursor0 (0.1.6-1 Ubuntu:26.04/resolute [amd64])
+Conf libqt6gui6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6sql6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6widgets6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6help6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Conf libqt6network6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6opengl6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6qml6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Conf libqt6qmlmodels6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Conf libqt6qmlworkerscript6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Conf libqt6qmlmeta6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Conf libqt6quick6 (6.10.2+dfsg-3 Ubuntu:26.04/resolute [amd64])
+Conf libqt6multimedia6 (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Conf libqt6printsupport6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6sql6-sqlite (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6statemachine6 (6.10.2-1 Ubuntu:26.04/resolute [amd64])
+Conf libqt6svg6 (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Conf libqt6waylandclient6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6waylandcompositor6 (6.10.2-4 Ubuntu:26.04/resolute [amd64])
+Conf libqt6wlshellintegration6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libqt6xml6 (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf libsmi2t64 (0.4.8+dfsg2-18 Ubuntu:26.04/resolute [amd64])
+Conf libtpms0 (0.10.2-2ubuntu1 Ubuntu:26.04/resolute [amd64])
+Conf libvncserver1 (0.9.15+dfsg-3ubuntu0.2 Ubuntu:26.04/resolute-updates, Ubuntu:26.04/resolute-security [amd64])
+Conf libwireshark-data (4.6.4-1 Ubuntu:26.04/resolute [all])
+Conf libwsutil17 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf libwiretap16 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf libwireshark19 (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf libze1 (1.28.2-2 Ubuntu:26.04/resolute [amd64])
+Conf pandoc-data (3.7.0.2-1build1 Ubuntu:26.04/resolute [all])
+Conf pandoc (3.7.0.2+ds-1 Ubuntu:26.04/resolute [amd64])
+Conf qt6-gtk-platformtheme (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf qt6-qpa-plugins (6.10.2+dfsg-7 Ubuntu:26.04/resolute [amd64])
+Conf qt6-svg-plugins (6.10.2-2 Ubuntu:26.04/resolute [amd64])
+Conf qt6-translations-l10n (6.10.2-1 Ubuntu:26.04/resolute [all])
+Conf qt6-wayland (6.10.2-4 Ubuntu:26.04/resolute [amd64])
+Conf wireshark-common (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf tshark (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf virtualbox-dkms (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Conf virtualbox (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Conf virtualbox-qt (7.2.6-dfsg-4 Ubuntu:26.04/resolute [amd64])
+Conf wireshark (4.6.4-1 Ubuntu:26.04/resolute [amd64])
+Conf libhwloc-plugins (2.13.0-2 Ubuntu:26.04/resolute [amd64])
+Conf shellcheck (0.11.0-2 Ubuntu:26.04/resolute [amd64])

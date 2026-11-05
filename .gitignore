@@ -1,0 +1,33 @@
+# Planejamento local.
+/docs/
+/sprints.md
+
+# Metadados locais do ambiente de desenvolvimento.
+/.agents/
+/.codex/
+/.aws/
+
+# Configuração local e credenciais.
+/config/lab.env
+/config/*.local.env
+/secrets/
+.env
+.env.*
+!.env.example
+
+# Imagens e arquivos locais pesados do laboratório.
+/vms/
+/isos/
+*.vdi
+*.vmdk
+*.qcow2
+*.iso
+
+# Arquivos temporários e backups locais.
+/tmp/
+/backups/
+*.swp
+*.swo
+*~
+
+# Capturas, evidências e relatório final devem permanecer versionáveis.

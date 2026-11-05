@@ -1,0 +1,145 @@
+# Cardeal Ltda — inventário de requisitos de sistema
+# Hospedeiro: Ubuntu 26.04 LTS amd64.
+# Convidados: três VMs Debian 13 amd64 mínimas, sem desktop.
+# Pacotes organizados por máquina; instalar apenas os grupos correspondentes.
+# Este arquivo documenta pacotes APT e pré-requisitos externos, não pacotes Python.
+# As dependências transitivas serão resolvidas pelo APT.
+# Versões: usar atualizações da distribuição e registrar as versões instaladas.
+# Detalhes de função, gratuidade e licenças: docs/FERRAMENTAS.md.
+# Listas executáveis por máquina: config/packages/*.txt.
+# Instalação e verificação: docs/PREPARACAO_DO_AMBIENTE.md.
+
+# ============================================================
+# 1. HOSPEDEIRO — Ubuntu 26.04 LTS
+# ============================================================
+
+# Virtualização: pacote base VirtualBox, linha 7.2.
+# Lista abaixo corresponde ao empacotamento Ubuntu.
+# Não combinar esses pacotes com instalação Oracle do mesmo hipervisor.
+virtualbox
+virtualbox-qt
+virtualbox-dkms
+dkms
+build-essential
+kmod
+debconf
+sudo
+# Também necessários: headers correspondentes ao kernel em execução.
+# O nome exato deve ser obtido do kernel atual: linux-headers-$(uname -r).
+# O pacote de headers não é fixado aqui para evitar usar versão incorreta.
+# VBoxManage é fornecido pelo VirtualBox; não tem pacote separado.
+# Extension Pack e Guest Additions não fazem parte dos requisitos.
+
+# Captura/análise: Wireshark, dumpcap, capinfos e TShark.
+wireshark
+wireshark-common
+tshark
+
+# Administração e transferência de arquivos: ssh e scp.
+openssh-client
+
+# Versionamento e validação de scripts.
+git
+shellcheck
+
+# Topologia e geração do relatório.
+graphviz
+pandoc
+# Firefox: usar a distribuição oficial Ubuntu (Snap), se já disponível.
+# Necessário para abrir o relatório HTML e imprimir em PDF.
+# Não instalar uma segunda cópia se o navegador já estiver disponível.
+
+# Diagnóstico e downloads no hospedeiro.
+iproute2
+curl
+ca-certificates
+
+# ============================================================
+# 2. BASE COMUM — todas as VMs Debian 13
+# ============================================================
+
+# Sistema, serviços, networkd, journald e inventário de pacotes.
+# A maioria já faz parte da instalação mínima: conferir antes de instalar.
+systemd
+systemd-sysv
+hostname
+debconf
+apt
+dpkg
+libc-bin
+
+# Shell, processamento de arquivos, backup e hashes SHA-256.
+bash
+coreutils
+sed
+grep
+gawk
+tar
+
+# Administração remota e utilitários de rede.
+openssh-server
+iproute2
+iputils-ping
+curl
+ca-certificates
+
+# Bash, APT/dpkg, libc e os utilitários de arquivos também serão utilizados
+# no hospedeiro, onde normalmente já estão disponíveis.
+# Edição: utilizar o editor de texto já disponível; não exige editor pago.
+
+# ============================================================
+# 3. GATEWAY — cardeal-gw (adicional à base comum)
+# ============================================================
+
+# DHCPv4, firewall, encaminhamento/NAT e captura DHCP de apoio.
+kea-dhcp4-server
+nftables
+wireshark-common
+
+# ============================================================
+# 4. SERVIDOR — cardeal-srv (adicional à base comum)
+# ============================================================
+
+# DNS e validadores: named, named-checkconf, named-checkzone e dig.
+bind9
+bind9-utils
+bind9-dnsutils
+
+# Servidor HTTP e página HTML/CSS estática.
+apache2
+
+# Servidor SMB, contas Samba e testparm.
+samba
+samba-common-bin
+
+# Correio interno SMTP + IMAP; usar sintaxe do Dovecot 2.4.
+postfix
+dovecot-core
+dovecot-imapd
+
+# Firewall do servidor.
+nftables
+
+# ============================================================
+# 5. CLIENTE — cardeal-cli (adicional à base comum)
+# ============================================================
+
+# Consultas DNS, testes SMTP, transferências SMB e captura em pcapng.
+# curl, da base comum, também será usado para HTTP/HTTPS e IMAP.
+bind9-dnsutils
+swaks
+smbclient
+wireshark-common
+
+# ============================================================
+# 6. REQUISITOS EXTERNOS AO APT / ARTEFATOS
+# ============================================================
+
+# ISO Debian 13 netinst amd64 e arquivo de checksums oficial.
+# Firefox oficial Ubuntu, descrito no grupo do hospedeiro.
+# Recursos iniciais: gateway 512 MiB, servidor 1024 MiB, cliente 512 MiB.
+# Confirmar AMD-V/VT-x disponível e inicialização das três VMs.
+# HTML/CSS, arquivos DOT, Markdown e scripts Bash são fontes do projeto;
+# não exigem Node.js, Python/pip, banco SQL ou hospedagem contratada.
+# Todos os componentes selecionados têm uso gratuito no laboratório local.
+# Opcionais não adotados estão separados em docs/FERRAMENTAS.md.

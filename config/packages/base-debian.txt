@@ -1,0 +1,19 @@
+# Base comum das VMs Debian 13.
+systemd
+systemd-sysv
+hostname
+debconf
+apt
+dpkg
+libc-bin
+bash
+coreutils
+sed
+grep
+gawk
+tar
+openssh-server
+iproute2
+iputils-ping
+curl
+ca-certificates

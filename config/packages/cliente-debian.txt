@@ -1,0 +1,5 @@
+# Somar à base comum; instalar somente na VM cardeal-cli.
+bind9-dnsutils
+swaks
+smbclient
+wireshark-common

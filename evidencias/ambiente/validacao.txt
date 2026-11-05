@@ -1,0 +1,8 @@
+OK: bash -n e ShellCheck 0.11.0 nos três scripts.
+OK: configuração de exemplo/local com sintaxe válida; arquivo local com permissão 0600.
+OK: instalador das VMs recusa instalar serviços no hospedeiro Ubuntu.
+OK: modo inválido é recusado antes de qualquer instalação.
+OK: cinco manifestos e requirements.txt consistentes; 46 pacotes únicos.
+OK: documentação com links locais e blocos de código conferidos.
+OK: simulação APT sem remoção de pacotes.
+PENDENTE: instalação real exige sudo com autenticação interativa; VMs e serviços não configurados.

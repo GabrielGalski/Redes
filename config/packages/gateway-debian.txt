@@ -1,0 +1,4 @@
+# Somar à base comum; instalar somente na VM cardeal-gw.
+kea-dhcp4-server
+nftables
+wireshark-common

@@ -1,0 +1,48 @@
+Hospedeiro: Ubuntu 26.04 LTS; kernel 7.0.0-38-generic
+OK       apt                                    3.2.0
+OK       bash                                   5.3-2ubuntu1
+OK       build-essential                        12.12ubuntu2.26.04.2
+OK       ca-certificates                        20260816ubuntu0.26.04.1
+OK       coreutils                              9.5-1ubuntu2+0.0.0~ubuntu25
+OK       curl                                   8.18.0-1ubuntu2.8
+OK       debconf                                1.5.92
+PENDENTE dkms
+OK       dpkg                                   1.23.7ubuntu1
+PENDENTE gawk
+OK       git                                    1:2.53.0-1ubuntu1.1
+OK       graphviz                               14.1.2-1ubuntu1
+OK       grep                                   3.12-1
+OK       iproute2                               6.19.0-1ubuntu1.1
+OK       iputils-ping                           3:20250605-1ubuntu1
+OK       kmod                                   34.2-2ubuntu2
+OK       libc-bin                               2.43-2ubuntu2.4
+OK       openssh-client                         1:10.2p1-2ubuntu3.8
+PENDENTE pandoc
+OK       sed                                    4.9-2ubuntu1
+PENDENTE shellcheck
+OK       sudo                                   1.9.17p2-1ubuntu3.2
+OK       tar                                    1.35+dfsg-4ubuntu0.4
+PENDENTE tshark
+PENDENTE virtualbox
+PENDENTE virtualbox-dkms
+PENDENTE virtualbox-qt
+PENDENTE wireshark
+PENDENTE wireshark-common
+OK       linux-headers-7.0.0-38-generic         7.0.0-38.38
+FERRAMENTA PENDENTE VBoxManage
+FERRAMENTA PENDENTE wireshark
+FERRAMENTA PENDENTE dumpcap
+FERRAMENTA PENDENTE tshark
+FERRAMENTA PENDENTE capinfos
+FERRAMENTA OK       ssh
+FERRAMENTA OK       scp
+FERRAMENTA OK       git
+FERRAMENTA PENDENTE shellcheck
+FERRAMENTA OK       dot
+FERRAMENTA PENDENTE pandoc
+FERRAMENTA OK       firefox
+FERRAMENTA OK       curl
+FERRAMENTA OK       ip
+FERRAMENTA OK       ping
+DRIVER PENDENTE: /dev/vboxdrv ausente ou sem permissão de acesso.
+O teste de inicialização das três VMs será feito após a criação delas.
