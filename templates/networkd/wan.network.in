@@ -1,0 +1,9 @@
+[Match]
+MACAddress=@WAN_MAC@
+[Network]
+DHCP=ipv4
+MulticastDNS=no
+LLMNR=no
+[DHCPv4]
+UseDNS=yes
+RouteMetric=100

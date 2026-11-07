@@ -1,0 +1,8 @@
+zone "@LAB_DOMAIN@" {
+    type primary;
+    file "/etc/bind/db.cardeal.local";
+};
+zone "@LAB_REVERSE_ZONE@" {
+    type primary;
+    file "/etc/bind/db.cardeal.rev";
+};

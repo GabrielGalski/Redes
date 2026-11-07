@@ -1,0 +1,16 @@
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:3 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:2 https://deb.debian.org/debian trixie InRelease
+Hit:4 https://deb.debian.org/debian trixie-updates InRelease
+Hit:5 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+bind9-dnsutils is already the newest version (1:9.20.30-1~deb13u1).
+curl is already the newest version (8.14.1-2+deb13u7).
+ca-certificates is already the newest version (20250419+deb13u1).
+wireshark-common is already the newest version (4.4.19-0+deb13u1).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Cliente configurado para receber DHCP, DNS e rota pela LAN.

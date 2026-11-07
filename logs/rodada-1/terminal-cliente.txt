@@ -1,0 +1,12 @@
+Linux cardeal-cli 6.12.115+deb13.1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.115-2 (2026-11-01) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+cardeal-cli
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             192.168.50.100/24 metric 10 fe80::a00:27ff:feca:301/64 
+192.168.50.10   www.cardeal.local

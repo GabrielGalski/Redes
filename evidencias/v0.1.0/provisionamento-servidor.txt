@@ -1,0 +1,25 @@
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:3 https://deb.debian.org/debian trixie InRelease
+Hit:4 https://deb.debian.org/debian trixie-updates InRelease
+Hit:5 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+bind9 is already the newest version (1:9.20.30-1~deb13u1).
+bind9-utils is already the newest version (1:9.20.30-1~deb13u1).
+bind9-dnsutils is already the newest version (1:9.20.30-1~deb13u1).
+curl is already the newest version (8.14.1-2+deb13u7).
+ca-certificates is already the newest version (20250419+deb13u1).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+zone cardeal.local/IN: loaded serial 2026110501
+OK
+zone 50.168.192.in-addr.arpa/IN: loaded serial 2026110501
+OK
+Synchronizing state of named.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable named
+active
+192.168.50.10
+DNS interno e encaminhamento externo configurados.

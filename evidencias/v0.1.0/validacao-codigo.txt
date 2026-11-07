@@ -1,0 +1,1 @@
+Aprovado: py_compile; bash/ShellCheck -x; links Markdown; manifestos equivalentes a requirements.txt; checklist Sprint 1.

@@ -3,11 +3,11 @@ set -Eeuo pipefail
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/.." && pwd)
-# shellcheck source=scripts/common/packages.sh
-source "$PROJECT_ROOT/scripts/common/packages.sh"
+# shellcheck source=src/common/packages.sh
+source "$PROJECT_ROOT/src/common/packages.sh"
 
 usage() {
-    printf 'Uso: bash scripts/instalar-dependencias-vm.sh gateway|servidor|cliente --check|--plan|--install\n'
+    printf 'Uso: bash src/instalar-dependencias-vm.sh gateway|servidor|cliente --check|--plan|--install\n'
     printf 'Executar dentro da VM Debian 13 correspondente. --install exige root.\n'
 }
 [[ $# -eq 2 ]] || { usage; exit 2; }
@@ -63,7 +63,7 @@ case "$MODE" in
             printf 'postfix postfix/main_mailer_type select Local only\n' | debconf-set-selections
         fi
         printf 'wireshark-common wireshark-common/install-setuid boolean false\n' | debconf-set-selections
-        apt-get --no-remove install -y "${PACKAGES[@]}"
+        apt-get --no-remove --no-install-recommends install -y "${PACKAGES[@]}"
         cleanup
         POLICY_CREATED=0
         check_packages

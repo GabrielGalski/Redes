@@ -1,0 +1,4 @@
+Capturing on 'enp0s8'
+File: /tmp/cardeal-dhcp.pcapng
+Packets captured: 5
+Packets received/dropped on interface 'enp0s8': 5/0 (pcap:0/dumpcap:0/flushed:0/ps_ifdrop:0) (100.0%)

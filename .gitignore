@@ -29,5 +29,7 @@
 *.swp
 *.swo
 *~
+__pycache__/
+*.py[cod]
 
 # Capturas, evidências e relatório final devem permanecer versionáveis.

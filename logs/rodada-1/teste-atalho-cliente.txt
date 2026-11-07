@@ -1,0 +1,82 @@
+Entrando na VM cliente. Dentro dela: ./lab.sh testar. Para retornar ao Ubuntu: exit.
+Linux cardeal-cli 6.12.115+deb13.1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.115-2 (2026-11-01) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Ambiente: VM cliente. Verificando suas funções de rede...
+=== Identificação e endereçamento do cliente ===
+cardeal-cli
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             192.168.50.100/24 metric 10 fe80::a00:27ff:feca:301/64 
+default via 192.168.50.1 dev enp0s3 proto dhcp src 192.168.50.100 metric 10 
+192.168.50.0/24 dev enp0s3 proto kernel scope link src 192.168.50.100 metric 10 
+192.168.50.1 dev enp0s3 proto dhcp scope link src 192.168.50.100 metric 10 
+192.168.50.10 dev enp0s3 proto dhcp scope link src 192.168.50.100 metric 10 
+● 2: enp0s3
+                   Link File: /usr/lib/systemd/network/99-default.link
+                Network File: /etc/systemd/network/10-cardeal-lan.network
+                       State: routable (configured)
+                Online state: online
+                        Type: ether
+                        Path: pci-0000:00:03.0
+                      Driver: e1000
+                      Vendor: Intel Corporation
+                       Model: 82540EM Gigabit Ethernet Controller (PRO/1000 MT Desktop Adapter)
+           Alternative Names: enx080027ca0301
+            Hardware Address: 08:00:27:ca:03:01 (PCS Systemtechnik GmbH)
+                         MTU: 1500 (min: 46, max: 16110)
+                       QDisc: fq_codel
+IPv6 Address Generation Mode: eui64
+    Number of Queues (Tx/Rx): 1/1
+            Auto negotiation: yes
+                       Speed: 1Gbps
+                      Duplex: full
+                        Port: tp
+                     Address: 192.168.50.100 (DHCPv4 via 192.168.50.1)
+                              fe80::a00:27ff:feca:301
+                     Gateway: 192.168.50.1
+                         DNS: 192.168.50.10
+              Search Domains: cardeal.local
+           Activation Policy: up
+         Required For Online: yes
+            DHCPv4 Client ID: IAID:0xe2343f3e/DUID
+          DHCPv6 Client DUID: DUID-EN/Vendor:0000ab115c4e603b9b26c5c9
+
+Nov 05 23:58:10 cardeal-cli systemd-networkd[501]: enp0s3: Configuring with /etc/systemd/network/10-cardeal-lan.network.
+Nov 05 23:58:10 cardeal-cli systemd-networkd[501]: enp0s3: Link UP
+Nov 05 23:58:10 cardeal-cli systemd-networkd[501]: enp0s3: Gained carrier
+Nov 05 23:58:10 cardeal-cli systemd-networkd[501]: enp0s3: DHCPv4 address 192.168.50.100/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Nov 05 23:58:11 cardeal-cli systemd-networkd[501]: enp0s3: Gained IPv6LL
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 192.168.50.10
+       DNS Servers: 192.168.50.10
+        DNS Domain: cardeal.local
+     Default Route: yes
+default via 192.168.50.1 dev enp0s3 proto dhcp src 192.168.50.100 metric 10 
+Link 2 (enp0s3): 192.168.50.10
+Link 2 (enp0s3): cardeal.local
+OK: DHCP, máscara, gateway, DNS e domínio de busca.
+=== DNS interno UDP/TCP, MX, PTR e resolução das aplicações ===
+10 mail.cardeal.local.
+srv.cardeal.local.
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: A, MX, PTR, DNS TCP e getent.
+=== Resolução e acesso externo ===
+deb.debian.org.		160	IN	CNAME	debian.map.fastlydns.net.
+debian.map.fastlydns.net. 299	IN	A	151.101.250.132
+HTTP/2 200 
+server: Apache
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: no-referrer
+x-xss-protection: 1
+OK: cliente acessa HTTPS externo pela única interface LAN.
+ACEITE FUNCIONAL DA REDE: APROVADO

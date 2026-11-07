@@ -1,0 +1,16 @@
+digraph Cardeal {
+    graph [rankdir=TB, bgcolor="white", label="Cardeal — rodada 1 / v0.1.0", labelloc=t, fontname="DejaVu Sans"];
+    node [shape=box, style="rounded,filled", fillcolor="#eef4f8", fontname="DejaVu Sans"];
+    edge [fontname="DejaVu Sans", fontsize=10];
+    internet [label="Internet\nconexão existente do hospedeiro", fillcolor="#f7f7f7"];
+    nat [label="NAT VirtualBox\nsem interface física/bridge"];
+    gw [label="cardeal-gw\nWAN: NAT / LAN: 192.168.50.1\nKea DHCP + nftables / NAT"];
+    lan [label="cardeal-lan\nrede interna 192.168.50.0/24", shape=ellipse, fillcolor="#e5f5e5"];
+    srv [label="cardeal-srv\n192.168.50.10\nBIND: cardeal.local e resolução externa"];
+    cli [label="cardeal-cli\nDHCP: 192.168.50.100–200\nterminal SSH + testes + captura"];
+    internet -> nat;
+    nat -> gw;
+    gw -> lan;
+    lan -> srv;
+    lan -> cli;
+}

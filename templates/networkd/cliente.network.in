@@ -1,0 +1,11 @@
+[Match]
+MACAddress=@LAN_MAC@
+[Network]
+DHCP=ipv4
+Domains=@LAB_DOMAIN@
+MulticastDNS=no
+LLMNR=no
+[DHCPv4]
+UseDNS=yes
+UseDomains=yes
+RouteMetric=10

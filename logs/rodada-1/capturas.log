@@ -1,0 +1,55 @@
+Waiting for VM "cardeal-cli" to power on...
+VM "cardeal-cli" has been successfully started.
+Aguardando SSH: cardeal-cli...
+
+; <<>> DiG 9.20.30-1~deb13u1-Debian <<>> @192.168.50.10 www.cardeal.local A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45486
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2d68c1974082bbce010000006aed164c34b1aef6fac17bed (good)
+;; QUESTION SECTION:
+;www.cardeal.local.		IN	A
+
+;; ANSWER SECTION:
+www.cardeal.local.	300	IN	A	192.168.50.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.50.10#53(192.168.50.10) (UDP)
+;; WHEN: Thu Nov 05 23:50:36 UTC 2026
+;; MSG SIZE  rcvd: 90
+
+
+; <<>> DiG 9.20.30-1~deb13u1-Debian <<>> +tcp @192.168.50.10 cardeal.local MX
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 17058
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 75e69adea823c7df010000006aed164c2107fe463c750193 (good)
+;; QUESTION SECTION:
+;cardeal.local.			IN	MX
+
+;; ANSWER SECTION:
+cardeal.local.		300	IN	MX	10 mail.cardeal.local.
+
+;; ADDITIONAL SECTION:
+mail.cardeal.local.	300	IN	A	192.168.50.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.50.10#53(192.168.50.10) (TCP)
+;; WHEN: Thu Nov 05 23:50:36 UTC 2026
+;; MSG SIZE  rcvd: 107
+
+ERRO: Command '['tshark', '-r', '/home/gabriel/Downloads/trabalho de redes/wireshark/dhcp.pcapng', '-Y', 'dhcp', '-T', 'fields', '-e', 'frame.number', '-e', 'ip.src', '-e', 'ip.dst', '-e', 'dhcp.option.dhcp']' returned non-zero exit status 3.

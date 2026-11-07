@@ -1,0 +1,8 @@
+[Match]
+MACAddress=@LAN_MAC@
+[Network]
+Address=@LAB_GATEWAY_IP@/@LAB_PREFIX@
+DHCP=no
+MulticastDNS=no
+LLMNR=no
+ConfigureWithoutCarrier=yes

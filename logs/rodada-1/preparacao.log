@@ -1,0 +1,45 @@
+OK: SHA-512 da imagem Debian verificado.
+Converting from raw image file="/home/gabriel/Downloads/trabalho de redes/isos/disk.raw" to file="/home/gabriel/Downloads/trabalho de redes/isos/debian-13-base.vdi"...
+Creating dynamic image with size 3221225472 bytes (3072MB)...
+Virtual machine 'cardeal-gw' is created and registered.
+UUID: 1e6da473-9242-485b-b507-9b58b4b65e18
+Settings file: '/home/gabriel/Downloads/trabalho de redes/vms/cardeal-gw/cardeal-gw.vbox'
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Clone medium created in format 'VDI'. UUID: 99a29303-b5ad-4cc0-9d6c-ef36c51bc275
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+xorriso 1.5.6 : RockRidge filesystem manipulator, libburnia project.
+
+Virtual machine 'cardeal-srv' is created and registered.
+UUID: cb98cbdc-9c99-41e7-8d9e-f3306549f7db
+Settings file: '/home/gabriel/Downloads/trabalho de redes/vms/cardeal-srv/cardeal-srv.vbox'
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Clone medium created in format 'VDI'. UUID: f2bd6161-bc72-4737-8ee9-e6cedcb9390e
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+xorriso 1.5.6 : RockRidge filesystem manipulator, libburnia project.
+
+Virtual machine 'cardeal-cli' is created and registered.
+UUID: cf7d2343-ca8a-4a04-b3fc-bff1e4b36d50
+Settings file: '/home/gabriel/Downloads/trabalho de redes/vms/cardeal-cli/cardeal-cli.vbox'
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Clone medium created in format 'VDI'. UUID: c5edbc3c-471d-4bf1-9ba4-73c8fffef2b0
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+xorriso 1.5.6 : RockRidge filesystem manipulator, libburnia project.
+
+Waiting for VM "cardeal-gw" to power on...
+VM "cardeal-gw" has been successfully started.
+Aguardando SSH: cardeal-gw...
+status: done
+Configurando cardeal-gw...
+Waiting for VM "cardeal-srv" to power on...
+VM "cardeal-srv" has been successfully started.
+Aguardando SSH: cardeal-srv...
+status: done
+Configurando cardeal-srv...
+Waiting for VM "cardeal-cli" to power on...
+VM "cardeal-cli" has been successfully started.
+Aguardando SSH: cardeal-cli...
+status: done
+Configurando cardeal-cli...
+Waiting for VM "cardeal-srv" to power on...
+VM "cardeal-srv" has been successfully started.
+Aguardando SSH: cardeal-srv...

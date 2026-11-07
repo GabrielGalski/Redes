@@ -28,3 +28,7 @@ tar
 apt
 dpkg
 libc-bin
+python3
+xorriso
+xz-utils
+openssl

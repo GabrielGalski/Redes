@@ -1,0 +1,13 @@
+cardeal-srv
+6.12.115+deb13.1-amd64
+               total        used        free      shared  buff/cache   available
+Mem:             967         255         724           0         114         712
+Swap:           1023           0        1023
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        16G  1.9G   14G  13% /
+Filename				Type		Size		Used		Priority
+/swapfile                               file		1048572		0		-2
+bind9 1:9.20.30-1~deb13u1
+bind9-utils 1:9.20.30-1~deb13u1
+cloud-init 25.1.4-1+deb13u1
+systemd 257.13-1~deb13u1

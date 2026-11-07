@@ -1,0 +1,14 @@
+cardeal-cli
+6.12.115+deb13.1-amd64
+               total        used        free      shared  buff/cache   available
+Mem:             464         103         248           0         124         360
+Swap:           1023           0        1023
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       7.7G  2.0G  5.4G  28% /
+Filename				Type		Size		Used		Priority
+/swapfile                               file		1048572		0		-2
+bind9-dnsutils 1:9.20.30-1~deb13u1
+cloud-init 25.1.4-1+deb13u1
+curl 8.14.1-2+deb13u7
+systemd 257.13-1~deb13u1
+wireshark-common 4.4.19-0+deb13u1

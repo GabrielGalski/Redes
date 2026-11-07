@@ -1,0 +1,4 @@
+Capturing on 'enp0s3'
+File: /tmp/cardeal-dns.pcapng
+Packets captured: 12
+Packets received/dropped on interface 'enp0s3': 12/0 (pcap:0/dumpcap:0/flushed:0/ps_ifdrop:0) (100.0%)

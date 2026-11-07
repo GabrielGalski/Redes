@@ -1,0 +1,11 @@
+[Match]
+MACAddress=@LAN_MAC@
+[Network]
+Address=@LAB_SERVER_IP@/@LAB_PREFIX@
+DNS=127.0.0.1
+Domains=@LAB_DOMAIN@
+MulticastDNS=no
+LLMNR=no
+[Route]
+Gateway=@LAB_GATEWAY_IP@
+Metric=10

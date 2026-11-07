@@ -1,0 +1,12 @@
+options {
+    directory "/var/cache/bind";
+    listen-on { 127.0.0.1; @LAB_SERVER_IP@; };
+    listen-on-v6 { none; };
+    allow-query { localhost; @LAB_SUBNET@; };
+    allow-recursion { localhost; @LAB_SUBNET@; };
+    allow-transfer { none; };
+    recursion yes;
+    forwarders { @LAB_DNS_FORWARDER@; };
+    forward only;
+    dnssec-validation auto;
+};

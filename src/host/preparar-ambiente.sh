@@ -3,11 +3,11 @@ set -Eeuo pipefail
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/../.." && pwd)
-# shellcheck source=scripts/common/packages.sh
-source "$PROJECT_ROOT/scripts/common/packages.sh"
+# shellcheck source=src/common/packages.sh
+source "$PROJECT_ROOT/src/common/packages.sh"
 
 usage() {
-    printf 'Uso: bash scripts/host/preparar-ambiente.sh --check|--plan|--install\n'
+    printf 'Uso: bash src/host/preparar-ambiente.sh --check|--plan|--install\n'
     printf '  --check    Verifica pacotes, ferramentas e driver, sem instalar.\n'
     printf '  --plan     Simula a instalação APT, sem alterar o sistema.\n'
     printf '  --install  Instala dependências do hospedeiro; executar como root.\n'
@@ -46,8 +46,8 @@ case "$MODE" in
                 failed=1
             fi
         done
-        if [[ -r /dev/vboxdrv && -w /dev/vboxdrv ]]; then
-            printf 'DRIVER OK: /dev/vboxdrv acessível ao usuário atual.\n'
+        if [[ -c /dev/vboxdrv ]]; then
+            printf 'DRIVER PRESENTE: /dev/vboxdrv; validar também a inicialização de VM.\n'
         else
             printf 'DRIVER PENDENTE: /dev/vboxdrv ausente ou sem permissão de acesso.\n'
             failed=1

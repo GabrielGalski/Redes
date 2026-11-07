@@ -6,6 +6,7 @@
 # As dependências transitivas serão resolvidas pelo APT.
 # Versões: usar atualizações da distribuição e registrar as versões instaladas.
 # Detalhes de função, gratuidade e licenças: docs/FERRAMENTAS.md.
+# Rodada 1: src/host/lab.py orquestra VMs com imagem Debian oficial e seed NoCloud.
 # Listas executáveis por máquina: config/packages/*.txt.
 # Instalação e verificação: docs/PREPARACAO_DO_AMBIENTE.md.
 
@@ -53,6 +54,10 @@ pandoc
 iproute2
 curl
 ca-certificates
+python3
+xorriso
+xz-utils
+openssl
 
 # ============================================================
 # 2. BASE COMUM — todas as VMs Debian 13
@@ -62,6 +67,11 @@ ca-certificates
 # A maioria já faz parte da instalação mínima: conferir antes de instalar.
 systemd
 systemd-sysv
+systemd-resolved
+cloud-init
+netplan.io
+sudo
+python3
 hostname
 debconf
 apt
@@ -140,6 +150,7 @@ wireshark-common
 # Recursos iniciais: gateway 512 MiB, servidor 1024 MiB, cliente 512 MiB.
 # Confirmar AMD-V/VT-x disponível e inicialização das três VMs.
 # HTML/CSS, arquivos DOT, Markdown e scripts Bash são fontes do projeto;
-# não exigem Node.js, Python/pip, banco SQL ou hospedagem contratada.
+# não exigem Node.js, pip, banco SQL ou hospedagem contratada.
+# Python 3 do sistema é usado na orquestração local, sem pacotes pip.
 # Todos os componentes selecionados têm uso gratuito no laboratório local.
 # Opcionais não adotados estão separados em docs/FERRAMENTAS.md.

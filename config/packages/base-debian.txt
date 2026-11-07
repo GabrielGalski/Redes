@@ -1,6 +1,11 @@
 # Base comum das VMs Debian 13.
 systemd
 systemd-sysv
+systemd-resolved
+cloud-init
+netplan.io
+sudo
+python3
 hostname
 debconf
 apt

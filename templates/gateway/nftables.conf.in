@@ -1,0 +1,29 @@
+#!/usr/sbin/nft -f
+destroy table inet cardeal
+destroy table ip cardeal_nat
+table inet cardeal {
+    chain input {
+        type filter hook input priority filter; policy drop;
+        iifname "lo" accept
+        ct state established,related accept
+        ip protocol icmp accept
+        iifname "@LAN_IF@" udp sport 68 udp dport 67 accept
+        iifname "@WAN_IF@" udp sport 67 udp dport 68 accept
+        iifname "@LAN_IF@" ip saddr @LAB_SUBNET@ tcp dport 22 accept
+        iifname "@WAN_IF@" ip saddr 10.0.2.2 tcp dport 22 accept
+    }
+    chain forward {
+        type filter hook forward priority filter; policy drop;
+        ct state established,related accept
+        iifname "@LAN_IF@" oifname "@WAN_IF@" ip saddr @LAB_SUBNET@ counter accept
+    }
+    chain output {
+        type filter hook output priority filter; policy accept;
+    }
+}
+table ip cardeal_nat {
+    chain postrouting {
+        type nat hook postrouting priority srcnat; policy accept;
+        ip saddr @LAB_SUBNET@ oifname "@WAN_IF@" counter masquerade
+    }
+}
