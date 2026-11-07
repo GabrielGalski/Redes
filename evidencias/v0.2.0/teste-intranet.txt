@@ -1,0 +1,37 @@
+=== Intranet HTTP por nome DNS ===
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+<body data-app="cardeal-intranet">
+  <meta name="description" content="Intranet da Cardeal Ltda: comunicados e arquivos da equipe.">
+  <title>Cardeal Ltda | Intranet</title>
+  <footer>Cardeal Ltda <span>Comunicação e colaboração na nossa rede interna.</span></footer>
+HTTP/1.1 200 OK
+Date: Sat, 07 Nov 2026 01:43:23 GMT
+Server: Apache/2.4.69 (Debian)
+Last-Modified: Sat, 07 Nov 2026 00:41:57 GMT
+ETag: "9eb-65fa4fef9e080"
+Accept-Ranges: bytes
+Content-Length: 2539
+Vary: Accept-Encoding
+Content-Type: text/html
+
+OK: página Cardeal e CSS retornam HTTP 200 pelo nome.
+=== Arquivo de Ana para Bruno por SMB autenticado ===
+192.168.50.10   STREAM files.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: arquivo anterior permanece acessível e íntegro.
+putting file origem.txt as \aceite-cardeal\ana-para-bruno.txt (71.3 kb/s) (average 71.3 kb/s)
+getting file \aceite-cardeal\ana-para-bruno.txt of size 73 as recebido.txt (71.3 KiloBytes/sec) (average 71.3 KiloBytes/sec)
+69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37  origem.txt
+69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37  recebido.txt
+OK: Ana enviou, Bruno baixou e os hashes SHA-256 coincidem.
+putting file colaboracao.txt as \aceite-cardeal\ana-para-bruno.txt (71.3 kb/s) (average 71.3 kb/s)
+getting file \aceite-cardeal\ana-para-bruno.txt of size 73 as retorno.txt (71.3 KiloBytes/sec) (average 71.3 KiloBytes/sec)
+OK: ambos os funcionários têm leitura e escrita no mesmo arquivo.
+=== Rejeição de credencial incorreta e acesso anônimo ===
+session setup failed: NT_STATUS_LOGON_FAILURE
+tree connect failed: NT_STATUS_ACCESS_DENIED
+OK: Samba recusa senha incorreta e acesso sem autenticação.
+ACEITE FUNCIONAL DA INTRANET: APROVADO

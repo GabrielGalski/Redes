@@ -1,0 +1,30 @@
+Aguardando o desligamento do gateway virtual.
+Gateway indisponível: confirmado.
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: DNS interno continua disponível na LAN sem o gateway.
+curl: (28) Connection timed out after 4002 milliseconds
+OK: saída externa falha sem o gateway.
+HTTP/2 200 
+server: Apache
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: no-referrer
+x-xss-protection: 1
+permissions-policy: interest-cohort=()
+x-clacks-overhead: GNU Terry Pratchett
+content-type: text/html;charset=UTF-8
+backend: 4qpvL1tJyeV1P6Tmf0Lj8g--F_accum_debian_backend_mirrors_debian_org
+via: 1.1 varnish, 1.1 varnish
+accept-ranges: bytes
+date: Sat, 07 Nov 2026 00:43:51 GMT
+age: 109
+x-served-by: cache-ams-eham8680060-AMS, cache-gru-sbgr1930069-GRU
+x-cache: HIT, HIT
+x-cache-hits: 32, 1
+x-timer: S1794012232.866598,VS0,VE2
+vary: Accept-Encoding
+content-length: 6153
+
+OK: saída externa restaurada após religar o gateway.

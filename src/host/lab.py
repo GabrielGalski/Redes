@@ -23,7 +23,8 @@ ROOT = Path(__file__).resolve().parents[2]
 VMROOT = ROOT / "vms"
 RUNTIME = VMROOT / ".runtime"
 KEYDIR = VMROOT / ".ssh"
-EVIDENCE = ROOT / "evidencias" / "v0.1.0"
+VERSION = (ROOT / "VERSION").read_text().strip()
+EVIDENCE = ROOT / "evidencias" / ("v" + VERSION)
 SSH_CONFIG = KEYDIR / "config"
 STATE_PATH = VMROOT / "lab-state.json"
 ENV = {**os.environ, "VBOX_USER_HOME": str(VMROOT / ".virtualbox")}
@@ -269,6 +270,10 @@ def wait_ready():
         "servidor": "systemctl is-active --quiet named && dig +time=1 +tries=1 +short @127.0.0.1 "
                     + shlex.quote("www." + CFG["LAB_DOMAIN"]) + " A | grep -Fx " + shlex.quote(CFG["LAB_SERVER_IP"]),
     }
+    if state().get("intranet_configured"):
+        checks["servidor"] += " && systemctl is-active --quiet apache2 smbd nftables && " \
+            "curl --noproxy '*' --silent --fail --max-time 3 -H " + shlex.quote("Host: www." + CFG["LAB_DOMAIN"]) \
+            + " http://" + CFG["LAB_SERVER_IP"] + "/ >/dev/null"
     for role, command in checks.items():
         deadline = time.monotonic() + 120
         while time.monotonic() < deadline:
@@ -443,6 +448,194 @@ def test_network():
     print((EVIDENCE / "teste-rede.txt").read_text(), end="")
     if result.returncode:
         raise RuntimeError("Teste funcional do cliente reprovado.")
+    if state().get("intranet_configured"):
+        test_intranet()
+
+
+def intranet_credentials():
+    directory = ROOT / "secrets"
+    directory.mkdir(mode=0o700, exist_ok=True)
+    directory.chmod(0o700)
+    path = directory / "intranet.json"
+    if path.exists():
+        credentials = json.loads(path.read_text())
+    else:
+        if state().get("intranet_configured"):
+            raise RuntimeError("Credenciais locais ausentes; restaurar secrets/intranet.json antes de reaplicar.")
+        credentials = {user: secrets.token_urlsafe(24) for user in ("ana", "bruno")}
+        with open(path, "x", opener=lambda name, flags: os.open(name, flags, 0o600)) as output:
+            output.write(json.dumps(credentials, indent=2) + "\n")
+    path.chmod(0o600)
+    for user in ("ana", "bruno"):
+        password = credentials[user]
+        if not isinstance(password, str) or len(password) < 16 or "\n" in password or "\r" in password:
+            raise ValueError("Credencial de laboratório inválida; preservar o arquivo local original.")
+    return credentials
+
+
+def update_intranet(*, run_tests=True):
+    if state().get("phase") != "ready":
+        raise RuntimeError("Execute ./lab.sh preparar antes da atualização.")
+    wait_ready()
+    credentials = json.dumps(intranet_credentials()) + "\n"
+    bundle = payload()
+    for role in ("servidor", "cliente"):
+        check_owned(role)
+        run(["scp", "-F", SSH_CONFIG.relative_to(ROOT), bundle, f"{alias(role)}:/tmp/cardeal-payload.tar.gz"])
+        ssh(role, "sudo -n install -d -m 700 /etc/cardeal && "
+                  "sudo -n sh -c 'umask 077; cat > /etc/cardeal/intranet.json'", input=credentials)
+        command = "sudo -n mkdir -p /opt/cardeal && sudo -n tar -xzf /tmp/cardeal-payload.tar.gz -C /opt/cardeal && " \
+                  "sudo -n bash /opt/cardeal/src/" + role + "/configurar-r2.sh"
+        print(f"Aplicando Web/SMB em {vm_name(role)}; acompanhe evidencias/v{VERSION}/provisionamento-r2-{role}.txt...", flush=True)
+        path = EVIDENCE / f"provisionamento-r2-{role}.txt"
+        with path.open("w") as output:
+            result = ssh(role, command, stdout=output, stderr=subprocess.STDOUT, check=False)
+        if result.returncode:
+            raise RuntimeError("Falha na atualização " + role + ":\n" + "\n".join(path.read_text().splitlines()[-30:]))
+    data = state()
+    data["intranet_configured"] = True
+    save_state(data)
+    if run_tests:
+        test_network()
+
+
+def intranet_inventory():
+    return json.loads(ssh("servidor", "sudo -n python3 /opt/cardeal/src/testes/inventario-intranet.py", capture=True).stdout)
+
+
+def test_persistence():
+    test_network()
+    before = intranet_inventory()
+    if not before["arquivos"]:
+        raise RuntimeError("Aceite de persistência requer arquivos existentes.")
+    (EVIDENCE / "inventario-antes.json").write_text(json.dumps(before, indent=2, ensure_ascii=False) + "\n")
+    try:
+        for role in reversed(ROLES):
+            stop(role)
+    finally:
+        for role in ROLES:
+            start(role)
+    wait_ready()
+    after_restart = intranet_inventory()
+    (EVIDENCE / "inventario-pos-reinicio.json").write_text(json.dumps(after_restart, indent=2, ensure_ascii=False) + "\n")
+    if before != after_restart:
+        raise RuntimeError("Dados, contas ou permissões mudaram após reinício; conferir inventários.")
+    print("OK: reinício preservou arquivos, SHA-256, proprietários, permissões e contas.", flush=True)
+    test_network()
+    # Conferir antes de qualquer teste que possa reenviar o arquivo de demonstração.
+    update_intranet(run_tests=False)
+    after_reapply = intranet_inventory()
+    (EVIDENCE / "inventario-pos-reaplicacao.json").write_text(json.dumps(after_reapply, indent=2, ensure_ascii=False) + "\n")
+    if before != after_reapply:
+        raise RuntimeError("Reaplicação alterou arquivos, contas ou permissões; conferir inventários.")
+    print("OK: reaplicação preservou arquivos, SHA-256, proprietários, permissões e contas únicas.", flush=True)
+    test_network()
+    (EVIDENCE / "persistencia.json").write_text(json.dumps({"reinicio": "APROVADO", "reaplicacao": "APROVADO",
+        "comparacao": "conteúdo SHA-256, tamanho, UID/GID, modos, contas Unix/Samba e grupo",
+        "verificado_antes_de_reenviar_arquivo": True}, indent=2, ensure_ascii=False) + "\n")
+    print("ACEITE DE REINÍCIO E REAPLICAÇÃO: APROVADO", flush=True)
+
+
+def test_intranet():
+    if not state().get("intranet_configured"):
+        raise RuntimeError("Execute ./lab.sh atualizar antes dos testes Web/SMB.")
+    path = EVIDENCE / "validadores-servidor.txt"
+    with path.open("w") as output:
+        result = ssh("servidor", "sudo -n apache2ctl configtest && sudo -n testparm -s && "
+                     "sudo -n nft -c -f /etc/nftables.conf && systemctl is-active named apache2 smbd nftables && "
+                     "systemctl is-enabled named apache2 smbd nftables && "
+                     "sudo -n stat -c '%a %U %G %n' /srv/samba/compartilhado /srv/samba/compartilhado/aceite-cardeal && "
+                     "sudo -n nft list ruleset && sudo -n ss -lntup", stdout=output, stderr=subprocess.STDOUT, check=False)
+    if result.returncode:
+        raise RuntimeError("Validadores do servidor falharam; consultar " + str(path.relative_to(ROOT)))
+    path = EVIDENCE / "teste-intranet.txt"
+    with path.open("w") as output:
+        result = ssh("cliente", "sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh", stdout=output, stderr=subprocess.STDOUT, check=False)
+    print(path.read_text(), end="")
+    if result.returncode:
+        raise RuntimeError("Aceite funcional Web/SMB reprovado.")
+    path = EVIDENCE / "inventario-intranet.json"
+    inventory = intranet_inventory()
+    path.write_text(json.dumps(inventory, indent=2, ensure_ascii=False) + "\n")
+    group = inventory["grupo"]["gid"]
+    for user in ("ana", "bruno"):
+        if inventory["usuarios"][user]["ocorrencias"] != 1 or user not in inventory["grupo"]["membros"]:
+            raise RuntimeError("Contas duplicadas ou associação de grupo incorreta.")
+    transferred = inventory["arquivos"]["aceite-cardeal/ana-para-bruno.txt"]
+    if transferred["gid"] != group or transferred["modo"] != "0o660":
+        raise RuntimeError("Permissões do arquivo compartilhado incorretas.")
+    if inventory["diretorios"]["."]["modo"] != "0o2770":
+        raise RuntimeError("Diretório sem permissões de grupo e setgid previstos.")
+    print("OK: validadores Apache/Samba/firewall, contas únicas e permissões de grupo.", flush=True)
+
+
+def capture_http():
+    if not state().get("intranet_configured"):
+        raise RuntimeError("Execute ./lab.sh atualizar antes da captura HTTP.")
+    wait_ready()
+    path = "/tmp/cardeal-http.pcapng"
+    ssh("cliente", f"sudo -n rm -f {path}")
+    command = "sudo -n dumpcap -q -p -i enp0s3 -f " \
+        + shlex.quote("host " + CFG["LAB_SERVER_IP"] + " and tcp port 80") \
+        + f" -a duration:12 -w {path}"
+    with (EVIDENCE / "coleta-http.txt").open("w") as output:
+        process = subprocess.Popen(["ssh", "-F", str(SSH_CONFIG.relative_to(ROOT)), alias("cliente"), command],
+                                   env=ENV, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=output, stderr=subprocess.STDOUT)
+        try:
+            for _ in range(20):
+                if ssh("cliente", f"sudo -n test -f {path}", capture=True, check=False).returncode == 0:
+                    break
+                if process.poll() is not None:
+                    raise RuntimeError("Coletor HTTP terminou antes da requisição.")
+                time.sleep(1)
+            else:
+                raise TimeoutError("Coletor HTTP não ficou pronto.")
+            ssh("cliente", "curl --noproxy '*' --http1.1 --fail --silent --show-error --max-time 15 "
+                + shlex.quote("http://www." + CFG["LAB_DOMAIN"] + "/") + " -o /dev/null")
+            if process.wait(timeout=40):
+                raise RuntimeError("Falha na coleta HTTP; consultar seu log.")
+        finally:
+            if process.poll() is None:
+                process.terminate()
+                process.wait(timeout=10)
+    ssh("cliente", f"sudo -n chmod 644 {path}")
+    run(["scp", "-F", SSH_CONFIG.relative_to(ROOT), f"{alias('cliente')}:{path}", ROOT / "wireshark/http.pcapng"])
+    analyze_http()
+
+
+def analyze_http():
+    fields = ("frame.number", "ip.src", "ip.dst", "tcp.stream", "tcp.flags.syn", "tcp.flags.ack", "tcp.len",
+              "http.request.method", "http.host", "http.request.uri", "http.response.code")
+    with tempfile.TemporaryDirectory(prefix="cardeal-http-") as directory:
+        path = Path(directory) / "http.pcapng"
+        shutil.copyfile(ROOT / "wireshark/http.pcapng", path)
+        args = ["tshark", "-r", path, "-Y", "tcp", "-T", "fields"]
+        for field in fields:
+            args.extend(["-e", field])
+        result = run(args, capture=True).stdout
+    rows = [dict(zip(fields, line.split("\t"))) for line in result.splitlines()]
+    request = next((row for row in rows if row["http.request.method"] == "GET"
+                    and row["http.host"] == "www." + CFG["LAB_DOMAIN"] and row["http.request.uri"] == "/"), None)
+    if not request:
+        raise RuntimeError("Captura sem GET e Host da página Cardeal.")
+    stream = [row for row in rows if row["tcp.stream"] == request["tcp.stream"]]
+    truth = lambda value: value.lower() in {"1", "true"}
+    syn = next((row for row in stream if truth(row["tcp.flags.syn"]) and not truth(row["tcp.flags.ack"]) and row["ip.dst"] == CFG["LAB_SERVER_IP"]), None)
+    synack = next((row for row in stream if truth(row["tcp.flags.syn"]) and truth(row["tcp.flags.ack"]) and row["ip.src"] == CFG["LAB_SERVER_IP"]), None)
+    ack = next((row for row in stream if synack and int(synack["frame.number"]) < int(row["frame.number"]) < int(request["frame.number"])
+                and not truth(row["tcp.flags.syn"]) and truth(row["tcp.flags.ack"])
+                and row["tcp.len"] == "0" and row["ip.dst"] == CFG["LAB_SERVER_IP"]), None)
+    response = next((row for row in stream if row["http.response.code"] == "200" and row["ip.src"] == CFG["LAB_SERVER_IP"]), None)
+    if not all((syn, synack, ack, response)):
+        raise RuntimeError("Captura sem handshake TCP completo e resposta HTTP 200 no fluxo do GET.")
+    url = "http://" + request["http.host"] + request["http.request.uri"]
+    summary = {"url": url, "tcp_stream": request["tcp.stream"], "cliente": request["ip.src"],
+               "servidor": CFG["LAB_SERVER_IP"],
+               "quadros": {"SYN": syn["frame.number"], "SYN_ACK": synack["frame.number"],
+                           "ACK": ack["frame.number"], "GET": request["frame.number"], "HTTP_200": response["frame.number"]}}
+    (EVIDENCE / "http.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n")
+    (EVIDENCE / "analise-http.txt").write_text("\t".join(fields) + "\n" + result + "\nURL reconstruída: " + url + "\n")
+    print("OK: handshake TCP completo, GET, Host e HTTP 200; URL reconstruída: " + url, flush=True)
 
 
 def capture_packets():
@@ -543,14 +736,14 @@ def prepare():
     base = download()
     create_vms(base)
     provision()
-    test_network()
+    update_intranet()
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("preparar", "baixar", "iniciar", "parar", "status", "cliente", "testar", "reiniciar", "capturar", "analisar", "testar-falha"))
+    parser.add_argument("command", choices=("preparar", "baixar", "iniciar", "parar", "status", "cliente", "testar", "reiniciar", "capturar", "analisar", "testar-falha", "atualizar", "testar-intranet", "capturar-http", "testar-persistencia"))
     args = parser.parse_args()
-    network_operation = args.command in {"preparar", "iniciar", "parar", "testar", "reiniciar", "capturar", "testar-falha"}
+    network_operation = args.command in {"preparar", "iniciar", "parar", "testar", "reiniciar", "capturar", "testar-falha", "atualizar", "testar-intranet", "capturar-http", "testar-persistencia"}
     if network_operation:
         private_dirs()
         # Comparar cada operação com seu início, permitindo uso em outras redes
@@ -587,10 +780,23 @@ def main():
         os.execvpe("ssh", ["ssh", *tty, "-F", str(SSH_CONFIG.relative_to(ROOT)), "cardeal-cli"], ENV)
     elif args.command == "testar":
         test_network()
+    elif args.command == "atualizar":
+        update_intranet()
+    elif args.command == "testar-intranet":
+        wait_ready()
+        test_intranet()
+    elif args.command == "capturar-http":
+        capture_http()
+    elif args.command == "testar-persistencia":
+        test_persistence()
     elif args.command == "capturar":
         capture_packets()
+        if state().get("intranet_configured"):
+            capture_http()
     elif args.command == "analisar":
         analyze_packets()
+        if (ROOT / "wireshark/http.pcapng").exists():
+            analyze_http()
     elif args.command == "testar-falha":
         test_gateway_failure()
     else:

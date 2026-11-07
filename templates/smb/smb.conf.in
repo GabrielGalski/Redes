@@ -1,0 +1,33 @@
+[global]
+    workgroup = CARDEAL
+    netbios name = CARDEAL-SRV
+    server role = standalone server
+    security = user
+    passdb backend = tdbsam
+    map to guest = Never
+    interfaces = lo @LAB_SERVER_IP@/24
+    bind interfaces only = yes
+    smb ports = 445
+    disable netbios = yes
+    server min protocol = SMB2_02
+    server max protocol = SMB3
+    server signing = mandatory
+    load printers = no
+    printing = bsd
+    printcap name = /dev/null
+    disable spoolss = yes
+    log file = /var/log/samba/log.%m
+    max log size = 1000
+
+[compartilhado]
+    comment = Arquivos da equipe Cardeal
+    path = /srv/samba/compartilhado
+    browseable = yes
+    read only = no
+    guest ok = no
+    valid users = @funcionarios
+    force group = funcionarios
+    create mask = 0660
+    force create mode = 0660
+    directory mask = 2770
+    force directory mode = 2770

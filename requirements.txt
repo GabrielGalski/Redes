@@ -7,6 +7,7 @@
 # Versões: usar atualizações da distribuição e registrar as versões instaladas.
 # Detalhes de função, gratuidade e licenças: docs/FERRAMENTAS.md.
 # Rodada 1: src/host/lab.py orquestra VMs com imagem Debian oficial e seed NoCloud.
+# Rodada 2: Apache/Samba/nftables no servidor e smbclient no cliente; sem novos pacotes no host.
 # Listas executáveis por máquina: config/packages/*.txt.
 # Instalação e verificação: docs/PREPARACAO_DO_AMBIENTE.md.
 

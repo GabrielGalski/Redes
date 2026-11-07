@@ -1,0 +1,6 @@
+{
+  "reinicio": "APROVADO",
+  "reaplicacao": "APROVADO",
+  "comparacao": "conteúdo SHA-256, tamanho, UID/GID, modos, contas Unix/Samba e grupo",
+  "verificado_antes_de_reenviar_arquivo": true
+}

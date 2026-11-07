@@ -1,0 +1,11 @@
+<VirtualHost @LAB_SERVER_IP@:80>
+    ServerName www.@LAB_DOMAIN@
+    DocumentRoot /var/www/cardeal
+    <Directory /var/www/cardeal>
+        Options -Indexes -ExecCGI
+        AllowOverride None
+        Require ip @LAB_SUBNET@ 127.0.0.1
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/cardeal-error.log
+    CustomLog ${APACHE_LOG_DIR}/cardeal-access.log combined
+</VirtualHost>

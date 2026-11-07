@@ -1,0 +1,14 @@
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:5 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:2 https://deb.debian.org/debian trixie InRelease
+Hit:3 https://deb.debian.org/debian trixie-updates InRelease
+Hit:4 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+smbclient is already the newest version (2:4.22.11+dfsg-0+deb13u1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Testes disponíveis no cliente: ~/lab.sh testar ou cardeal-lab testar.
+Cliente pronto para acessar Web e compartilhar arquivos como Ana e Bruno.

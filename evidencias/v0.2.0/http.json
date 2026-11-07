@@ -1,0 +1,13 @@
+{
+  "url": "http://www.cardeal.local/",
+  "tcp_stream": "0",
+  "cliente": "192.168.50.100",
+  "servidor": "192.168.50.10",
+  "quadros": {
+    "SYN": "1",
+    "SYN_ACK": "2",
+    "ACK": "3",
+    "GET": "4",
+    "HTTP_200": "6"
+  }
+}

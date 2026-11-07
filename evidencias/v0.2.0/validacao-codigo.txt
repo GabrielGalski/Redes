@@ -1,0 +1,20 @@
+Python: src/testes/inventario-intranet.py OK
+Python: src/host/lab.py OK
+Bash: src/instalar-dependencias-vm.sh OK
+Bash: src/cliente/configurar-r2.sh OK
+Bash: src/cliente/lab.sh OK
+Bash: src/cliente/instalar-atalho.sh OK
+Bash: src/cliente/configurar-r1.sh OK
+Bash: src/testes/testar-intranet.sh OK
+Bash: src/testes/testar-rede.sh OK
+Bash: src/testes/testar-falha-gateway.sh OK
+Bash: src/host/preparar-ambiente.sh OK
+Bash: src/common/guest.sh OK
+Bash: src/common/packages.sh OK
+Bash: src/gateway/configurar-r1.sh OK
+Bash: src/servidor/configurar-r2.sh OK
+Bash: src/servidor/configurar-r1.sh OK
+Bash: lab.sh OK
+ShellCheck -x: todos os scripts aprovados
+Manifestos APT: união corresponde ao requirements.txt; nenhum pacote novo no hospedeiro para R2
+Ajuste final do atalho cliente: bash -n e ShellCheck -x aprovados após verificar marcador protegido com sudo.

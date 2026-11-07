@@ -1,0 +1,64 @@
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:3 https://deb.debian.org/debian trixie InRelease
+Hit:4 https://deb.debian.org/debian trixie-updates InRelease
+Hit:5 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+apache2 is already the newest version (2.4.69-1~deb13u1).
+samba is already the newest version (2:4.22.11+dfsg-0+deb13u1).
+samba-common-bin is already the newest version (2:4.22.11+dfsg-0+deb13u1).
+nftables is already the newest version (1.1.3-1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+# Global parameters
+[global]
+	bind interfaces only = Yes
+	disable netbios = Yes
+	disable spoolss = Yes
+	interfaces = lo 192.168.50.10/24
+	load printers = No
+	log file = /var/log/samba/log.%m
+	max log size = 1000
+	printcap name = /dev/null
+	security = USER
+	server role = standalone server
+	server signing = required
+	smb ports = 445
+	workgroup = CARDEAL
+	idmap config * : backend = tdb
+	printing = bsd
+
+
+[compartilhado]
+	comment = Arquivos da equipe Cardeal
+	create mask = 0660
+	directory mask = 02770
+	force create mode = 0660
+	force directory mode = 02770
+	force group = funcionarios
+	path = /srv/samba/compartilhado
+	read only = No
+	valid users = @funcionarios
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+Weak crypto is allowed by GnuTLS (e.g. NTLM as a compatibility fallback)
+
+Server role: ROLE_STANDALONE
+
+Synchronizing state of smbd.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable smbd
+Conf other-vhosts-access-log already disabled
+Site 000-default already disabled
+Conf cardeal already enabled
+Site cardeal already enabled
+Syntax OK
+Synchronizing state of apache2.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable apache2
+active
+active
+active
+active
+Web, SMB autenticado e firewall LAN configurados; dados existentes preservados.

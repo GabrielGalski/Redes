@@ -1,0 +1,147 @@
+Waiting for VM "cardeal-gw" to power on...
+VM "cardeal-gw" has been successfully started.
+Aguardando SSH: cardeal-gw...
+Aguardando o desligamento do gateway virtual.
+Gateway indisponível: confirmado.
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: DNS interno continua disponível na LAN sem o gateway.
+curl: (28) Connection timed out after 4002 milliseconds
+OK: saída externa falha sem o gateway.
+HTTP/2 200 
+server: Apache
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: no-referrer
+x-xss-protection: 1
+permissions-policy: interest-cohort=()
+x-clacks-overhead: GNU Terry Pratchett
+content-type: text/html;charset=UTF-8
+backend: 4qpvL1tJyeV1P6Tmf0Lj8g--F_accum_debian_backend_mirrors_debian_org
+via: 1.1 varnish, 1.1 varnish
+accept-ranges: bytes
+date: Sat, 07 Nov 2026 00:43:51 GMT
+age: 109
+x-served-by: cache-ams-eham8680060-AMS, cache-gru-sbgr1930069-GRU
+x-cache: HIT, HIT
+x-cache-hits: 32, 1
+x-timer: S1794012232.866598,VS0,VE2
+vary: Accept-Encoding
+content-length: 6153
+
+OK: saída externa restaurada após religar o gateway.
+Aguardando SSH: cardeal-gw...
+Aguardando SSH: cardeal-srv...
+Aguardando SSH: cardeal-cli...
+=== Identificação e endereçamento do cliente ===
+cardeal-cli
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             192.168.50.100/24 metric 10 fe80::a00:27ff:feca:301/64 
+default via 192.168.50.1 dev enp0s3 proto dhcp src 192.168.50.100 metric 10 
+192.168.50.0/24 dev enp0s3 proto kernel scope link src 192.168.50.100 metric 10 
+192.168.50.1 dev enp0s3 proto dhcp scope link src 192.168.50.100 metric 10 
+192.168.50.10 dev enp0s3 proto dhcp scope link src 192.168.50.100 metric 10 
+● 2: enp0s3
+                   Link File: /usr/lib/systemd/network/99-default.link
+                Network File: /etc/systemd/network/10-cardeal-lan.network
+                       State: routable (configured)
+                Online state: online
+                        Type: ether
+                        Path: pci-0000:00:03.0
+                      Driver: e1000
+                      Vendor: Intel Corporation
+                       Model: 82540EM Gigabit Ethernet Controller (PRO/1000 MT Desktop Adapter)
+           Alternative Names: enx080027ca0301
+            Hardware Address: 08:00:27:ca:03:01 (PCS Systemtechnik GmbH)
+                         MTU: 1500 (min: 46, max: 16110)
+                       QDisc: fq_codel
+IPv6 Address Generation Mode: eui64
+    Number of Queues (Tx/Rx): 1/1
+            Auto negotiation: yes
+                       Speed: 1Gbps
+                      Duplex: full
+                        Port: tp
+                     Address: 192.168.50.100 (DHCPv4 via 192.168.50.1)
+                              fe80::a00:27ff:feca:301
+                     Gateway: 192.168.50.1
+                         DNS: 192.168.50.10
+              Search Domains: cardeal.local
+           Activation Policy: up
+         Required For Online: yes
+            DHCPv4 Client ID: IAID:0xe2343f3e/DUID
+          DHCPv6 Client DUID: DUID-EN/Vendor:0000ab115c4e603b9b26c5c9
+
+Nov 07 00:41:36 cardeal-cli systemd-networkd[503]: enp0s3: Configuring with /etc/systemd/network/10-cardeal-lan.network.
+Nov 07 00:41:36 cardeal-cli systemd-networkd[503]: enp0s3: Link UP
+Nov 07 00:41:36 cardeal-cli systemd-networkd[503]: enp0s3: Gained carrier
+Nov 07 00:41:37 cardeal-cli systemd-networkd[503]: enp0s3: Gained IPv6LL
+Nov 07 00:41:40 cardeal-cli systemd-networkd[503]: enp0s3: DHCPv4 address 192.168.50.100/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 192.168.50.10
+       DNS Servers: 192.168.50.10
+        DNS Domain: cardeal.local
+     Default Route: yes
+default via 192.168.50.1 dev enp0s3 proto dhcp src 192.168.50.100 metric 10 
+Link 2 (enp0s3): 192.168.50.10
+Link 2 (enp0s3): cardeal.local
+OK: DHCP, máscara, gateway, DNS e domínio de busca.
+=== DNS interno UDP/TCP, MX, PTR e resolução das aplicações ===
+10 mail.cardeal.local.
+srv.cardeal.local.
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: A, MX, PTR, DNS TCP e getent.
+=== Resolução e acesso externo ===
+deb.debian.org.		2989	IN	CNAME	debian.map.fastlydns.net.
+debian.map.fastlydns.net. 87	IN	A	151.101.250.132
+HTTP/2 200 
+server: Apache
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: no-referrer
+x-xss-protection: 1
+OK: cliente acessa HTTPS externo pela única interface LAN.
+ACEITE FUNCIONAL DA REDE: APROVADO
+=== Intranet HTTP por nome DNS ===
+192.168.50.10   STREAM www.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+<body data-app="cardeal-intranet">
+  <meta name="description" content="Intranet da Cardeal Ltda: comunicados e arquivos da equipe.">
+  <title>Cardeal Ltda | Intranet</title>
+  <footer>Cardeal Ltda <span>Comunicação e colaboração na nossa rede interna.</span></footer>
+HTTP/1.1 200 OK
+Date: Sat, 07 Nov 2026 00:44:03 GMT
+Server: Apache/2.4.69 (Debian)
+Last-Modified: Sat, 07 Nov 2026 00:41:57 GMT
+ETag: "9eb-65fa4fef9e080"
+Accept-Ranges: bytes
+Content-Length: 2539
+Vary: Accept-Encoding
+Content-Type: text/html
+
+OK: página Cardeal e CSS retornam HTTP 200 pelo nome.
+=== Arquivo de Ana para Bruno por SMB autenticado ===
+192.168.50.10   STREAM files.cardeal.local
+192.168.50.10   DGRAM  
+192.168.50.10   RAW    
+OK: arquivo anterior permanece acessível e íntegro.
+putting file origem.txt as \aceite-cardeal\ana-para-bruno.txt (35.6 kb/s) (average 35.6 kb/s)
+getting file \aceite-cardeal\ana-para-bruno.txt of size 73 as recebido.txt (35.6 KiloBytes/sec) (average 35.6 KiloBytes/sec)
+69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37  origem.txt
+69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37  recebido.txt
+OK: Ana enviou, Bruno baixou e os hashes SHA-256 coincidem.
+putting file colaboracao.txt as \aceite-cardeal\ana-para-bruno.txt (71.3 kb/s) (average 71.3 kb/s)
+getting file \aceite-cardeal\ana-para-bruno.txt of size 73 as retorno.txt (71.3 KiloBytes/sec) (average 71.3 KiloBytes/sec)
+OK: ambos os funcionários têm leitura e escrita no mesmo arquivo.
+=== Rejeição de credencial incorreta e acesso anônimo ===
+session setup failed: NT_STATUS_LOGON_FAILURE
+tree connect failed: NT_STATUS_ACCESS_DENIED
+OK: Samba recusa senha incorreta e acesso sem autenticação.
+ACEITE FUNCIONAL DA INTRANET: APROVADO
+OK: validadores Apache/Samba/firewall, contas únicas e permissões de grupo.
+OK: interfaces, rotas e DNS do hospedeiro preservados.

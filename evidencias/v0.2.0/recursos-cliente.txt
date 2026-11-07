@@ -1,0 +1,13 @@
+cardeal-cli
+6.12.115+deb13.1-amd64
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             192.168.50.100/24 metric 10 fe80::a00:27ff:feca:301/64 
+               total        used        free      shared  buff/cache   available
+Mem:             464         108          63           1         304         355
+Swap:           1023           0        1023
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       7.7G  2.1G  5.3G  29% /
+bind9-dnsutils	1:9.20.30-1~deb13u1
+curl	8.14.1-2+deb13u7
+smbclient	2:4.22.11+dfsg-0+deb13u1
+wireshark-common	4.4.19-0+deb13u1

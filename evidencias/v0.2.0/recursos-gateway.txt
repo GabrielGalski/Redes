@@ -1,0 +1,13 @@
+cardeal-gw
+6.12.115+deb13.1-amd64
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             10.0.2.15/24 metric 100 fe80::a00:27ff:feca:101/64 
+enp0s8           UP             192.168.50.1/24 fe80::a00:27ff:feca:102/64 
+               total        used        free      shared  buff/cache   available
+Mem:             464         111         236           0         128         352
+Swap:           1023           0        1023
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       7.7G  2.9G  4.5G  39% /
+kea-dhcp4-server	2.6.3-1+deb13u1
+nftables	1.1.3-1
+wireshark-common	4.4.19-0+deb13u1

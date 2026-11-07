@@ -1,0 +1,5 @@
+Quadro	Origem	Destino	Nome	Resposta (False=consulta,True=resposta)
+1	192.168.50.100	192.168.50.10	www.cardeal.local	False
+2	192.168.50.10	192.168.50.100	www.cardeal.local	True
+6	192.168.50.100	192.168.50.10	cardeal.local	False
+8	192.168.50.10	192.168.50.100	cardeal.local	True

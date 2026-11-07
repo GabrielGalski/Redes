@@ -9,7 +9,13 @@ fi
 case "${1:-ajuda}" in
     testar)
         printf 'Ambiente: VM cliente. Verificando suas funções de rede...\n'
-        exec sudo -n bash /opt/cardeal/src/testes/testar-rede.sh
+        sudo -n bash /opt/cardeal/src/testes/testar-rede.sh
+        if sudo -n test -f /etc/cardeal/version; then
+            sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
+        fi
+        ;;
+    testar-intranet)
+        exec sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
         ;;
     status)
         hostname
@@ -18,14 +24,15 @@ case "${1:-ajuda}" in
         ;;
     ajuda|--help|-h)
         printf 'Você está na VM cliente.\n'
-        printf '  ./lab.sh testar   Testar DHCP, DNS e acesso externo do cliente.\n'
+        printf '  ./lab.sh testar   Testar rede e os serviços Web/SMB configurados.\n'
+        printf '  ./lab.sh testar-intranet   Testar página Web, arquivos e autenticação SMB.\n'
         printf '  ./lab.sh status   Mostrar endereços e rotas do cliente.\n'
         printf '  exit              Retornar ao terminal Ubuntu.\n'
         printf 'O comando cardeal-lab oferece as mesmas opções em qualquer diretório.\n'
         ;;
     *)
         printf 'Esse comando deve ser executado na pasta do projeto no Ubuntu hospedeiro.\n' >&2
-        printf 'Digite exit para sair da VM. Aqui, use ./lab.sh testar ou ./lab.sh status.\n' >&2
+        printf 'Digite exit para sair da VM. Aqui, use ./lab.sh testar, testar-intranet ou status.\n' >&2
         exit 2
         ;;
 esac

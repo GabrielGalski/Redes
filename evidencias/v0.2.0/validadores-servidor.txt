@@ -1,0 +1,85 @@
+Syntax OK
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+Weak crypto is allowed by GnuTLS (e.g. NTLM as a compatibility fallback)
+
+Server role: ROLE_STANDALONE
+
+# Global parameters
+[global]
+	bind interfaces only = Yes
+	disable netbios = Yes
+	disable spoolss = Yes
+	interfaces = lo 192.168.50.10/24
+	load printers = No
+	log file = /var/log/samba/log.%m
+	max log size = 1000
+	printcap name = /dev/null
+	security = USER
+	server role = standalone server
+	server signing = required
+	smb ports = 445
+	workgroup = CARDEAL
+	idmap config * : backend = tdb
+	printing = bsd
+
+
+[compartilhado]
+	comment = Arquivos da equipe Cardeal
+	create mask = 0660
+	directory mask = 02770
+	force create mode = 0660
+	force directory mode = 02770
+	force group = funcionarios
+	path = /srv/samba/compartilhado
+	read only = No
+	valid users = @funcionarios
+active
+active
+active
+active
+enabled
+enabled
+enabled
+enabled
+2770 root funcionarios /srv/samba/compartilhado
+2770 root funcionarios /srv/samba/compartilhado/aceite-cardeal
+table inet cardeal_servidor {
+	chain input {
+		type filter hook input priority filter; policy drop;
+		iifname "lo" accept
+		ct state established,related accept
+		ip protocol icmp accept
+		iifname "enp0s3" ip saddr 192.168.50.0/24 udp dport 53 accept
+		iifname "enp0s3" ip saddr 192.168.50.0/24 tcp dport { 22, 53, 80, 445 } accept
+	}
+
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority filter; policy accept;
+	}
+}
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                                               
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=708,fd=25))                                                      
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=708,fd=24))                                                      
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=708,fd=19))                                                      
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=708,fd=18))                                                      
+udp   UNCONN 0      0         127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=16))                                            
+udp   UNCONN 0      0      127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=14))                                            
+tcp   LISTEN 0      50     192.168.50.10:445       0.0.0.0:*    users:(("smbd",pid=1310,fd=28))                                                      
+tcp   LISTEN 0      50         127.0.0.1:445       0.0.0.0:*    users:(("smbd",pid=1310,fd=29))                                                      
+tcp   LISTEN 0      5          127.0.0.1:953       0.0.0.0:*    users:(("named",pid=708,fd=29))                                                      
+tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=726,fd=6))                                                        
+tcp   LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=15))                                            
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=708,fd=22))                                                      
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=708,fd=20))                                                      
+tcp   LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=17))                                            
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=708,fd=27))                                                      
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=708,fd=26))                                                      
+tcp   LISTEN 0      511    192.168.50.10:80        0.0.0.0:*    users:(("apache2",pid=1460,fd=3),("apache2",pid=1459,fd=3),("apache2",pid=1456,fd=3))
+tcp   LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=726,fd=7))                                                        
+tcp   LISTEN 0      5              [::1]:953          [::]:*    users:(("named",pid=708,fd=30))                                                      
+tcp   LISTEN 0      50             [::1]:445          [::]:*    users:(("smbd",pid=1310,fd=30))                                                      

@@ -1,0 +1,18 @@
+#!/usr/sbin/nft -f
+destroy table inet cardeal_servidor
+table inet cardeal_servidor {
+    chain input {
+        type filter hook input priority filter; policy drop;
+        iifname "lo" accept
+        ct state established,related accept
+        ip protocol icmp accept
+        iifname "@LAN_IF@" ip saddr @LAB_SUBNET@ udp dport 53 accept
+        iifname "@LAN_IF@" ip saddr @LAB_SUBNET@ tcp dport { 22, 53, 80, 445 } accept
+    }
+    chain forward {
+        type filter hook forward priority filter; policy drop;
+    }
+    chain output {
+        type filter hook output priority filter; policy accept;
+    }
+}

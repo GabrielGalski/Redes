@@ -1,0 +1,38 @@
+:root { color-scheme: light; --tinta: #252b28; --papel: #f7f7f2; --vermelho: #a92d38; --linha: #d9ddd5; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 17px/1.65 system-ui, sans-serif; }
+a { color: inherit; text-underline-offset: .25em; }
+a:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 5px; }
+.cabecalho, main, footer { max-width: 1140px; margin: auto; padding: 0 36px; }
+.cabecalho { min-height: 104px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--linha); }
+.marca { font-size: 32px; font-weight: 800; letter-spacing: -.06em; color: var(--vermelho); text-decoration: none; }
+.marca span { font-size: 10px; letter-spacing: .16em; margin-left: 10px; }
+.ambiente { font-size: 14px; color: #58635c; }
+.abertura { padding: 72px 0 64px; border-bottom: 1px solid var(--linha); }
+.categoria { margin: 0 0 14px; color: var(--vermelho); font-size: 12px; letter-spacing: .15em; font-weight: 750; }
+h1 { font-size: clamp(32px, 4.5vw, 56px); line-height: 1.12; letter-spacing: -.045em; margin: 0 0 26px; }
+.abertura > p:not(.categoria) { max-width: 650px; color: #58635c; }
+.botao { display: inline-flex; gap: 24px; align-items: center; margin-top: 18px; padding: 13px 20px; background: var(--vermelho); color: #fff; font-size: 15px; font-weight: 650; text-decoration: none; border-radius: 3px; }
+.botao:hover { background: #86212c; }
+.conteudo { display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; padding: 54px 0 72px; }
+h2 { font-size: 27px; line-height: 1.2; letter-spacing: -.03em; margin: 0 0 26px; }
+h3 { font-size: 18px; line-height: 1.4; margin: 9px 0; }
+.aviso { border-top: 1px solid var(--linha); padding: 24px 0 10px; }
+.aviso p, .arquivos > p:not(.categoria) { color: #58635c; font-size: 15px; }
+.etiqueta { color: var(--vermelho); font-size: 12px; font-weight: 650; }
+.arquivos { background: #e9ede5; border-top: 3px solid #637d63; padding: 28px; align-self: start; }
+.endereco { overflow-wrap: anywhere; font-family: ui-monospace, monospace; font-size: 13px !important; padding: 14px 0; border-top: 1px solid #c8d2c5; border-bottom: 1px solid #c8d2c5; }
+.link { display: inline-block; margin: 7px 0; font-size: 15px; font-weight: 650; }
+.arquivos .nota { font-size: 13px !important; }
+footer { border-top: 1px solid var(--linha); padding-top: 24px; padding-bottom: 30px; font-size: 13px; font-weight: 650; }
+footer span { float: right; color: #58635c; font-weight: 400; }
+@media (max-width: 700px) {
+  .cabecalho, main, footer { padding-left: 22px; padding-right: 22px; }
+  .cabecalho { min-height: 84px; }
+  .ambiente { font-size: 12px; }
+  .abertura { padding-top: 46px; padding-bottom: 42px; }
+  .conteudo { grid-template-columns: 1fr; gap: 30px; padding-top: 38px; }
+  footer span { display: block; float: none; margin-top: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

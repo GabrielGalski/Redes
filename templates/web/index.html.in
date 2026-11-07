@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Intranet da Cardeal Ltda: comunicados e arquivos da equipe.">
+  <title>Cardeal Ltda | Intranet</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body data-app="cardeal-intranet">
+  <header class="cabecalho">
+    <a class="marca" href="/" aria-label="Cardeal, início">cardeal<span>LTDA</span></a>
+    <span class="ambiente">Intranet da equipe</span>
+  </header>
+  <main>
+    <section class="abertura" aria-labelledby="titulo">
+      <p class="categoria">NOSSO ESPAÇO DE TRABALHO</p>
+      <h1 id="titulo">Informação que aproxima.<br>Trabalho que avança.</h1>
+      <p>Comunicados e documentos da Cardeal reunidos em um só lugar para facilitar o dia a dia da equipe.</p>
+      <a class="botao" href="#arquivos">Acessar arquivos da equipe <span aria-hidden="true">↗</span></a>
+    </section>
+    <div class="conteudo">
+      <section aria-labelledby="comunicados">
+        <p class="categoria">FIQUE POR DENTRO</p>
+        <h2 id="comunicados">Comunicados</h2>
+        <article class="aviso">
+          <span class="etiqueta">Equipe</span>
+          <h3>Bem-vindo à nossa intranet</h3>
+          <p>Este é o ponto de encontro da Cardeal. Consulte os avisos e encontre os materiais compartilhados com seus colegas.</p>
+        </article>
+        <article class="aviso">
+          <span class="etiqueta">Organização</span>
+          <h3>Documentos fáceis de encontrar</h3>
+          <p>Use nomes claros para os arquivos e mantenha os documentos de trabalho na pasta compartilhada da equipe.</p>
+        </article>
+      </section>
+      <section class="arquivos" id="arquivos" aria-labelledby="titulo-arquivos">
+        <p class="categoria">TRABALHE EM CONJUNTO</p>
+        <h2 id="titulo-arquivos">Arquivos da equipe</h2>
+        <p>Envie documentos e acesse os materiais dos seus colegas usando sua conta de funcionário.</p>
+        <p class="endereco">//files.@LAB_DOMAIN@/compartilhado</p>
+        <a class="link" href="smb://files.@LAB_DOMAIN@/compartilhado">Abrir pasta compartilhada <span aria-hidden="true">↗</span></a>
+        <p class="nota">Abra o endereço no gerenciador de arquivos e informe seu usuário e senha. O acesso é exclusivo para funcionários autenticados.</p>
+      </section>
+    </div>
+  </main>
+  <footer>Cardeal Ltda <span>Comunicação e colaboração na nossa rede interna.</span></footer>
+</body>
+</html>

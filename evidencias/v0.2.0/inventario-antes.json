@@ -1,0 +1,48 @@
+{
+  "arquivos": {
+    "aceite-cardeal/ana-para-bruno.txt": {
+      "bytes": 73,
+      "gid": 1001,
+      "modo": "0o660",
+      "sha256": "69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37",
+      "uid": 1001
+    }
+  },
+  "contas_samba": [
+    "ana:1001:",
+    "bruno:1002:"
+  ],
+  "diretorios": {
+    ".": {
+      "gid": 1001,
+      "modo": "0o2770",
+      "uid": 0
+    },
+    "aceite-cardeal": {
+      "gid": 1001,
+      "modo": "0o2770",
+      "uid": 0
+    }
+  },
+  "grupo": {
+    "gid": 1001,
+    "membros": [
+      "ana",
+      "bruno"
+    ]
+  },
+  "usuarios": {
+    "ana": {
+      "gid": 1001,
+      "home": "/home/ana",
+      "ocorrencias": 1,
+      "uid": 1001
+    },
+    "bruno": {
+      "gid": 1001,
+      "home": "/home/bruno",
+      "ocorrencias": 1,
+      "uid": 1002
+    }
+  }
+}
