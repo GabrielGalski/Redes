@@ -8,4 +8,5 @@ samba-common-bin
 postfix
 dovecot-core
 dovecot-imapd
+openssl
 nftables

@@ -1,0 +1,3 @@
+Dependências desta etapa já instaladas.
+Testes disponíveis no cliente: ~/lab.sh testar ou cardeal-lab testar.
+Cliente pronto para acessar Web e compartilhar arquivos como Ana e Bruno.

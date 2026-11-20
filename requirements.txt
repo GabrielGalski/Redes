@@ -8,6 +8,7 @@
 # Detalhes de função, gratuidade e licenças: docs/FERRAMENTAS.md.
 # Rodada 1: src/host/lab.py orquestra VMs com imagem Debian oficial e seed NoCloud.
 # Rodada 2: Apache/Samba/nftables no servidor e smbclient no cliente; sem novos pacotes no host.
+# Rodada 3: Postfix/Dovecot no servidor, swaks no cliente e exportação local do relatório.
 # Listas executáveis por máquina: config/packages/*.txt.
 # Instalação e verificação: docs/PREPARACAO_DO_AMBIENTE.md.
 
@@ -47,6 +48,7 @@ shellcheck
 # Topologia e geração do relatório.
 graphviz
 pandoc
+poppler-utils
 # Firefox: usar a distribuição oficial Ubuntu (Snap), se já disponível.
 # Necessário para abrir o relatório HTML e imprimir em PDF.
 # Não instalar uma segunda cópia se o navegador já estiver disponível.
@@ -127,6 +129,7 @@ samba-common-bin
 postfix
 dovecot-core
 dovecot-imapd
+openssl
 
 # Firewall do servidor.
 nftables
@@ -146,7 +149,7 @@ wireshark-common
 # 6. REQUISITOS EXTERNOS AO APT / ARTEFATOS
 # ============================================================
 
-# ISO Debian 13 netinst amd64 e arquivo de checksums oficial.
+# Imagem cloud oficial Debian 13 amd64 e SHA-512 em config/debian-image.json.
 # Firefox oficial Ubuntu, descrito no grupo do hospedeiro.
 # Recursos iniciais: gateway 512 MiB, servidor 1024 MiB, cliente 512 MiB.
 # Confirmar AMD-V/VT-x disponível e inicialização das três VMs.

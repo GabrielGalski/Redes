@@ -1,6 +1,6 @@
 # Cardeal Ltda — trabalho de Redes de Computadores
 
-Planejamento baseado em [Trabalho Infraestrutura.pdf](Trabalho%20Infraestrutura.pdf).
+Planejamento baseado no enunciado acadêmico `Trabalho Infraestrutura.pdf`, mantido apenas como arquivo local.
 
 - [Plano de implementação](docs/PLANO_DE_IMPLEMENTACAO.md): requisitos, topologia, endereçamento, sequência de execução, testes, capturas e entregas.
 - [Plano de sprints](sprints.md): três entregas funcionais cumulativas, versões, tarefas e critérios de aceite.
@@ -9,28 +9,29 @@ Planejamento baseado em [Trabalho Infraestrutura.pdf](Trabalho%20Infraestrutura.
 - [Configuração de exemplo](config/lab.env.example): parâmetros de rede, recursos e acesso administrativo previstos.
 - [Preparação do ambiente](docs/PREPARACAO_DO_AMBIENTE.md): instalação, simulação e verificação das dependências do hospedeiro e das VMs.
 
-Versão **v0.2.0**: rede básica, intranet Web e compartilhamento SMB. O [aceite da segunda rodada](evidencias/v0.2.0/STATUS.md) registra os resultados nas VMs reais; o [relatório](logs/rodada-2/RELATORIO.md) explica configuração, testes e captura HTTP. A primeira etapa foi publicada no commit `de1cebb` (`feat: DHCP, DNS e gateway`); suas [evidências](evidencias/v0.1.0/STATUS.md) permanecem preservadas.
+Entrega **v1.0.0**: rede básica, intranet Web, SMB autenticado e correio interno SMTP/IMAP. A Sprint 3 foi aprovada localmente em **07/11/2026**; o [aceite final](evidencias/v1.0.0/STATUS.md) apresenta as comprovações. O [relatório consolidado](logs/relatorio/relatorio.md) reúne a infraestrutura e as respostas ao enunciado. As etapas anteriores foram publicadas nos commits `de1cebb` (rede) e `60fc6a8` (Web/SMB), com evidências preservadas por versão.
 
 A proposta usa **VirtualBox + três VMs Debian 13 sem interface gráfica**, executadas no Ubuntu 26.04 LTS atual. O conjunto atende ao laboratório local sem serviços pagos, assinatura, cartão de crédito ou cotas de SaaS. A RAM das VMs precisa ser validada com os serviços em execução.
 
 ## Executar o laboratório
 
-A versão entrega DHCP, DNS interno/externo, gateway/NAT, intranet em `http://www.cardeal.local/` e SMB autenticado em `//files.cardeal.local/compartilhado`. O cliente Debian é acessível por terminal SSH. O serviço de e-mail será implementado na Sprint 3; o registro DNS `mail` já existe.
+A versão entrega DHCP, DNS interno/externo, gateway/NAT, intranet em `http://www.cardeal.local/` e SMB autenticado em `//files.cardeal.local/compartilhado`. O cliente Debian é acessível por terminal SSH. O Postfix recebe correio interno em `mail.cardeal.local:25` e o Dovecot permite leitura IMAP na porta 143, com contas Ana e Bruno.
 
 Na raiz do projeto, como usuário normal do Ubuntu:
 
 ```bash
 ./lab.sh preparar      # primeira vez: baixar/verificar imagem, criar e provisionar
 ./lab.sh iniciar       # iniciar as três VMs já preparadas
-./lab.sh atualizar     # atualizar VMs da v0.1.0 com Web/SMB, sem recriar discos
+./lab.sh atualizar     # aplicar Web/SMB/e-mail nas VMs existentes, preservando os dados
 ./lab.sh cliente       # abrir o terminal do cliente pela LAN, via gateway
 ```
 
 Depois de `./lab.sh cliente`, o prompt `cardeal@cardeal-cli:~$` indica que você está **dentro da VM Debian**. Nesse terminal:
 
 ```bash
-./lab.sh testar       # verificar rede, Web, transferência e autenticação SMB
+./lab.sh testar       # verificar rede, Web, SMB e envio/leitura de e-mail
 ./lab.sh testar-intranet # verificar somente Web e SMB
+./lab.sh testar-email # envio/leitura Ana ↔ Bruno e rejeições SMTP
 ./lab.sh status       # endereços e rotas do cliente
 ip -br address
 ip route
@@ -42,20 +43,26 @@ sudo smbclient //files.cardeal.local/compartilhado -A /etc/cardeal/credentials/a
 exit
 ```
 
-O atalho `cardeal-lab testar` também funciona em qualquer diretório da VM. O teste local verifica DHCP, DNS, acesso externo e os novos serviços Web/SMB, quando configurados. Para a verificação adicional das NICs VirtualBox e da rede do hospedeiro, use o comando de testes no Ubuntu.
+O atalho `cardeal-lab testar` também funciona em qualquer diretório da VM. Na v1.0.0, o teste local apresenta aprovado/reprovado por função: rede, intranet e e-mail; retorna erro se alguma delas falhar. Para a verificação adicional das NICs VirtualBox e da rede do hospedeiro, use o comando de testes no Ubuntu.
 
 **No terminal Ubuntu, na pasta do projeto**, execute a administração das VMs e os testes completos. Se estiver no prompt do cliente, digite `exit` primeiro:
 
 ```bash
 ./lab.sh status        # estado das VMs e IP atual do cliente
-./lab.sh testar        # aceite cumulativo de rede e intranet; conferir rede do Ubuntu
+./lab.sh testar        # aceite integrado de rede, intranet e e-mail; conferir rede do Ubuntu
+./lab.sh verificar     # mesmo aceite integrado
+./lab.sh testar-email  # SMTP nos dois sentidos, leitura IMAP e recusas de relay/destinatário
 ./lab.sh testar-intranet # HTTP, Ana → Bruno, SHA-256 e recusas SMB
-./lab.sh testar-persistencia # reiniciar e reaplicar; comparar dados/permissões/contas
+./lab.sh testar-persistencia # reiniciar e reaplicar; comparar arquivos, mensagens e contas
 ./lab.sh reiniciar     # reiniciar as VMs e repetir o aceite
-./lab.sh capturar      # DHCP DORA, DNS e HTTP
+./lab.sh capturar      # DHCP DORA, DNS, HTTP e SMTP/IMAP
 ./lab.sh capturar-http # somente handshake, GET/Host e HTTP 200 da intranet
+./lab.sh capturar-email # SMTP e IMAP reais na interface LAN do cliente
 ./lab.sh analisar      # analisar novamente as capturas existentes
-./lab.sh testar-falha  # desligar só o gateway virtual, testar e religá-lo
+./lab.sh testar-sem-wan # desconectar só a WAN virtual; testar os serviços LAN; restaurar
+./lab.sh testar-falha  # desligar só o gateway; testar a LAN e a recuperação da internet
+./lab.sh testar-detector # parar Apache, exigir reprovação e verificar a recuperação
+./lab.sh reconstruir  # validar em três VMs novas e depois restabelecer as originais
 ./lab.sh parar         # desligamento ACPI somente das VMs do projeto
 ```
 
@@ -78,7 +85,7 @@ vms/
 │   ├── seed/                 # arquivos usados para gerar a seed
 │   ├── serial.log            # saída do console durante o boot
 │   └── Logs/                 # registros do VirtualBox
-├── cardeal-srv/              # DNS, Apache e Samba
+├── cardeal-srv/              # DNS, Apache, Samba, Postfix e Dovecot
 │   ├── cardeal-srv.vbox
 │   ├── disk.vdi
 │   └── ...                   # seed e logs da própria VM
@@ -89,6 +96,7 @@ vms/
 ├── .virtualbox/              # catálogo VirtualBox exclusivo deste projeto
 ├── .ssh/                    # configuração e chaves SSH do laboratório
 ├── .runtime/                # arquivos auxiliares da automação
+├── reconstrucao-r3/          # VMs novas usadas na validação da entrega final
 └── lab-state.json            # identificação das VMs e IP descoberto do cliente
 ```
 
@@ -118,7 +126,7 @@ As conexões finais foram conferidas nos arquivos `.vbox`. Todos os adaptadores 
 | --- | --- | --- | --- |
 | `cardeal-gw` | 1 / `enp0s3` | NAT VirtualBox, lado WAN | IP por DHCP do NAT; observado `10.0.2.15/24` no aceite. Saída externa. |
 | `cardeal-gw` | 2 / `enp0s8` | Rede interna `cardeal-lan`, lado LAN | Estático `192.168.50.1/24`. Gateway e DHCP dos convidados. |
-| `cardeal-srv` | 1 / `enp0s3` | Rede interna `cardeal-lan` | Estático `192.168.50.10/24`. DNS, HTTP e SMB. |
+| `cardeal-srv` | 1 / `enp0s3` | Rede interna `cardeal-lan` | Estático `192.168.50.10/24`. DNS, HTTP, SMB, SMTP e IMAP. |
 | `cardeal-cli` | 1 / `enp0s3` | Rede interna `cardeal-lan` | DHCP entre `.100` e `.200`; observado `192.168.50.100/24` no aceite. |
 
 Cliente e servidor ficam sem segundo adaptador na topologia final. O NAT temporário usado em seu provisionamento inicial é removido pela automação. Os nomes das interfaces são associados aos MACs dos adaptadores nos scripts de cada papel.
@@ -130,7 +138,7 @@ flowchart TB
     NAT["NAT do VirtualBox"]
     GW["cardeal-gw<br/>WAN: enp0s3 / NAT<br/>LAN: enp0s8 / 192.168.50.1"]
     LAN["cardeal-lan<br/>rede interna 192.168.50.0/24"]
-    SRV["cardeal-srv<br/>192.168.50.10<br/>DNS / Web / SMB"]
+    SRV["cardeal-srv<br/>192.168.50.10<br/>DNS / Web / SMB / e-mail"]
     CLI["cardeal-cli<br/>DHCP: 192.168.50.100–200"]
     INTERNET <--> UBUNTU
     UBUNTU <--> NAT
@@ -158,7 +166,7 @@ Cliente → gateway Debian → NAT VirtualBox → conexão do Ubuntu → interne
 Ubuntu:127.0.0.1:2222 → SSH do gateway → SSH do cliente:22
 ```
 
-Essa conexão abre o terminal dentro do Debian cliente. O acesso HTTP/SMB feito nesse terminal continua sendo gerado pelo cliente na LAN. O hospedeiro não recebe uma interface na LAN virtual nem passa a resolver os nomes `cardeal.local` por causa desse acesso SSH.
+Essa conexão abre o terminal dentro do Debian cliente. O acesso HTTP/SMB/e-mail feito nesse terminal continua sendo gerado pelo cliente na LAN. O hospedeiro não recebe uma interface na LAN virtual nem passa a resolver os nomes `cardeal.local` por causa desse acesso SSH.
 
 ### Onde essa configuração está implementada
 
@@ -169,10 +177,63 @@ Essa conexão abre o terminal dentro do Debian cliente. O acesso HTTP/SMB feito 
 | [src/gateway/configurar-r1.sh](src/gateway/configurar-r1.sh) | Aplica WAN/LAN, encaminhamento IPv4, NAT/firewall e Kea dentro do gateway. |
 | [src/servidor/configurar-r1.sh](src/servidor/configurar-r1.sh) e [configurar-r2.sh](src/servidor/configurar-r2.sh) | Rede estática/DNS e serviços Web/SMB/firewall dentro do servidor. |
 | [src/cliente/configurar-r1.sh](src/cliente/configurar-r1.sh) e [configurar-r2.sh](src/cliente/configurar-r2.sh) | DHCP/resolução e ferramentas para acessar os serviços dentro do cliente. |
+| [src/servidor/configurar-r3.sh](src/servidor/configurar-r3.sh) e [templates/email/](templates/email/) | Postfix, Dovecot 2.4, Maildir e portas de correio no firewall do servidor. |
 | [templates/networkd/](templates/networkd/) | Configurações persistentes das interfaces dos convidados. |
 | [templates/gateway/](templates/gateway/), [templates/dhcp/](templates/dhcp/) e [templates/dns/](templates/dns/) | Regras do gateway, opções DHCP e zonas DNS. |
 
-Para inspecionar a configuração sem alterá-la, execute `./lab.sh status` no Ubuntu. Dentro do cliente, use `ip -br address`, `ip route` e `resolvectl status`. As configurações verificadas e o teste de preservação da rede do hospedeiro ficam em [evidencias/v0.2.0/](evidencias/v0.2.0/). O [diagrama SVG](topologia/topologia.svg) também representa a topologia implementada.
+Para inspecionar a configuração sem alterá-la, execute `./lab.sh status` no Ubuntu. Dentro do cliente, use `ip -br address`, `ip route` e `resolvectl status`. As configurações verificadas e o teste de preservação da rede do hospedeiro ficam em [evidencias/v1.0.0/](evidencias/v1.0.0/). O [diagrama SVG](topologia/topologia.svg) também representa a topologia implementada.
+
+## Enviar e ler e-mail no cliente
+
+Entre com `./lab.sh cliente`. O comando abaixo envia Ana → Bruno e Bruno → Ana, pesquisa e lê cada mensagem por IMAP e verifica Message-ID, corpo e destinatário:
+
+```bash
+./lab.sh testar-email
+```
+
+Para criar sua própria mensagem:
+
+```bash
+swaks --server mail.cardeal.local --port 25 --from ana@cardeal.local --to bruno@cardeal.local --header 'Subject: Mensagem da equipe' --body 'Ola Bruno, mensagem enviada pela LAN.'
+sudo curl --noproxy '*' --netrc-file /etc/cardeal/credentials/bruno.netrc 'imap://mail.cardeal.local/INBOX' --request 'UID SEARCH ALL'
+sudo curl --noproxy '*' --netrc-file /etc/cardeal/credentials/bruno.netrc 'imap://mail.cardeal.local/INBOX/;UID=1'
+```
+
+No último comando, substitua `1` pelo UID retornado na pesquisa. O endereço de correio é `ana@cardeal.local` ou `bruno@cardeal.local`; o login IMAP usa o nome local `ana` ou `bruno`. Postfix grava em `~/Maildir/` no servidor e Dovecot lê a mesma caixa. Destinatário inexistente e relay externo, inclusive originado na LAN, são rejeitados.
+
+As credenciais de e-mail em [config/email-demo.json](config/email-demo.json) são **fictícias e públicas para a demonstração**. SMTP/IMAP em claro permitem analisar os comandos na captura isolada. Essas credenciais são distintas das senhas SMB privadas; os arquivos `.netrc` usados nos comandos ficam protegidos na VM cliente.
+
+## Reconstrução e entrega do trabalho
+
+`./lab.sh reconstruir` desliga temporariamente as três VMs originais, cria `cardeal-r3-gw`, `cardeal-r3-srv` e `cardeal-r3-cli` da imagem Debian base e usa a LAN separada `cardeal-r3-validacao`. O provisionamento ocorre por papel, com no máximo três VMs ligadas durante a validação. Ao terminar, as VMs de validação são desligadas e as originais voltam a ficar disponíveis. Os resultados ficam em `evidencias/v1.0.0/reconstrucao/`; a confirmação efetiva está no aceite final.
+
+A instalação do SO é automatizada por imagem oficial e NoCloud. Em outro Ubuntu, a instalação administrativa das dependências do hospedeiro continua necessária, conforme a seção de preparação. Os discos e as credenciais locais não acompanham o Git nem o pacote da entrega.
+
+Depois de gerar as evidências e aprovar o aceite, os documentos e o pacote podem ser reproduzidos com:
+
+```bash
+python3 src/host/verificar-capturas.py
+python3 src/host/compilar-relatorio.py
+python3 src/host/gerar-relatorio.py
+python3 src/host/empacotar.py
+sha256sum -c entrega/SHA256SUMS
+```
+
+O compilador exige os resultados reais de persistência, falhas e reconstrução. Pandoc gera HTML autocontido e Firefox gera PDF usando um perfil temporário separado. O pacote `entrega/cardeal-v1.0.0.tar.gz` reúne os scripts, templates, evidências, topologia, quatro capturas e o relatório em Markdown/HTML/PDF. O Firefox precisa estar disponível; `poppler-utils` fornece as ferramentas de conferência do PDF.
+
+O Git contém os fontes, configurações públicas, manifestos das dependências e evidências do aceite. Os pacotes são obtidos pelos instaladores; dependências instaladas, imagens/discos de VM, credenciais privadas, PDFs, HTML exportado e `entrega/` permanecem locais e ignorados. O pacote local não inclui o PDF de especificação.
+
+## Abrir as capturas para apresentação
+
+As capturas canônicas estão em `wireshark/dhcp.pcapng`, `dns.pcapng`, `http.pcapng` e `email.pcapng`. A análise automatizada usa cópias temporárias para respeitar o perfil AppArmor instalado. Para abrir uma cópia na interface do Wireshark, no Ubuntu:
+
+```bash
+CARDEAL_CAPTURAS=$(mktemp -d /tmp/cardeal-wireshark.XXXXXX)
+cp wireshark/*.pcapng "$CARDEAL_CAPTURAS/"
+wireshark -r "$CARDEAL_CAPTURAS/email.pcapng"
+```
+
+Selecione `smtp` ou `imap` no filtro de exibição. Para as outras capturas, use `dhcp`, `dns` ou `http`. O relatório identifica os quadros e responde às perguntas do PDF. `python3 src/host/verificar-capturas.py` confere a abertura das quatro capturas no Wireshark com plataforma gráfica offscreen, compara as contagens de quadros e encerra cada processo automaticamente.
 
 ## Trocar arquivos no cliente
 
@@ -185,9 +246,9 @@ sudo smbclient //files.cardeal.local/compartilhado -A /etc/cardeal/credentials/b
 sha256sum /tmp/documento.txt /tmp/documento-bruno.txt
 ```
 
-O diretório `aceite-cardeal/` é reservado aos testes automáticos. Outros arquivos compartilhados são preservados na reaplicação. `./lab.sh testar-persistencia` compara conteúdo, UID/GID, modos e contas **antes** de repetir qualquer transferência de teste.
+O diretório `aceite-cardeal/` é reservado aos testes automáticos. Os testes de correio geram mensagens fictícias com identificadores únicos. Outros arquivos compartilhados são preservados na reaplicação. `./lab.sh testar-persistencia` compara conteúdo, UID/GID, modos e contas **antes** de repetir qualquer transferência de teste.
 
-A página e a pasta estão na LAN das VMs. O Ubuntu acessa a administração por SSH; seu navegador não resolve nem acessa esses endereços internos diretamente na topologia atual.
+A página, a pasta e o correio estão na LAN das VMs. O Ubuntu acessa a administração por SSH; seu navegador não resolve nem acessa esses endereços internos diretamente na topologia atual.
 
 ## Estrutura do repositório
 
@@ -199,9 +260,9 @@ A página e a pasta estão na LAN das VMs. O Ubuntu acessa a administração por
 ├── sprints.md                # evolução funcional em três versões
 ├── requirements.txt          # inventário de ferramentas e pacotes de sistema
 ├── .gitignore
-├── Trabalho Infraestrutura.pdf
 ├── config/
 │   ├── lab.env.example       # parâmetros de referência, sem senhas
+│   ├── email-demo.json       # credenciais fictícias públicas para a captura
 │   └── packages/             # manifestos APT por máquina
 ├── docs/                     # planejamento e ferramentas
 ├── src/
@@ -226,7 +287,8 @@ A página e a pasta estão na LAN das VMs. O Ubuntu acessa a administração por
 ├── logs/                     # execução e relatório da rodada
 ├── vms/                      # VMs e catálogo locais, ignorados pelo Git
 ├── isos/                     # imagem Debian e disco base locais, ignorados
-└── secrets/                  # credenciais locais, ignoradas pelo Git
+├── secrets/                  # credenciais locais, ignoradas pelo Git
+└── entrega/                  # pacote e hashes locais, ignorados pelo Git
 ```
 
 Os diretórios reservados contêm `.gitkeep` para serem preservados no Git. A primeira rodada adiciona orquestração em `src/host/lab.py`, configuração dos convidados em `src/gateway/`, `src/servidor/` e `src/cliente/`, templates e testes funcionais em `src/testes/`. `docs/` e `sprints.md` permanecem ignorados pelo Git.

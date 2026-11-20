@@ -1,0 +1,181 @@
+Waiting for VM "cardeal-cli" to power on...
+VM "cardeal-cli" has been successfully started.
+Aguardando SSH: cardeal-cli...
+
+; <<>> DiG 9.20.30-1~deb13u1-Debian <<>> @192.168.50.10 www.cardeal.local A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52542
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 7c8f045133dd957b010000006aefb41cff49665990e5dffd (good)
+;; QUESTION SECTION:
+;www.cardeal.local.		IN	A
+
+;; ANSWER SECTION:
+www.cardeal.local.	300	IN	A	192.168.50.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.50.10#53(192.168.50.10) (UDP)
+;; WHEN: Sat Nov 07 23:28:28 UTC 2026
+;; MSG SIZE  rcvd: 90
+
+
+; <<>> DiG 9.20.30-1~deb13u1-Debian <<>> +tcp @192.168.50.10 cardeal.local MX
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23245
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: bcd7b18bb5c01575010000006aefb41c9b31fa7f5a9396c5 (good)
+;; QUESTION SECTION:
+;cardeal.local.			IN	MX
+
+;; ANSWER SECTION:
+cardeal.local.		300	IN	MX	10 mail.cardeal.local.
+
+;; ADDITIONAL SECTION:
+mail.cardeal.local.	300	IN	A	192.168.50.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.50.10#53(192.168.50.10) (TCP)
+;; WHEN: Sat Nov 07 23:28:28 UTC 2026
+;; MSG SIZE  rcvd: 107
+
+OK: DHCP DORA e consulta/resposta DNS capturados e conferidos.
+Aguardando SSH: cardeal-gw...
+Aguardando SSH: cardeal-srv...
+Aguardando SSH: cardeal-cli...
+OK: handshake TCP completo, GET, Host e HTTP 200; URL reconstruída: http://www.cardeal.local/
+Aguardando SSH: cardeal-gw...
+Aguardando SSH: cardeal-srv...
+Aguardando SSH: cardeal-cli...
+Aguardando SSH: cardeal-gw...
+Aguardando SSH: cardeal-srv...
+Aguardando SSH: cardeal-cli...
+=== SMTP ana@cardeal.local -> bruno@cardeal.local ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<bruno@cardeal.local>
+<-  250 2.1.5 Ok
+ -> DATA
+<-  354 End data with <CR><LF>.<CR><LF>
+ -> Date: Sat, 07 Nov 2026 23:28:59 +0000
+ -> To: bruno@cardeal.local
+ -> From: ana@cardeal.local
+ -> Subject: Aceite Cardeal ana para bruno
+ -> Message-Id: <cardeal-ana-c0d4561e0bed4e2db9b1e79bc08c6b58@cardeal.local>
+ -> X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -> 
+ -> Mensagem interna Cardeal de ana para bruno. Identificador: <cardeal-ana-c0d4561e0bed4e2db9b1e79bc08c6b58@cardeal.local>
+ -> 
+ -> 
+ -> .
+<-  250 2.0.0 Ok: queued as 0D3AC21101
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+OK: bruno leu por IMAP UID 13; Message-ID e corpo coincidem.
+=== SMTP bruno@cardeal.local -> ana@cardeal.local ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<bruno@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<ana@cardeal.local>
+<-  250 2.1.5 Ok
+ -> DATA
+<-  354 End data with <CR><LF>.<CR><LF>
+ -> Date: Sat, 07 Nov 2026 23:28:59 +0000
+ -> To: ana@cardeal.local
+ -> From: bruno@cardeal.local
+ -> Subject: Aceite Cardeal bruno para ana
+ -> Message-Id: <cardeal-bruno-1aff96ed3892494facb88ea83c63a860@cardeal.local>
+ -> X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -> 
+ -> Mensagem interna Cardeal de bruno para ana. Identificador: <cardeal-bruno-1aff96ed3892494facb88ea83c63a860@cardeal.local>
+ -> 
+ -> 
+ -> .
+<-  250 2.0.0 Ok: queued as 2E50721101
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+OK: ana leu por IMAP UID 12; Message-ID e corpo coincidem.
+=== Destinatário inexistente e relay externo ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<inexistente@cardeal.local>
+<** 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<destinatario@example.org>
+<** 554 5.7.1 <destinatario@example.org>: Relay access denied
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+ACEITE FUNCIONAL DO E-MAIL: APROVADO
+OK: iniciador TCP, banner SMTP, EHLO/MAIL/RCPT/DATA e comunicação IMAP identificados.
+OK: interfaces, rotas e DNS do hospedeiro preservados.

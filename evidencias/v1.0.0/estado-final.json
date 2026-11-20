@@ -1,0 +1,8 @@
+{
+  "cardeal-gw": "running",
+  "cardeal-srv": "running",
+  "cardeal-cli": "running",
+  "cardeal-r3-gw": "poweroff",
+  "cardeal-r3-srv": "poweroff",
+  "cardeal-r3-cli": "poweroff"
+}

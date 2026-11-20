@@ -1,0 +1,16 @@
+[
+  {
+    "remetente": "ana@cardeal.local",
+    "destinatario": "bruno@cardeal.local",
+    "message_id": "<cardeal-ana-c0d4561e0bed4e2db9b1e79bc08c6b58@cardeal.local>",
+    "queue_id": "0D3AC21101",
+    "imap_uid": "13"
+  },
+  {
+    "remetente": "bruno@cardeal.local",
+    "destinatario": "ana@cardeal.local",
+    "message_id": "<cardeal-bruno-1aff96ed3892494facb88ea83c63a860@cardeal.local>",
+    "queue_id": "2E50721101",
+    "imap_uid": "12"
+  }
+]

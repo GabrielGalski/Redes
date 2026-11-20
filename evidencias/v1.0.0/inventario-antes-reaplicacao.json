@@ -1,0 +1,126 @@
+{
+  "arquivos": {
+    "aceite-cardeal/ana-para-bruno.txt": {
+      "bytes": 73,
+      "gid": 1001,
+      "modo": "0o660",
+      "sha256": "69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37",
+      "uid": 1001
+    }
+  },
+  "contas_samba": [
+    "ana:1001:",
+    "bruno:1002:"
+  ],
+  "diretorios": {
+    ".": {
+      "gid": 1001,
+      "modo": "0o2770",
+      "uid": 0
+    },
+    "aceite-cardeal": {
+      "gid": 1001,
+      "modo": "0o2770",
+      "uid": 0
+    }
+  },
+  "email": {
+    "ana": [
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-bruno-014f3ad5a7384ef6b4643ba4094c5e15@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "270469f8f5c13d992ad0a063a8b3d13d2ea0f413bb8e8547adcf3e23afac247e",
+        "uid": 1001
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-bruno-09af7d472f6a4152bd0fa85fb0399f56@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "a4cb3f2aefadec8a20b264f84740d2a270f53acd8ac4a4389ad54f48d20dbfa7",
+        "uid": 1001
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-bruno-37426fd7b0b448eea3c157d40b8724c5@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "ebe851fbd068944ac0024c5c77ce5646debc02a6e3309b63fb581d1f29a56f1a",
+        "uid": 1001
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-bruno-8938430ee1a743c7b50d5278da5d4786@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "61ca02d772a8ca73810167b38e7c585a8793795b4926d8508d35a74f99bf4e52",
+        "uid": 1001
+      }
+    ],
+    "bruno": [
+      {
+        "bytes": 706,
+        "gid": 1001,
+        "message_id": "<20261107232042.001240@cardeal-cli>",
+        "modo": "0o600",
+        "sha256": "7bdbf2c2ee9bd654f8889a36f8b85cde6972092d8a48a089992230e82ee060e6",
+        "uid": 1002
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-ana-119ea8adac634b1baea76507cdb34c30@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "2a4297b6ce64a0f6d06e85a1bc5022aa6974b82836ddabb1a17347f1f2628b2e",
+        "uid": 1002
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-ana-afaf993a60a348f7a3f71b99a0dfb79e@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "513ffc575c780e8fc895e37599c54c8079b525ef0eb44040e14de5df9792a22f",
+        "uid": 1002
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-ana-d47c5f8a09d140189e0b9fbf2f1d562f@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "ad85cae36ce34015a3e744c565bdfd64d033793d87c197c372caea95306d47ef",
+        "uid": 1002
+      },
+      {
+        "bytes": 658,
+        "gid": 1001,
+        "message_id": "<cardeal-ana-e76bd6d41a67446486a5e560f7b7df06@cardeal.local>",
+        "modo": "0o600",
+        "sha256": "80d1f2254ed811b82567d8f1102bab29430dcaa71ee96cf763d235dd121de27a",
+        "uid": 1002
+      }
+    ]
+  },
+  "grupo": {
+    "gid": 1001,
+    "membros": [
+      "ana",
+      "bruno"
+    ]
+  },
+  "usuarios": {
+    "ana": {
+      "gid": 1001,
+      "home": "/home/ana",
+      "ocorrencias": 1,
+      "uid": 1001
+    },
+    "bruno": {
+      "gid": 1001,
+      "home": "/home/bruno",
+      "ocorrencias": 1,
+      "uid": 1002
+    }
+  }
+}

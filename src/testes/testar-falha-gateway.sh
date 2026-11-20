@@ -20,6 +20,16 @@ fi
 echo 'Gateway indisponível: confirmado.'
 getent ahostsv4 "www.$LAB_DOMAIN"
 echo 'OK: DNS interno continua disponível na LAN sem o gateway.'
+bash "$PROJECT_ROOT/src/testes/testar-rede.sh" --sem-internet
+bash "$PROJECT_ROOT/src/testes/testar-intranet.sh"
+if [[ $(cat /etc/cardeal/version 2>/dev/null) == 1.0.0 ]]; then
+    bash "$PROJECT_ROOT/src/testes/testar-email.sh"
+fi
+if ping -c 1 -W 1 "$LAB_GATEWAY_IP" >/dev/null 2>&1; then
+    echo 'Gateway retornou antes do fim dos testes LAN.'
+    exit 1
+fi
+echo 'OK: serviços LAN aprovados com gateway ainda desligado.'
 if curl --fail --silent --show-error --connect-timeout 4 --max-time 8 --resolve "deb.debian.org:443:$EXTERNAL_IP" --head https://deb.debian.org/debian/; then
     echo 'ERRO: saída externa funcionou sem o gateway.'
     exit 1

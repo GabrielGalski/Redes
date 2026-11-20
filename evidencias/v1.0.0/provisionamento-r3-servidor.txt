@@ -1,0 +1,44 @@
+Dependências desta etapa já instaladas.
+postfix/postlog: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+# 2.4.1-4 (7d8c0e5759): /etc/dovecot/dovecot.conf
+# Pigeonhole version 2.4.1-4 (0a86619f)
+# OS: Linux 6.12.115+deb13.1-amd64 x86_64 Debian 13.7 
+# Hostname: cardeal-srv
+# 4 default setting changes since version 2.4.0
+dovecot_config_version = 2.4.0
+auth_allow_cleartext = yes
+auth_mechanisms = plain login
+dovecot_storage_version = 2.4.0
+first_valid_uid = 1000
+info_log_path = /var/log/dovecot.log
+listen = 127.0.0.1 192.168.50.10
+log_path = /var/log/dovecot.log
+mail_driver = maildir
+mail_path = %{home}/Maildir
+protocols = imap
+ssl = no
+namespace inbox {
+  inbox = yes
+  separator = /
+}
+passdb passwd-file {
+  passwd_file_path = /etc/dovecot/cardeal-users
+}
+userdb passwd-file {
+  passwd_file_path = /etc/dovecot/cardeal-users
+}
+service imap-login {
+  inet_listener imap {
+    port = 143
+  }
+  inet_listener imaps {
+    port = 0
+  }
+}
+Synchronizing state of postfix.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable postfix
+Synchronizing state of dovecot.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable dovecot
+postfix/postlog: the Postfix mail system is running: PID: 2336
+active
+SMTP interno e IMAP configurados; Maildir existente preservado.

@@ -41,6 +41,8 @@ render() {
 }
 
 install_r1_packages() {
+    local package
+    local missing=()
     export DEBIAN_FRONTEND=noninteractive
     if [[ ! -f /swapfile ]]; then
         fallocate -l 1G /swapfile
@@ -53,6 +55,15 @@ install_r1_packages() {
     for source_file in /etc/apt/sources.list.d/*.sources; do
         [[ ! -f "$source_file" ]] || sed -i 's/^Types: deb deb-src$/Types: deb/' "$source_file"
     done
+    for package in "$@"; do
+        if [[ $(dpkg-query -W -f='${Status}' "$package" 2>/dev/null || true) != 'install ok installed' ]]; then
+            missing+=("$package")
+        fi
+    done
+    if [[ ${#missing[@]} == 0 ]]; then
+        echo 'Dependências desta etapa já instaladas.'
+        return
+    fi
     apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update
     printf 'wireshark-common wireshark-common/install-setuid boolean false\n' | debconf-set-selections
     apt-get --no-remove --no-install-recommends -y install "$@"

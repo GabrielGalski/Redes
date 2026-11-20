@@ -28,6 +28,10 @@ dig +short "@$LAB_DNS_IP" "$LAB_DOMAIN" MX | grep -F "10 mail.$LAB_DOMAIN."
 dig +short "@$LAB_DNS_IP" -x "$LAB_SERVER_IP" | grep -F "srv.$LAB_DOMAIN."
 getent ahostsv4 "www.$LAB_DOMAIN" | grep -F "$LAB_SERVER_IP"
 echo 'OK: A, MX, PTR, DNS TCP e getent.'
+if [[ ${1:-} == --sem-internet ]]; then
+    echo 'ACEITE FUNCIONAL DA REDE INTERNA: APROVADO'
+    exit 0
+fi
 echo '=== Resolução e acesso externo ==='
 dig "@$LAB_DNS_IP" deb.debian.org A +noall +answer
 curl --fail --silent --show-error --connect-timeout 15 --max-time 45 --head https://deb.debian.org/debian/ | head -n 6

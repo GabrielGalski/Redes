@@ -1,0 +1,12 @@
+{
+  "resultado": "APROVADO",
+  "base": "imagem Debian oficial, sem reutilizar discos configurados",
+  "vms": [
+    "cardeal-r3-gw",
+    "cardeal-r3-srv",
+    "cardeal-r3-cli"
+  ],
+  "lan": "cardeal-r3-validacao",
+  "passos_manuais_so": "nenhum; NoCloud e scripts versionados",
+  "originais_preservadas": true
+}

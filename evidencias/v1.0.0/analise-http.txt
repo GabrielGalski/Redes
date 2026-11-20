@@ -1,0 +1,13 @@
+frame.number	ip.src	ip.dst	tcp.stream	tcp.flags.syn	tcp.flags.ack	tcp.len	http.request.method	http.host	http.request.uri	http.response.code
+1	192.168.50.100	192.168.50.10	0	True	False	0				
+2	192.168.50.10	192.168.50.100	0	True	True	0				
+3	192.168.50.100	192.168.50.10	0	False	True	0				
+4	192.168.50.100	192.168.50.10	0	False	True	81	GET	www.cardeal.local	/	
+5	192.168.50.10	192.168.50.100	0	False	True	0				
+6	192.168.50.10	192.168.50.100	0	False	True	2792			/	200
+7	192.168.50.100	192.168.50.10	0	False	True	0				
+8	192.168.50.100	192.168.50.10	0	False	True	0				
+9	192.168.50.10	192.168.50.100	0	False	True	0				
+10	192.168.50.100	192.168.50.10	0	False	True	0				
+
+URL reconstruída: http://www.cardeal.local/

@@ -1,0 +1,118 @@
+Aguardando SSH: cardeal-gw...
+Aguardando SSH: cardeal-srv...
+Aguardando SSH: cardeal-cli...
+=== SMTP ana@cardeal.local -> bruno@cardeal.local ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<bruno@cardeal.local>
+<-  250 2.1.5 Ok
+ -> DATA
+<-  354 End data with <CR><LF>.<CR><LF>
+ -> Date: Sat, 07 Nov 2026 23:21:47 +0000
+ -> To: bruno@cardeal.local
+ -> From: ana@cardeal.local
+ -> Subject: Aceite Cardeal ana para bruno
+ -> Message-Id: <cardeal-ana-e76bd6d41a67446486a5e560f7b7df06@cardeal.local>
+ -> X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -> 
+ -> Mensagem interna Cardeal de ana para bruno. Identificador: <cardeal-ana-e76bd6d41a67446486a5e560f7b7df06@cardeal.local>
+ -> 
+ -> 
+ -> .
+<-  250 2.0.0 Ok: queued as 82AB621152
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+OK: bruno leu por IMAP UID 2; Message-ID e corpo coincidem.
+=== SMTP bruno@cardeal.local -> ana@cardeal.local ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<bruno@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<ana@cardeal.local>
+<-  250 2.1.5 Ok
+ -> DATA
+<-  354 End data with <CR><LF>.<CR><LF>
+ -> Date: Sat, 07 Nov 2026 23:21:47 +0000
+ -> To: ana@cardeal.local
+ -> From: bruno@cardeal.local
+ -> Subject: Aceite Cardeal bruno para ana
+ -> Message-Id: <cardeal-bruno-8938430ee1a743c7b50d5278da5d4786@cardeal.local>
+ -> X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -> 
+ -> Mensagem interna Cardeal de bruno para ana. Identificador: <cardeal-bruno-8938430ee1a743c7b50d5278da5d4786@cardeal.local>
+ -> 
+ -> 
+ -> .
+<-  250 2.0.0 Ok: queued as AE92F21152
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+OK: ana leu por IMAP UID 1; Message-ID e corpo coincidem.
+=== Destinatário inexistente e relay externo ===
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<inexistente@cardeal.local>
+<** 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+=== Trying mail.cardeal.local:25...
+=== Connected to mail.cardeal.local.
+<-  220 mail.cardeal.local ESMTP Cardeal
+ -> EHLO cardeal-cli
+<-  250-mail.cardeal.local
+<-  250-PIPELINING
+<-  250-SIZE 2097152
+<-  250-ETRN
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250-SMTPUTF8
+<-  250 CHUNKING
+ -> MAIL FROM:<ana@cardeal.local>
+<-  250 2.1.0 Ok
+ -> RCPT TO:<destinatario@example.org>
+<** 554 5.7.1 <destinatario@example.org>: Relay access denied
+ -> QUIT
+<-  221 2.0.0 Bye
+=== Connection closed with remote host.
+ACEITE FUNCIONAL DO E-MAIL: APROVADO
+OK: interfaces, rotas e DNS do hospedeiro preservados.

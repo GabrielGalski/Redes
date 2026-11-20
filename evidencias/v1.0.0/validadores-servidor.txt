@@ -1,0 +1,140 @@
+postfix/postlog: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+alias_database = hash:/etc/aliases
+alias_maps = hash:/etc/aliases
+compatibility_level = 3.6
+default_transport = error:5.7.1 Somente correio interno Cardeal
+disable_vrfy_command = yes
+home_mailbox = Maildir/
+inet_interfaces = 127.0.0.1, 192.168.50.10
+inet_protocols = ipv4
+local_recipient_maps = hash:/etc/postfix/cardeal-recipients
+mailbox_command =
+mailbox_size_limit = 0
+maillog_file = /var/log/postfix.log
+message_size_limit = 2097152
+mydestination = $myhostname, $mydomain, localhost.$mydomain, localhost
+mydomain = cardeal.local
+myhostname = mail.cardeal.local
+mynetworks = 127.0.0.0/8, 192.168.50.0/24
+myorigin = $mydomain
+recipient_delimiter =
+relay_domains =
+relay_transport = error:5.7.1 Relay externo desabilitado
+relayhost =
+smtp_tls_security_level = none
+smtpd_banner = $myhostname ESMTP Cardeal
+smtpd_client_restrictions = permit_mynetworks, reject
+smtpd_recipient_restrictions = reject_unlisted_recipient, check_recipient_access hash:/etc/postfix/cardeal-recipients, reject
+smtpd_reject_unlisted_recipient = yes
+smtpd_relay_restrictions = reject_unauth_destination
+smtpd_sasl_auth_enable = no
+smtpd_tls_security_level = none
+# 2.4.1-4 (7d8c0e5759): /etc/dovecot/dovecot.conf
+# Pigeonhole version 2.4.1-4 (0a86619f)
+# OS: Linux 6.12.115+deb13.1-amd64 x86_64 Debian 13.7 
+# Hostname: cardeal-srv
+# 4 default setting changes since version 2.4.0
+dovecot_config_version = 2.4.0
+auth_allow_cleartext = yes
+auth_mechanisms = plain login
+dovecot_storage_version = 2.4.0
+first_valid_uid = 1000
+info_log_path = /var/log/dovecot.log
+listen = 127.0.0.1 192.168.50.10
+log_path = /var/log/dovecot.log
+mail_driver = maildir
+mail_path = %{home}/Maildir
+protocols = imap
+ssl = no
+namespace inbox {
+  inbox = yes
+  separator = /
+}
+passdb passwd-file {
+  passwd_file_path = /etc/dovecot/cardeal-users
+}
+userdb passwd-file {
+  passwd_file_path = /etc/dovecot/cardeal-users
+}
+service imap-login {
+  inet_listener imap {
+    port = 143
+  }
+  inet_listener imaps {
+    port = 0
+  }
+}
+postfix/postlog: the Postfix mail system is running: PID: 959
+Syntax OK
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+Weak crypto is allowed by GnuTLS (e.g. NTLM as a compatibility fallback)
+
+Server role: ROLE_STANDALONE
+
+# Global parameters
+[global]
+	bind interfaces only = Yes
+	disable netbios = Yes
+	disable spoolss = Yes
+	interfaces = lo 192.168.50.10/24
+	load printers = No
+	log file = /var/log/samba/log.%m
+	max log size = 1000
+	printcap name = /dev/null
+	security = USER
+	server role = standalone server
+	server signing = required
+	smb ports = 445
+	workgroup = CARDEAL
+	idmap config * : backend = tdb
+	printing = bsd
+
+
+[compartilhado]
+	comment = Arquivos da equipe Cardeal
+	create mask = 0660
+	directory mask = 02770
+	force create mode = 0660
+	force directory mode = 02770
+	force group = funcionarios
+	path = /srv/samba/compartilhado
+	read only = No
+	valid users = @funcionarios
+active
+active
+active
+active
+active
+active
+enabled
+enabled
+enabled
+enabled
+enabled
+enabled
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                                            
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=712,fd=25))                                                   
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=712,fd=24))                                                   
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=712,fd=19))                                                   
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=712,fd=18))                                                   
+udp   UNCONN 0      0         127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=413,fd=16))                                         
+udp   UNCONN 0      0      127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=413,fd=14))                                         
+tcp   LISTEN 0      100    192.168.50.10:143       0.0.0.0:*    users:(("dovecot",pid=705,fd=45))                                                 
+tcp   LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=413,fd=15))                                         
+tcp   LISTEN 0      100        127.0.0.1:143       0.0.0.0:*    users:(("dovecot",pid=705,fd=44))                                                 
+tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=727,fd=6))                                                     
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=712,fd=22))                                                   
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=712,fd=20))                                                   
+tcp   LISTEN 0      100    192.168.50.10:25        0.0.0.0:*    users:(("smtpd",pid=1951,fd=7),("master",pid=959,fd=13))                          
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=712,fd=27))                                                   
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=712,fd=26))                                                   
+tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("smtpd",pid=1951,fd=6),("master",pid=959,fd=12))                          
+tcp   LISTEN 0      511    192.168.50.10:80        0.0.0.0:*    users:(("apache2",pid=788,fd=3),("apache2",pid=787,fd=3),("apache2",pid=785,fd=3))
+tcp   LISTEN 0      50         127.0.0.1:445       0.0.0.0:*    users:(("smbd",pid=813,fd=29))                                                    
+tcp   LISTEN 0      5          127.0.0.1:953       0.0.0.0:*    users:(("named",pid=712,fd=29))                                                   
+tcp   LISTEN 0      50     192.168.50.10:445       0.0.0.0:*    users:(("smbd",pid=813,fd=28))                                                    
+tcp   LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=413,fd=17))                                         
+tcp   LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=727,fd=7))                                                     
+tcp   LISTEN 0      5              [::1]:953          [::]:*    users:(("named",pid=712,fd=30))                                                   
+tcp   LISTEN 0      50             [::1]:445          [::]:*    users:(("smbd",pid=813,fd=30))                                                    

@@ -1,0 +1,4 @@
+Python, Bash e ShellCheck: todos os scripts aprovados.
+Manifestos APT correspondem ao requirements.txt; dependências do hospedeiro verificadas fora do isolamento de dispositivos.
+Links locais e blocos Markdown dos documentos finais: conferidos.
+Senhas SMB/console e chaves privadas ausentes dos arquivos versionáveis; autenticação IMAP fictícia pública é intencional.

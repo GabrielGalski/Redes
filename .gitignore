@@ -2,6 +2,16 @@
 /docs/
 /sprints.md
 
+# Material pessoal de estudo, incluindo o PDF e seus arquivos de geração.
+/estudo/
+
+# Documentos PDF e exportações reproduzíveis, mantidos apenas localmente.
+*.[pP][dD][fF]
+/entrega/
+/logs/relatorio/relatorio.html
+/logs/relatorio/exportacao-firefox.log
+/evidencias/*/manifesto-entrega.json
+
 # Metadados locais do ambiente de desenvolvimento.
 /.agents/
 /.codex/
@@ -23,6 +33,14 @@
 *.qcow2
 *.iso
 
+# Dependências instaladas e pacotes baixados; versionar apenas os manifestos.
+.venv/
+venv/
+node_modules/
+*.deb
+*.rpm
+*.AppImage
+
 # Arquivos temporários e backups locais.
 /tmp/
 /backups/
@@ -32,4 +50,4 @@
 __pycache__/
 *.py[cod]
 
-# Capturas, evidências e relatório final devem permanecer versionáveis.
+# Capturas, evidências e fonte Markdown do relatório permanecem versionáveis.

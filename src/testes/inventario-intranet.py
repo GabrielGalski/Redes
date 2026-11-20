@@ -7,6 +7,8 @@ import os
 from pathlib import Path
 import pwd
 import subprocess
+from email.parser import BytesParser
+from email import policy
 
 if os.geteuid() != 0 or Path('/etc/cardeal-role').read_text().strip() != 'servidor':
     raise SystemExit('Executar como root na VM servidor do laboratório.')
@@ -28,4 +30,19 @@ for path in [root, *sorted(root.rglob('*'))]:
     elif path.is_dir():
         data['diretorios'][str(path.relative_to(root))] = item
 data['contas_samba'] = sorted(subprocess.check_output(['pdbedit', '-L'], text=True).splitlines())
+if Path('/etc/cardeal/version').read_text().strip() == '1.0.0':
+    data['email'] = {}
+    for user in ('ana', 'bruno'):
+        messages = []
+        for folder in ('cur', 'new'):
+            for path in (Path(pwd.getpwnam(user).pw_dir) / 'Maildir' / folder).glob('*'):
+                if not path.is_file():
+                    continue
+                raw = path.read_bytes()
+                msg = BytesParser(policy=policy.default).parsebytes(raw)
+                info = path.stat()
+                messages.append({'message_id': str(msg.get('Message-ID', '')), 'sha256': hashlib.sha256(raw).hexdigest(),
+                                 'bytes': len(raw), 'uid': info.st_uid, 'gid': info.st_gid,
+                                 'modo': oct(info.st_mode & 0o7777)})
+        data['email'][user] = sorted(messages, key=lambda item: (item['message_id'], item['sha256']))
 print(json.dumps(data, indent=2, ensure_ascii=False, sort_keys=True))

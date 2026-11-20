@@ -9,6 +9,9 @@ fi
 case "${1:-ajuda}" in
     testar)
         printf 'Ambiente: VM cliente. Verificando suas funções de rede...\n'
+        if sudo -n grep -qx '1.0.0' /etc/cardeal/version 2>/dev/null; then
+            exec sudo -n bash /opt/cardeal/src/testes/verificar-laboratorio.sh
+        fi
         sudo -n bash /opt/cardeal/src/testes/testar-rede.sh
         if sudo -n test -f /etc/cardeal/version; then
             sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
@@ -17,6 +20,12 @@ case "${1:-ajuda}" in
     testar-intranet)
         exec sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
         ;;
+    testar-email)
+        exec sudo -n bash /opt/cardeal/src/testes/testar-email.sh
+        ;;
+    verificar)
+        exec sudo -n bash /opt/cardeal/src/testes/verificar-laboratorio.sh
+        ;;
     status)
         hostname
         ip -br address
@@ -24,8 +33,9 @@ case "${1:-ajuda}" in
         ;;
     ajuda|--help|-h)
         printf 'Você está na VM cliente.\n'
-        printf '  ./lab.sh testar   Testar rede e os serviços Web/SMB configurados.\n'
+        printf '  ./lab.sh testar   Testar rede, Web/SMB e correio interno.\n'
         printf '  ./lab.sh testar-intranet   Testar página Web, arquivos e autenticação SMB.\n'
+        printf '  ./lab.sh testar-email      Enviar e ler e-mail nos dois sentidos.\n'
         printf '  ./lab.sh status   Mostrar endereços e rotas do cliente.\n'
         printf '  exit              Retornar ao terminal Ubuntu.\n'
         printf 'O comando cardeal-lab oferece as mesmas opções em qualquer diretório.\n'
