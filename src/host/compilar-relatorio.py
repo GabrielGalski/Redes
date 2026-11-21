@@ -18,7 +18,9 @@ def rows(name):
 
 assert data('persistencia.json')['reinicio']=='APROVADO'
 assert data('persistencia.json')['reaplicacao']=='APROVADO'
-assert data('reconstrucao.json')['resultado']=='APROVADO'
+reconstruction = data('reconstrucao.json')
+assert reconstruction['resultado']=='APROVADO'
+reconstruction_names = ', '.join('`'+name+'`' for name in reconstruction['vms'])
 assert data('detector.json')['apache_restaurado']=='APROVADO'
 assert data('rede-hospedeiro.json')['sem_alteracoes'] is True
 assert 'ACEITE INTEGRADO DO LABORATÓRIO: APROVADO' in (E/'teste-integrado.txt').read_text()
@@ -32,6 +34,7 @@ dns = rows('analise-dns.txt')
 dns_query = next(row for row in dns if row[3]=='www.'+lab.CFG['LAB_DOMAIN'] and row[4].lower() in ('false','0'))
 dns_reply = next(row for row in dns if row[3]=='www.'+lab.CFG['LAB_DOMAIN'] and row[4].lower() in ('true','1'))
 messages = data('mensagens-capturadas.json')
+shared_file = data('inventario-intranet.json')['arquivos']['aceite-cardeal/ana-para-bruno.txt']
 now = datetime.now(ZoneInfo('America/Sao_Paulo')).strftime('%d/%m/%Y %H:%M (%Z)')
 dhcp_table = '\n'.join(f'| {row[0]} | `{row[1]}` | `{row[2]}` | {dict(zip(("1","2","3","5"),("Discover","Offer","Request","ACK")))[row[3]]} |'
     for row in dhcp if len(row)==4 and row[3] in ('1','2','3','5'))
@@ -65,7 +68,7 @@ Foi implementada uma LAN com endereçamento automático, resolução de nomes, p
 | Demonstrar protocolos e rede funcionando | Verificador integrado, logs por função, falhas controladas e recuperação. |
 | Capturas DHCP/DNS/HTTP/e-mail | Quatro arquivos pcapng analisados por TShark/Wireshark, com quadros indicados neste relatório. |
 | Relatório, decisões, dificuldades e scripts | Este documento, README, código, templates, inventários e evidências por versão. |
-| Dicas: VirtualBox, três VMs, Linux e Git | Três convidados Debian 13 em VirtualBox, sobre Ubuntu 26.04; histórico das etapas anteriores em Git. |
+| Dicas: VirtualBox, três VMs, Linux e Git | Três convidados Debian 13 em VirtualBox, sobre Ubuntu 26.04, com código e evidências em Git. |
 
 ## 2. Infraestrutura, topologia e máquinas virtuais
 
@@ -114,7 +117,7 @@ Apache possui VirtualHost e ServerName explícitos para `www.cardeal.local`, com
 
 Samba standalone publica `//files.cardeal.local/compartilhado`, caminho `/srv/samba/compartilhado`, com grupo `funcionarios` e autenticação de `ana` e `bruno`. As contas estão separadas da administração. O diretório usa modo `2770`; arquivos usam `0660`, com leitura/escrita do grupo. SMB2/SMB3 e assinatura são exigidos pela configuração, na porta TCP 445, sem NetBIOS. As máscaras e o controle de acesso seguem o [manual smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html).
 
-Ana envia um arquivo e Bruno baixa os mesmos bytes. O SHA-256 verificado é `69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37`. Bruno também consegue gravar no arquivo criado por Ana. Senha incorreta retorna `NT_STATUS_LOGON_FAILURE`; acesso anônimo ao compartilhamento retorna `NT_STATUS_ACCESS_DENIED`.
+Ana envia um arquivo e Bruno baixa os mesmos bytes. O SHA-256 verificado é `{shared_file['sha256']}`. Bruno também consegue gravar no arquivo criado por Ana. Senha incorreta retorna `NT_STATUS_LOGON_FAILURE`; acesso anônimo ao compartilhamento retorna `NT_STATUS_ACCESS_DENIED`.
 
 ### 4.4 Correio interno SMTP e IMAP
 
@@ -154,7 +157,7 @@ Os seguintes envios ocorreram durante a captura de e-mail, com IDs de fila confi
 | --- | --- | --- | --- |
 {message_table}
 
-As evidências ficam em `evidencias/v1.0.0/`: `teste-integrado.txt`, `teste-email.txt`, `mensagens-capturadas.json`, `validadores-servidor.txt`, `persistencia.json`, inventários, `teste-sem-wan.txt`, `teste-falha-gateway.txt`, `detector.json` e `reconstrucao.json`. Os logs completos estão em `logs/rodada-3/`.
+As evidências ficam em `evidencias/v1.0.0/`: `teste-integrado.txt`, `teste-email.txt`, `mensagens-capturadas.json`, `validadores-servidor.txt`, `persistencia.json`, inventários, `teste-sem-wan.txt`, `teste-falha-gateway.txt`, `detector.json` e `reconstrucao.json`. Os logs completos estão em `logs/laboratorio/`.
 
 ## 6. Protocolos por camada
 
@@ -208,9 +211,9 @@ O teste de persistência inventaria arquivos SMB e as mensagens reais em Maildir
 
 O teste sem WAN desconecta apenas o primeiro cabo virtual do gateway, executa as funções internas e restaura esse cabo. O teste sem gateway desliga apenas a VM gateway, confirma os serviços LAN e a indisponibilidade externa, depois a religa. O teste do detector para Apache temporariamente e exige um resultado negativo verdadeiro, seguido de recuperação. As rotinas usam restauração em `finally` para recuperar o laboratório após o teste.
 
-`./lab.sh reconstruir` criou `cardeal-r3-gw`, `cardeal-r3-srv` e `cardeal-r3-cli` a partir do disco Debian base não provisionado, usando LAN separada `cardeal-r3-validacao`, diretório `vms/reconstrucao-r3/` e portas SSH 2232–2234. As VMs originais ficaram desligadas durante essa validação para limitar a RAM e foram novamente disponibilizadas depois. Nenhum disco de convidado já configurado foi reutilizado como base. Instalação, serviços, topologia final e aceite após reinício passaram nas três VMs novas; os registros completos ficam em `evidencias/v1.0.0/reconstrucao/`.
+`./lab.sh reconstruir` validou {reconstruction_names} a partir do disco Debian base não provisionado, usando LAN separada `{reconstruction['lan']}` e portas SSH 2232–2234. As VMs originais ficaram desligadas durante essa validação para limitar a RAM e foram novamente disponibilizadas depois. Nenhum disco de convidado já configurado foi reutilizado como base. Instalação, serviços, topologia final e aceite após reinício passaram nas três VMs novas; os registros completos ficam em `evidencias/v1.0.0/reconstrucao/`.
 
-Não restou instalação manual do sistema operacional: imagem oficial e NoCloud automatizam essa etapa. A preparação administrativa do hospedeiro, caso ainda necessária em outra máquina, segue o README e requer privilégios para instalar o VirtualBox e suas dependências. Backup privado dos dados anteriores à Sprint 3 foi mantido em `backups/antes-sprint3/`, fora da entrega e do Git.
+A instalação do sistema operacional usa imagem oficial e NoCloud. A preparação administrativa do hospedeiro, caso necessária em outra máquina, segue o README e requer privilégios para instalar o VirtualBox e suas dependências. Backups privados ficam em `backups/`, fora da entrega e do Git.
 
 ## 9. Decisões e dificuldades resolvidas
 
@@ -219,7 +222,7 @@ Não restou instalação manual do sistema operacional: imagem oficial e NoCloud
 3. **Dovecot 2.4:** a sintaxe atual foi aplicada explicitamente e o passwd-file usa hashes de demonstração, UID/GID e home corretos; a conta Unix continua sem shell interativo.
 4. **Identificador de mensagem no swaks:** a primeira tentativa anexou `Message-ID` além do campo automático `Message-Id`. O teste detectou a divergência. A configuração passou a substituir o cabeçalho com a grafia usada pelo swaks e exige exatamente um Message-ID, confirmado por IMAP.
 5. **Capturas e AppArmor:** a análise usa cópias temporárias permitidas pelo perfil do TShark, preservando a política do sistema. Campos IMAP são tratados como texto conforme a versão instalada, e flags TCP como booleanos.
-6. **Prontidão e acesso SSH:** a automação aguarda serviços funcionais após boot; usa configuração SSH relativa por causa dos espaços no caminho do projeto, conforme resolvido na R1.
+6. **Prontidão e acesso SSH:** a automação aguarda serviços funcionais após boot e usa configuração SSH relativa para lidar com os espaços no caminho do projeto.
 7. **Reaplicação e dados:** diretórios de dados não são apagados, contas não são duplicadas e pacotes já instalados não exigem novos downloads. A comparação de dados ocorre antes dos testes que geram novos arquivos/mensagens.
 
 ## 10. Versões instaladas

@@ -2,7 +2,7 @@
 
 **Relatório final — v1.0.0**
 
-Compilado em 07/11/2026 20:46 (-03). Trabalho de Redes de Computadores, UFPel, conforme o enunciado **Trabalho Infraestrutura.pdf**. As tabelas de quadros e os resultados abaixo foram obtidos nas VMs reais; o laboratório usa dados fictícios da empresa hipotética do enunciado.
+Compilado em 20/11/2026 20:13 (-03). Trabalho de Redes de Computadores, UFPel, conforme o enunciado **Trabalho Infraestrutura.pdf**. As tabelas de quadros e os resultados abaixo foram obtidos nas VMs reais; o laboratório usa dados fictícios da empresa hipotética do enunciado.
 
 ## 1. Objetivo e requisitos entregues
 
@@ -19,7 +19,7 @@ Foi implementada uma LAN com endereçamento automático, resolução de nomes, p
 | Demonstrar protocolos e rede funcionando | Verificador integrado, logs por função, falhas controladas e recuperação. |
 | Capturas DHCP/DNS/HTTP/e-mail | Quatro arquivos pcapng analisados por TShark/Wireshark, com quadros indicados neste relatório. |
 | Relatório, decisões, dificuldades e scripts | Este documento, README, código, templates, inventários e evidências por versão. |
-| Dicas: VirtualBox, três VMs, Linux e Git | Três convidados Debian 13 em VirtualBox, sobre Ubuntu 26.04; histórico das etapas anteriores em Git. |
+| Dicas: VirtualBox, três VMs, Linux e Git | Três convidados Debian 13 em VirtualBox, sobre Ubuntu 26.04, com código e evidências em Git. |
 
 ## 2. Infraestrutura, topologia e máquinas virtuais
 
@@ -109,7 +109,7 @@ Os seguintes envios ocorreram durante a captura de e-mail, com IDs de fila confi
 | `ana@cardeal.local` | `bruno@cardeal.local` | `0D3AC21101` | 13 |
 | `bruno@cardeal.local` | `ana@cardeal.local` | `2E50721101` | 12 |
 
-As evidências ficam em `evidencias/v1.0.0/`: `teste-integrado.txt`, `teste-email.txt`, `mensagens-capturadas.json`, `validadores-servidor.txt`, `persistencia.json`, inventários, `teste-sem-wan.txt`, `teste-falha-gateway.txt`, `detector.json` e `reconstrucao.json`. Os logs completos estão em `logs/rodada-3/`.
+As evidências ficam em `evidencias/v1.0.0/`: `teste-integrado.txt`, `teste-email.txt`, `mensagens-capturadas.json`, `validadores-servidor.txt`, `persistencia.json`, inventários, `teste-sem-wan.txt`, `teste-falha-gateway.txt`, `detector.json` e `reconstrucao.json`. Os logs completos estão em `logs/laboratorio/`.
 
 ## 6. Protocolos por camada
 
@@ -166,9 +166,9 @@ O teste de persistência inventaria arquivos SMB e as mensagens reais em Maildir
 
 O teste sem WAN desconecta apenas o primeiro cabo virtual do gateway, executa as funções internas e restaura esse cabo. O teste sem gateway desliga apenas a VM gateway, confirma os serviços LAN e a indisponibilidade externa, depois a religa. O teste do detector para Apache temporariamente e exige um resultado negativo verdadeiro, seguido de recuperação. As rotinas usam restauração em `finally` para recuperar o laboratório após o teste.
 
-`./lab.sh reconstruir` criou `cardeal-r3-gw`, `cardeal-r3-srv` e `cardeal-r3-cli` a partir do disco Debian base não provisionado, usando LAN separada `cardeal-r3-validacao`, diretório `vms/reconstrucao-r3/` e portas SSH 2232–2234. As VMs originais ficaram desligadas durante essa validação para limitar a RAM e foram novamente disponibilizadas depois. Nenhum disco de convidado já configurado foi reutilizado como base. Instalação, serviços, topologia final e aceite após reinício passaram nas três VMs novas; os registros completos ficam em `evidencias/v1.0.0/reconstrucao/`.
+`./lab.sh reconstruir` validou `cardeal-validacao-gw`, `cardeal-validacao-srv`, `cardeal-validacao-cli` a partir do disco Debian base não provisionado, usando LAN separada `cardeal-validacao` e portas SSH 2232–2234. As VMs originais ficaram desligadas durante essa validação para limitar a RAM e foram novamente disponibilizadas depois. Nenhum disco de convidado já configurado foi reutilizado como base. Instalação, serviços, topologia final e aceite após reinício passaram nas três VMs novas; os registros completos ficam em `evidencias/v1.0.0/reconstrucao/`.
 
-Não restou instalação manual do sistema operacional: imagem oficial e NoCloud automatizam essa etapa. A preparação administrativa do hospedeiro, caso ainda necessária em outra máquina, segue o README e requer privilégios para instalar o VirtualBox e suas dependências. Backup privado dos dados anteriores à Sprint 3 foi mantido em `backups/antes-sprint3/`, fora da entrega e do Git.
+A instalação do sistema operacional usa imagem oficial e NoCloud. A preparação administrativa do hospedeiro, caso necessária em outra máquina, segue o README e requer privilégios para instalar o VirtualBox e suas dependências. Backups privados ficam em `backups/`, fora da entrega e do Git.
 
 ## 9. Decisões e dificuldades resolvidas
 
@@ -177,7 +177,7 @@ Não restou instalação manual do sistema operacional: imagem oficial e NoCloud
 3. **Dovecot 2.4:** a sintaxe atual foi aplicada explicitamente e o passwd-file usa hashes de demonstração, UID/GID e home corretos; a conta Unix continua sem shell interativo.
 4. **Identificador de mensagem no swaks:** a primeira tentativa anexou `Message-ID` além do campo automático `Message-Id`. O teste detectou a divergência. A configuração passou a substituir o cabeçalho com a grafia usada pelo swaks e exige exatamente um Message-ID, confirmado por IMAP.
 5. **Capturas e AppArmor:** a análise usa cópias temporárias permitidas pelo perfil do TShark, preservando a política do sistema. Campos IMAP são tratados como texto conforme a versão instalada, e flags TCP como booleanos.
-6. **Prontidão e acesso SSH:** a automação aguarda serviços funcionais após boot; usa configuração SSH relativa por causa dos espaços no caminho do projeto, conforme resolvido na R1.
+6. **Prontidão e acesso SSH:** a automação aguarda serviços funcionais após boot e usa configuração SSH relativa para lidar com os espaços no caminho do projeto.
 7. **Reaplicação e dados:** diretórios de dados não são apagados, contas não são duplicadas e pacotes já instalados não exigem novos downloads. A comparação de dados ocorre antes dos testes que geram novos arquivos/mensagens.
 
 ## 10. Versões instaladas

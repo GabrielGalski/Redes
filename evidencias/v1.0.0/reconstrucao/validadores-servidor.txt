@@ -32,7 +32,7 @@ smtpd_tls_security_level = none
 # 2.4.1-4 (7d8c0e5759): /etc/dovecot/dovecot.conf
 # Pigeonhole version 2.4.1-4 (0a86619f)
 # OS: Linux 6.12.115+deb13.1-amd64 x86_64 Debian 13.7 
-# Hostname: cardeal-r3-srv
+# Hostname: cardeal-validacao-srv
 # 4 default setting changes since version 2.4.0
 dovecot_config_version = 2.4.0
 auth_allow_cleartext = yes
@@ -64,7 +64,7 @@ service imap-login {
     port = 0
   }
 }
-postfix/postlog: the Postfix mail system is running: PID: 957
+postfix/postlog: the Postfix mail system is running: PID: 969
 Syntax OK
 Load smb config files from /etc/samba/smb.conf
 Loaded services file OK.
@@ -115,27 +115,27 @@ enabled
 enabled
 enabled
 Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                                            
-udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=711,fd=25))                                                   
-udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=711,fd=24))                                                   
-udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=711,fd=19))                                                   
-udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=711,fd=18))                                                   
-udp   UNCONN 0      0         127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=16))                                         
-udp   UNCONN 0      0      127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=14))                                         
-tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("smtpd",pid=1034,fd=6),("master",pid=957,fd=12))                          
-tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=711,fd=22))                                                   
-tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=711,fd=20))                                                   
-tcp   LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=15))                                         
-tcp   LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=411,fd=17))                                         
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=710,fd=25))                                                   
+udp   UNCONN 0      0      192.168.50.10:53        0.0.0.0:*    users:(("named",pid=710,fd=24))                                                   
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=710,fd=19))                                                   
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*    users:(("named",pid=710,fd=18))                                                   
+udp   UNCONN 0      0         127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=410,fd=16))                                         
+udp   UNCONN 0      0      127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=410,fd=14))                                         
+tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("smtpd",pid=1033,fd=6),("master",pid=969,fd=12))                          
 tcp   LISTEN 0      100    192.168.50.10:143       0.0.0.0:*    users:(("dovecot",pid=705,fd=45))                                                 
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=710,fd=22))                                                   
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*    users:(("named",pid=710,fd=20))                                                   
+tcp   LISTEN 0      511    192.168.50.10:80        0.0.0.0:*    users:(("apache2",pid=794,fd=3),("apache2",pid=793,fd=3),("apache2",pid=791,fd=3))
 tcp   LISTEN 0      100        127.0.0.1:143       0.0.0.0:*    users:(("dovecot",pid=705,fd=44))                                                 
-tcp   LISTEN 0      511    192.168.50.10:80        0.0.0.0:*    users:(("apache2",pid=796,fd=3),("apache2",pid=792,fd=3),("apache2",pid=789,fd=3))
-tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=711,fd=27))                                                   
-tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=711,fd=26))                                                   
-tcp   LISTEN 0      100    192.168.50.10:25        0.0.0.0:*    users:(("smtpd",pid=1034,fd=7),("master",pid=957,fd=13))                          
-tcp   LISTEN 0      50     192.168.50.10:445       0.0.0.0:*    users:(("smbd",pid=784,fd=28))                                                    
-tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=729,fd=6))                                                     
-tcp   LISTEN 0      50         127.0.0.1:445       0.0.0.0:*    users:(("smbd",pid=784,fd=29))                                                    
-tcp   LISTEN 0      5          127.0.0.1:953       0.0.0.0:*    users:(("named",pid=711,fd=29))                                                   
-tcp   LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=729,fd=7))                                                     
-tcp   LISTEN 0      5              [::1]:953          [::]:*    users:(("named",pid=711,fd=30))                                                   
-tcp   LISTEN 0      50             [::1]:445          [::]:*    users:(("smbd",pid=784,fd=30))                                                    
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=710,fd=27))                                                   
+tcp   LISTEN 0      10     192.168.50.10:53        0.0.0.0:*    users:(("named",pid=710,fd=26))                                                   
+tcp   LISTEN 0      100    192.168.50.10:25        0.0.0.0:*    users:(("smtpd",pid=1033,fd=7),("master",pid=969,fd=13))                          
+tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=723,fd=6))                                                     
+tcp   LISTEN 0      50     192.168.50.10:445       0.0.0.0:*    users:(("smbd",pid=781,fd=28))                                                    
+tcp   LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=410,fd=15))                                         
+tcp   LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=410,fd=17))                                         
+tcp   LISTEN 0      5          127.0.0.1:953       0.0.0.0:*    users:(("named",pid=710,fd=29))                                                   
+tcp   LISTEN 0      50         127.0.0.1:445       0.0.0.0:*    users:(("smbd",pid=781,fd=29))                                                    
+tcp   LISTEN 0      5              [::1]:953          [::]:*    users:(("named",pid=710,fd=30))                                                   
+tcp   LISTEN 0      50             [::1]:445          [::]:*    users:(("smbd",pid=781,fd=30))                                                    
+tcp   LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=723,fd=7))                                                     

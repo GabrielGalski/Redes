@@ -1,0 +1,54 @@
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:3 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:2 https://deb.debian.org/debian trixie InRelease
+Hit:4 https://deb.debian.org/debian trixie-updates InRelease
+Hit:5 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgdbm-compat4t64 libperl5.40 perl perl-modules-5.40
+Suggested packages:
+  perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl make
+  libtap-harness-archive-perl libauthen-ntlm-perl libauthen-sasl-perl
+Recommended packages:
+  libio-socket-inet6-perl libnet-dns-perl libnet-ssleay-perl
+The following NEW packages will be installed:
+  libgdbm-compat4t64 libperl5.40 perl perl-modules-5.40 swaks
+0 upgraded, 5 newly installed, 0 to remove and 9 not upgraded.
+Need to get 7774 kB of archives.
+After this operation, 51.8 MB of additional disk space will be used.
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 https://deb.debian.org/debian trixie/main amd64 perl-modules-5.40 all 5.40.1-6+deb13u1 [3014 kB]
+Get:3 https://deb.debian.org/debian trixie/main amd64 libgdbm-compat4t64 amd64 1.24-2 [50.3 kB]
+Get:4 https://deb.debian.org/debian trixie/main amd64 libperl5.40 amd64 5.40.1-6+deb13u1 [4326 kB]
+Get:5 https://deb.debian.org/debian trixie/main amd64 perl amd64 5.40.1-6+deb13u1 [268 kB]
+Get:6 https://deb.debian.org/debian trixie/main amd64 swaks all 20240103.0-2 [117 kB]
+Fetched 7774 kB in 7s (1152 kB/s)
+Selecting previously unselected package perl-modules-5.40.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 25454 files and directories currently installed.)
+Preparing to unpack .../perl-modules-5.40_5.40.1-6+deb13u1_all.deb ...
+Unpacking perl-modules-5.40 (5.40.1-6+deb13u1) ...
+Selecting previously unselected package libgdbm-compat4t64:amd64.
+Preparing to unpack .../libgdbm-compat4t64_1.24-2_amd64.deb ...
+Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
+Selecting previously unselected package libperl5.40:amd64.
+Preparing to unpack .../libperl5.40_5.40.1-6+deb13u1_amd64.deb ...
+Unpacking libperl5.40:amd64 (5.40.1-6+deb13u1) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../perl_5.40.1-6+deb13u1_amd64.deb ...
+Unpacking perl (5.40.1-6+deb13u1) ...
+Selecting previously unselected package swaks.
+Preparing to unpack .../swaks_20240103.0-2_all.deb ...
+Unpacking swaks (20240103.0-2) ...
+Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
+Setting up perl-modules-5.40 (5.40.1-6+deb13u1) ...
+Setting up libperl5.40:amd64 (5.40.1-6+deb13u1) ...
+Setting up perl (5.40.1-6+deb13u1) ...
+Setting up swaks (20240103.0-2) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libc-bin (2.41-12+deb13u4) ...
+Testes disponíveis no cliente: ~/lab.sh testar ou cardeal-lab testar.
+Cliente pronto para SMTP e leitura IMAP; login local ana ou bruno.

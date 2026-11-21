@@ -1,0 +1,775 @@
+Nov 07 23:20:36 mail postfix/postfix-script[4692]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:20:38 mail postfix/postfix-script[4938]: stopping the Postfix mail system
+Nov 07 23:20:38 mail postfix/master[5086]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 07 23:20:38 mail postfix/postfix-script[5099]: the Postfix mail system is running: PID: 5086
+Nov 07 23:20:40 mail postfix/postfix-script[5196]: the Postfix mail system is running: PID: 5086
+Nov 07 23:20:42 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:20:42 mail postfix/smtpd[5235]: 64FB721155: client=unknown[192.168.50.100]
+Nov 07 23:20:42 mail postfix/cleanup[5243]: 64FB721155: message-id=<20261107232042.001240@cardeal-cli>
+Nov 07 23:20:42 mail postfix/cleanup[5243]: 64FB721155: message-id=<cardeal-ana-18ac93b648c1497c8b973b099a139704@cardeal.local>
+Nov 07 23:20:42 mail postfix/qmgr[5088]: 64FB721155: from=<ana@cardeal.local>, size=618, nrcpt=1 (queue active)
+Nov 07 23:20:42 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:20:42 mail postfix/local[5252]: 64FB721155: to=<bruno@cardeal.local>, relay=local, delay=0.05, delays=0.04/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:20:42 mail postfix/qmgr[5088]: 64FB721155: removed
+Nov 07 23:21:47 mail postfix/postfix-script[5362]: the Postfix mail system is running: PID: 5086
+Nov 07 23:21:47 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:21:47 mail postfix/smtpd[5235]: 82AB621152: client=unknown[192.168.50.100]
+Nov 07 23:21:47 mail postfix/cleanup[5243]: 82AB621152: message-id=<cardeal-ana-e76bd6d41a67446486a5e560f7b7df06@cardeal.local>
+Nov 07 23:21:47 mail postfix/qmgr[5088]: 82AB621152: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:21:47 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:21:47 mail postfix/local[5252]: 82AB621152: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:21:47 mail postfix/qmgr[5088]: 82AB621152: removed
+Nov 07 23:21:47 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:21:47 mail postfix/smtpd[5235]: AE92F21152: client=unknown[192.168.50.100]
+Nov 07 23:21:47 mail postfix/cleanup[5243]: AE92F21152: message-id=<cardeal-bruno-8938430ee1a743c7b50d5278da5d4786@cardeal.local>
+Nov 07 23:21:47 mail postfix/qmgr[5088]: AE92F21152: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:21:47 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:21:47 mail postfix/local[5252]: AE92F21152: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:21:47 mail postfix/qmgr[5088]: AE92F21152: removed
+Nov 07 23:21:47 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:21:47 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:21:47 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:21:48 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:21:48 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:21:48 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:21:48 mail postfix/postfix-script[5474]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:21:48 mail postfix/postfix-script[5507]: the Postfix mail system is running: PID: 5086
+Nov 07 23:23:18 mail postfix/postfix-script[5585]: the Postfix mail system is running: PID: 5086
+Nov 07 23:23:19 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:19 mail postfix/smtpd[5235]: AF8D321167: client=unknown[192.168.50.100]
+Nov 07 23:23:19 mail postfix/cleanup[5243]: AF8D321167: message-id=<cardeal-ana-afaf993a60a348f7a3f71b99a0dfb79e@cardeal.local>
+Nov 07 23:23:19 mail postfix/qmgr[5088]: AF8D321167: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:23:19 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:23:19 mail postfix/local[5252]: AF8D321167: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:23:19 mail postfix/qmgr[5088]: AF8D321167: removed
+Nov 07 23:23:19 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:19 mail postfix/smtpd[5235]: CF56F2115D: client=unknown[192.168.50.100]
+Nov 07 23:23:19 mail postfix/cleanup[5243]: CF56F2115D: message-id=<cardeal-bruno-37426fd7b0b448eea3c157d40b8724c5@cardeal.local>
+Nov 07 23:23:19 mail postfix/qmgr[5088]: CF56F2115D: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:23:19 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:23:19 mail postfix/local[5252]: CF56F2115D: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:23:19 mail postfix/qmgr[5088]: CF56F2115D: removed
+Nov 07 23:23:19 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:19 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:23:19 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:23:20 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:20 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:23:20 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:23:20 mail postfix/postfix-script[5709]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:23:20 mail postfix/postfix-script[5742]: the Postfix mail system is running: PID: 5086
+Nov 07 23:23:22 mail postfix/postfix-script[5811]: the Postfix mail system is running: PID: 5086
+Nov 07 23:23:23 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:23 mail postfix/smtpd[5235]: CB13E2115D: client=unknown[192.168.50.100]
+Nov 07 23:23:23 mail postfix/cleanup[5243]: CB13E2115D: message-id=<cardeal-ana-119ea8adac634b1baea76507cdb34c30@cardeal.local>
+Nov 07 23:23:23 mail postfix/qmgr[5088]: CB13E2115D: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:23:23 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:23:23 mail postfix/local[5252]: CB13E2115D: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:23:23 mail postfix/qmgr[5088]: CB13E2115D: removed
+Nov 07 23:23:23 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:23 mail postfix/smtpd[5235]: EAFC22115D: client=unknown[192.168.50.100]
+Nov 07 23:23:23 mail postfix/cleanup[5243]: EAFC22115D: message-id=<cardeal-bruno-09af7d472f6a4152bd0fa85fb0399f56@cardeal.local>
+Nov 07 23:23:23 mail postfix/qmgr[5088]: EAFC22115D: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:23:23 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:23:23 mail postfix/local[5252]: EAFC22115D: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:23:23 mail postfix/qmgr[5088]: EAFC22115D: removed
+Nov 07 23:23:24 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:24 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:23:24 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:23:24 mail postfix/smtpd[5235]: connect from unknown[192.168.50.100]
+Nov 07 23:23:24 mail postfix/smtpd[5235]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:23:24 mail postfix/smtpd[5235]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:23:24 mail postfix/postfix-script[5935]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:23:24 mail postfix/postfix-script[5968]: the Postfix mail system is running: PID: 5086
+Nov 07 23:23:32 mail postfix/postfix-script[6029]: stopping the Postfix mail system
+Nov 07 23:23:32 mail postfix/master[5086]: terminating on signal 15
+Nov 07 23:24:15 mail postfix/master[955]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 07 23:24:18 mail postfix/postfix-script[1018]: the Postfix mail system is running: PID: 955
+Nov 07 23:24:19 mail postfix/postfix-script[1073]: the Postfix mail system is running: PID: 955
+Nov 07 23:24:22 mail postfix/smtpd[1087]: connect from unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/smtpd[1087]: 052372115D: client=unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/cleanup[1089]: 052372115D: message-id=<cardeal-ana-d47c5f8a09d140189e0b9fbf2f1d562f@cardeal.local>
+Nov 07 23:24:22 mail postfix/qmgr[957]: 052372115D: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:24:22 mail postfix/smtpd[1087]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:24:22 mail postfix/local[1090]: 052372115D: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:24:22 mail postfix/qmgr[957]: 052372115D: removed
+Nov 07 23:24:22 mail postfix/smtpd[1087]: connect from unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/smtpd[1087]: 28A9C2115D: client=unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/cleanup[1089]: 28A9C2115D: message-id=<cardeal-bruno-014f3ad5a7384ef6b4643ba4094c5e15@cardeal.local>
+Nov 07 23:24:22 mail postfix/qmgr[957]: 28A9C2115D: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:24:22 mail postfix/smtpd[1087]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:24:22 mail postfix/local[1090]: 28A9C2115D: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:24:22 mail postfix/qmgr[957]: 28A9C2115D: removed
+Nov 07 23:24:22 mail postfix/smtpd[1087]: connect from unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/smtpd[1087]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:24:22 mail postfix/smtpd[1087]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:24:22 mail postfix/smtpd[1087]: connect from unknown[192.168.50.100]
+Nov 07 23:24:22 mail postfix/smtpd[1087]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:24:22 mail postfix/smtpd[1087]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:24:22 mail postfix/postfix-script[1203]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:24:22 mail postfix/postfix-script[1237]: the Postfix mail system is running: PID: 955
+Nov 07 23:24:31 mail postfix/postfix-script[1995]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:24:33 mail postfix/postfix-script[2213]: stopping the Postfix mail system
+Nov 07 23:24:33 mail postfix/master[955]: terminating on signal 15
+Nov 07 23:24:33 mail postfix/master[2336]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 07 23:24:33 mail postfix/postfix-script[2349]: the Postfix mail system is running: PID: 2336
+Nov 07 23:24:35 mail postfix/postfix-script[2404]: the Postfix mail system is running: PID: 2336
+Nov 07 23:24:36 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:24:36 mail postfix/smtpd[2419]: DE5BB21136: client=unknown[192.168.50.100]
+Nov 07 23:24:36 mail postfix/cleanup[2421]: DE5BB21136: message-id=<cardeal-ana-8355068238bd45b885e38511a7dd9aa2@cardeal.local>
+Nov 07 23:24:36 mail postfix/qmgr[2338]: DE5BB21136: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:24:36 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:24:36 mail postfix/local[2422]: DE5BB21136: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:24:36 mail postfix/qmgr[2338]: DE5BB21136: removed
+Nov 07 23:24:37 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:24:37 mail postfix/smtpd[2419]: 0B63621136: client=unknown[192.168.50.100]
+Nov 07 23:24:37 mail postfix/cleanup[2421]: 0B63621136: message-id=<cardeal-bruno-03bf5e0de6ac4226a698f884cbd05c99@cardeal.local>
+Nov 07 23:24:37 mail postfix/qmgr[2338]: 0B63621136: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:24:37 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:24:37 mail postfix/local[2422]: 0B63621136: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:24:37 mail postfix/qmgr[2338]: 0B63621136: removed
+Nov 07 23:24:37 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:24:37 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:24:37 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:24:37 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:24:37 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:24:37 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:24:37 mail postfix/postfix-script[2535]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:24:37 mail postfix/postfix-script[2568]: the Postfix mail system is running: PID: 2336
+Nov 07 23:25:07 mail postfix/postfix-script[2659]: the Postfix mail system is running: PID: 2336
+Nov 07 23:25:13 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/smtpd[2419]: 023B820E7A: client=unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/cleanup[2421]: 023B820E7A: message-id=<cardeal-ana-2af94b421ee547ac84aaeb147e8c08f7@cardeal.local>
+Nov 07 23:25:13 mail postfix/qmgr[2338]: 023B820E7A: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:25:13 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:25:13 mail postfix/local[2422]: 023B820E7A: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:25:13 mail postfix/qmgr[2338]: 023B820E7A: removed
+Nov 07 23:25:13 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/smtpd[2419]: 22F7920E7A: client=unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/cleanup[2421]: 22F7920E7A: message-id=<cardeal-bruno-d15794fe84764512b908f2dc73637a67@cardeal.local>
+Nov 07 23:25:13 mail postfix/qmgr[2338]: 22F7920E7A: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:25:13 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:25:13 mail postfix/local[2422]: 22F7920E7A: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:25:13 mail postfix/qmgr[2338]: 22F7920E7A: removed
+Nov 07 23:25:13 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:25:13 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:25:13 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:13 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:25:13 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:25:50 mail postfix/postfix-script[2738]: the Postfix mail system is running: PID: 2336
+Nov 07 23:25:52 mail postfix/postfix-script[2778]: the Postfix mail system is running: PID: 2336
+Nov 07 23:25:54 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/smtpd[2419]: 0E24520E7A: client=unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/cleanup[2421]: 0E24520E7A: message-id=<cardeal-ana-197838ccde9c4c12ad882481046e8bf6@cardeal.local>
+Nov 07 23:25:54 mail postfix/qmgr[2338]: 0E24520E7A: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:25:54 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:25:54 mail postfix/local[2422]: 0E24520E7A: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:25:54 mail postfix/qmgr[2338]: 0E24520E7A: removed
+Nov 07 23:25:54 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/smtpd[2419]: 2DA3220E7A: client=unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/cleanup[2421]: 2DA3220E7A: message-id=<cardeal-bruno-32b9b441401241b190bbf71ccea76732@cardeal.local>
+Nov 07 23:25:54 mail postfix/qmgr[2338]: 2DA3220E7A: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:25:54 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:25:54 mail postfix/local[2422]: 2DA3220E7A: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:25:54 mail postfix/qmgr[2338]: 2DA3220E7A: removed
+Nov 07 23:25:54 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:25:54 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:25:54 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:25:54 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:25:54 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:25:54 mail postfix/postfix-script[2902]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:25:54 mail postfix/postfix-script[2935]: the Postfix mail system is running: PID: 2336
+Nov 07 23:26:02 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/smtpd[2419]: 866BE20E7A: client=unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/cleanup[2421]: 866BE20E7A: message-id=<cardeal-ana-4f3233d312a2422f8d2513ba9f173f9e@cardeal.local>
+Nov 07 23:26:02 mail postfix/qmgr[2338]: 866BE20E7A: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:26:02 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:26:02 mail postfix/local[2422]: 866BE20E7A: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:26:02 mail postfix/qmgr[2338]: 866BE20E7A: removed
+Nov 07 23:26:02 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/smtpd[2419]: A813220E7A: client=unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/cleanup[2421]: A813220E7A: message-id=<cardeal-bruno-157a01dec8b24608bd82ade7ac66512b@cardeal.local>
+Nov 07 23:26:02 mail postfix/qmgr[2338]: A813220E7A: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:26:02 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:26:02 mail postfix/local[2422]: A813220E7A: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:26:02 mail postfix/qmgr[2338]: A813220E7A: removed
+Nov 07 23:26:02 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:26:02 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:26:02 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:26:02 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:26:02 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:11 mail postfix/postfix-script[3043]: the Postfix mail system is running: PID: 2336
+Nov 07 23:27:12 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/smtpd[2419]: 9C92F20E7A: client=unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/cleanup[2421]: 9C92F20E7A: message-id=<cardeal-ana-f9e1d04a5d9e44b7969204d1e97126a2@cardeal.local>
+Nov 07 23:27:12 mail postfix/qmgr[2338]: 9C92F20E7A: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:27:12 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:12 mail postfix/local[2422]: 9C92F20E7A: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:12 mail postfix/qmgr[2338]: 9C92F20E7A: removed
+Nov 07 23:27:12 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/smtpd[2419]: BC2FC20E7A: client=unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/cleanup[2421]: BC2FC20E7A: message-id=<cardeal-bruno-55ffff71f3b54e5a90bb262da57704bb@cardeal.local>
+Nov 07 23:27:12 mail postfix/qmgr[2338]: BC2FC20E7A: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:27:12 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:12 mail postfix/local[2422]: BC2FC20E7A: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:12 mail postfix/qmgr[2338]: BC2FC20E7A: removed
+Nov 07 23:27:12 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:12 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:12 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:12 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:12 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:13 mail postfix/postfix-script[3167]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:27:13 mail postfix/postfix-script[3200]: the Postfix mail system is running: PID: 2336
+Nov 07 23:27:15 mail postfix/postfix-script[3269]: the Postfix mail system is running: PID: 2336
+Nov 07 23:27:16 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/smtpd[2419]: 6AAAD20E7A: client=unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/cleanup[2421]: 6AAAD20E7A: message-id=<cardeal-ana-8cf8db760fa94a968aa873fdeaf2e32a@cardeal.local>
+Nov 07 23:27:16 mail postfix/qmgr[2338]: 6AAAD20E7A: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:27:16 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:16 mail postfix/local[2422]: 6AAAD20E7A: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:16 mail postfix/qmgr[2338]: 6AAAD20E7A: removed
+Nov 07 23:27:16 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/smtpd[2419]: 89FC820E7A: client=unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/cleanup[2421]: 89FC820E7A: message-id=<cardeal-bruno-f483762e71f04a498244e521e506f645@cardeal.local>
+Nov 07 23:27:16 mail postfix/qmgr[2338]: 89FC820E7A: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:27:16 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:16 mail postfix/local[2422]: 89FC820E7A: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:16 mail postfix/qmgr[2338]: 89FC820E7A: removed
+Nov 07 23:27:16 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:16 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:16 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:16 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:16 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:18 mail postfix/postfix-script[3410]: the Postfix mail system is running: PID: 2336
+Nov 07 23:27:19 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/smtpd[2419]: 8756721180: client=unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/cleanup[2421]: 8756721180: message-id=<cardeal-ana-882aebd9e2ea487cb46fcb1c9ecff540@cardeal.local>
+Nov 07 23:27:19 mail postfix/qmgr[2338]: 8756721180: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:27:19 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:19 mail postfix/local[2422]: 8756721180: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0.01, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:19 mail postfix/qmgr[2338]: 8756721180: removed
+Nov 07 23:27:19 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/smtpd[2419]: A7CF321101: client=unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/cleanup[2421]: A7CF321101: message-id=<cardeal-bruno-86018ec623db4b7eaca5c7076db39b21@cardeal.local>
+Nov 07 23:27:19 mail postfix/qmgr[2338]: A7CF321101: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:27:19 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:27:19 mail postfix/local[2422]: A7CF321101: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:27:19 mail postfix/qmgr[2338]: A7CF321101: removed
+Nov 07 23:27:19 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:19 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:19 mail postfix/smtpd[2419]: connect from unknown[192.168.50.100]
+Nov 07 23:27:19 mail postfix/smtpd[2419]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:27:19 mail postfix/smtpd[2419]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:27:20 mail postfix/postfix-script[3534]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:27:20 mail postfix/postfix-script[3567]: the Postfix mail system is running: PID: 2336
+Nov 07 23:28:41 mail postfix/postfix-script[3655]: the Postfix mail system is running: PID: 2336
+Nov 07 23:28:55 mail postfix/postfix-script[3714]: the Postfix mail system is running: PID: 2336
+Nov 07 23:28:58 mail postfix/postfix-script[3754]: the Postfix mail system is running: PID: 2336
+Nov 07 23:28:59 mail postfix/smtpd[3756]: connect from unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/smtpd[3756]: 0D3AC21101: client=unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/cleanup[3757]: 0D3AC21101: message-id=<cardeal-ana-c0d4561e0bed4e2db9b1e79bc08c6b58@cardeal.local>
+Nov 07 23:28:59 mail postfix/qmgr[2338]: 0D3AC21101: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:28:59 mail postfix/smtpd[3756]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:28:59 mail postfix/local[3758]: 0D3AC21101: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:28:59 mail postfix/qmgr[2338]: 0D3AC21101: removed
+Nov 07 23:28:59 mail postfix/smtpd[3756]: connect from unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/smtpd[3756]: 2E50721101: client=unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/cleanup[3757]: 2E50721101: message-id=<cardeal-bruno-1aff96ed3892494facb88ea83c63a860@cardeal.local>
+Nov 07 23:28:59 mail postfix/qmgr[2338]: 2E50721101: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:28:59 mail postfix/smtpd[3756]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:28:59 mail postfix/local[3758]: 2E50721101: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:28:59 mail postfix/qmgr[2338]: 2E50721101: removed
+Nov 07 23:28:59 mail postfix/smtpd[3756]: connect from unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/smtpd[3756]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:28:59 mail postfix/smtpd[3756]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:28:59 mail postfix/smtpd[3756]: connect from unknown[192.168.50.100]
+Nov 07 23:28:59 mail postfix/smtpd[3756]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:28:59 mail postfix/smtpd[3756]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:28:59 mail postfix/postfix-script[3870]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:28:59 mail postfix/postfix-script[3903]: the Postfix mail system is running: PID: 2336
+Nov 07 23:30:23 mail postfix/postfix-script[3956]: stopping the Postfix mail system
+Nov 07 23:30:23 mail postfix/master[2336]: terminating on signal 15
+Nov 07 23:40:49 mail postfix/master[959]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 07 23:40:51 mail postfix/postfix-script[1022]: the Postfix mail system is running: PID: 959
+Nov 07 23:40:52 mail postfix/postfix-script[1062]: the Postfix mail system is running: PID: 959
+Nov 07 23:40:54 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/smtpd[1077]: 1E0BE2117F: client=unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/cleanup[1079]: 1E0BE2117F: message-id=<cardeal-ana-d0035450ecea4ad0af0548be6c373d61@cardeal.local>
+Nov 07 23:40:54 mail postfix/qmgr[961]: 1E0BE2117F: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:40:54 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:40:54 mail postfix/local[1080]: 1E0BE2117F: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:40:54 mail postfix/qmgr[961]: 1E0BE2117F: removed
+Nov 07 23:40:54 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/smtpd[1077]: 417082117F: client=unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/cleanup[1079]: 417082117F: message-id=<cardeal-bruno-6c3d65a81b7c445da73ad0e48cdcc5fd@cardeal.local>
+Nov 07 23:40:54 mail postfix/qmgr[961]: 417082117F: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:40:54 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:40:54 mail postfix/local[1080]: 417082117F: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:40:54 mail postfix/qmgr[961]: 417082117F: removed
+Nov 07 23:40:54 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/smtpd[1077]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:40:54 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:40:54 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:40:54 mail postfix/smtpd[1077]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:40:54 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:40:54 mail postfix/postfix-script[1193]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 07 23:40:55 mail postfix/postfix-script[1226]: the Postfix mail system is running: PID: 959
+Nov 07 23:41:34 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/smtpd[1077]: 3761420EA4: client=unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/cleanup[1079]: 3761420EA4: message-id=<cardeal-ana-3cf6343090564161b73c50aaf022f4ff@cardeal.local>
+Nov 07 23:41:34 mail postfix/qmgr[961]: 3761420EA4: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 07 23:41:34 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:41:34 mail postfix/local[1080]: 3761420EA4: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:41:34 mail postfix/qmgr[961]: 3761420EA4: removed
+Nov 07 23:41:34 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/smtpd[1077]: 67C6420EA4: client=unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/cleanup[1079]: 67C6420EA4: message-id=<cardeal-bruno-dca68a6d627c405cb5118fee0f3e64ed@cardeal.local>
+Nov 07 23:41:34 mail postfix/qmgr[961]: 67C6420EA4: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 07 23:41:34 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 07 23:41:34 mail postfix/local[1080]: 67C6420EA4: to=<ana@cardeal.local>, relay=local, delay=0.02, delays=0.02/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 07 23:41:34 mail postfix/qmgr[961]: 67C6420EA4: removed
+Nov 07 23:41:34 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/smtpd[1077]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:41:34 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 07 23:41:34 mail postfix/smtpd[1077]: connect from unknown[192.168.50.100]
+Nov 07 23:41:34 mail postfix/smtpd[1077]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 07 23:41:34 mail postfix/smtpd[1077]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 08 01:21:36 mail postfix/postfix-script[1657]: the Postfix mail system is running: PID: 959
+Nov 08 01:21:37 mail postfix/postfix-script[1698]: the Postfix mail system is running: PID: 959
+Nov 08 01:21:38 mail postfix/smtpd[1712]: connect from unknown[192.168.50.100]
+Nov 08 01:21:38 mail postfix/smtpd[1712]: C202220EA6: client=unknown[192.168.50.100]
+Nov 08 01:21:38 mail postfix/cleanup[1714]: C202220EA6: message-id=<cardeal-ana-3c424100dd6b45e4adbc0b4ad640c684@cardeal.local>
+Nov 08 01:21:38 mail postfix/qmgr[961]: C202220EA6: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 08 01:21:38 mail postfix/smtpd[1712]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 08 01:21:38 mail postfix/local[1715]: C202220EA6: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 08 01:21:38 mail postfix/qmgr[961]: C202220EA6: removed
+Nov 08 01:21:38 mail postfix/smtpd[1712]: connect from unknown[192.168.50.100]
+Nov 08 01:21:38 mail postfix/smtpd[1712]: E309920EA6: client=unknown[192.168.50.100]
+Nov 08 01:21:38 mail postfix/cleanup[1714]: E309920EA6: message-id=<cardeal-bruno-6f0c5ab453bb4667b88bdaeca7b6eed6@cardeal.local>
+Nov 08 01:21:38 mail postfix/qmgr[961]: E309920EA6: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 08 01:21:38 mail postfix/smtpd[1712]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 08 01:21:38 mail postfix/local[1715]: E309920EA6: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 08 01:21:38 mail postfix/qmgr[961]: E309920EA6: removed
+Nov 08 01:21:39 mail postfix/smtpd[1712]: connect from unknown[192.168.50.100]
+Nov 08 01:21:39 mail postfix/smtpd[1712]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 08 01:21:39 mail postfix/smtpd[1712]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 08 01:21:39 mail postfix/smtpd[1712]: connect from unknown[192.168.50.100]
+Nov 08 01:21:39 mail postfix/smtpd[1712]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 08 01:21:39 mail postfix/smtpd[1712]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 08 01:21:39 mail postfix/postfix-script[1827]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 08 01:21:39 mail postfix/postfix-script[1860]: the Postfix mail system is running: PID: 959
+Nov 08 01:24:14 mail postfix/postfix-script[1948]: the Postfix mail system is running: PID: 959
+Nov 08 01:24:15 mail postfix/smtpd[1951]: connect from unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/smtpd[1951]: 407A820EA6: client=unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/cleanup[1953]: 407A820EA6: message-id=<cardeal-ana-b93027ff126b4c849ac6f09ff59b7779@cardeal.local>
+Nov 08 01:24:15 mail postfix/qmgr[961]: 407A820EA6: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 08 01:24:15 mail postfix/smtpd[1951]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 08 01:24:15 mail postfix/local[1954]: 407A820EA6: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 08 01:24:15 mail postfix/qmgr[961]: 407A820EA6: removed
+Nov 08 01:24:15 mail postfix/smtpd[1951]: connect from unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/smtpd[1951]: 641A220EA6: client=unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/cleanup[1953]: 641A220EA6: message-id=<cardeal-bruno-2d404bdc563c4095ab45cc681dba0842@cardeal.local>
+Nov 08 01:24:15 mail postfix/qmgr[961]: 641A220EA6: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 08 01:24:15 mail postfix/smtpd[1951]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 08 01:24:15 mail postfix/local[1954]: 641A220EA6: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 08 01:24:15 mail postfix/qmgr[961]: 641A220EA6: removed
+Nov 08 01:24:15 mail postfix/smtpd[1951]: connect from unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/smtpd[1951]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 08 01:24:15 mail postfix/smtpd[1951]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 08 01:24:15 mail postfix/smtpd[1951]: connect from unknown[192.168.50.100]
+Nov 08 01:24:15 mail postfix/smtpd[1951]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 08 01:24:15 mail postfix/smtpd[1951]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 08 01:24:16 mail postfix/postfix-script[2066]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 08 01:24:16 mail postfix/postfix-script[2099]: the Postfix mail system is running: PID: 959
+Nov 20 22:42:52 mail postfix/master[964]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 22:42:53 mail postfix/postfix-script[1027]: the Postfix mail system is running: PID: 964
+Nov 20 22:44:23 mail postfix/postfix-script[1096]: the Postfix mail system is running: PID: 964
+Nov 20 22:44:25 mail postfix/smtpd[1110]: connect from unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/smtpd[1110]: 6E4B021133: client=unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/cleanup[1112]: 6E4B021133: message-id=<cardeal-ana-ca5f639da6ca482695537a75fa4128fe@cardeal.local>
+Nov 20 22:44:25 mail postfix/qmgr[966]: 6E4B021133: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 22:44:25 mail postfix/smtpd[1110]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:44:25 mail postfix/local[1113]: 6E4B021133: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:44:25 mail postfix/qmgr[966]: 6E4B021133: removed
+Nov 20 22:44:25 mail postfix/smtpd[1110]: connect from unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/smtpd[1110]: 931D721133: client=unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/cleanup[1112]: 931D721133: message-id=<cardeal-bruno-23b38ccc30954155bcb06165e1da4388@cardeal.local>
+Nov 20 22:44:25 mail postfix/qmgr[966]: 931D721133: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 22:44:25 mail postfix/smtpd[1110]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:44:25 mail postfix/local[1113]: 931D721133: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:44:25 mail postfix/qmgr[966]: 931D721133: removed
+Nov 20 22:44:25 mail postfix/smtpd[1110]: connect from unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/smtpd[1110]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:44:25 mail postfix/smtpd[1110]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:44:25 mail postfix/smtpd[1110]: connect from unknown[192.168.50.100]
+Nov 20 22:44:25 mail postfix/smtpd[1110]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:44:25 mail postfix/smtpd[1110]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:44:26 mail postfix/postfix-script[1226]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:44:26 mail postfix/postfix-script[1259]: the Postfix mail system is running: PID: 964
+Nov 20 22:48:56 mail postfix/postfix-script[2153]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:48:58 mail postfix/postfix-script[2368]: stopping the Postfix mail system
+Nov 20 22:48:58 mail postfix/master[964]: terminating on signal 15
+Nov 20 22:48:58 mail postfix/master[2496]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 22:48:58 mail postfix/postfix-script[2509]: the Postfix mail system is running: PID: 2496
+Nov 20 22:49:01 mail postfix/postfix-script[2565]: the Postfix mail system is running: PID: 2496
+Nov 20 22:49:02 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:49:02 mail postfix/smtpd[2579]: 0085E200E7: client=unknown[192.168.50.100]
+Nov 20 22:49:02 mail postfix/cleanup[2581]: 0085E200E7: message-id=<cardeal-ana-2bfa3243b891453d88568a750791870b@cardeal.local>
+Nov 20 22:49:03 mail postfix/qmgr[2499]: 0085E200E7: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 22:49:03 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:49:03 mail postfix/local[2582]: 0085E200E7: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:49:03 mail postfix/qmgr[2499]: 0085E200E7: removed
+Nov 20 22:49:03 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:49:03 mail postfix/smtpd[2579]: 233A2200E7: client=unknown[192.168.50.100]
+Nov 20 22:49:03 mail postfix/cleanup[2581]: 233A2200E7: message-id=<cardeal-bruno-85d1d55739e842ffbc36cc98b13c9727@cardeal.local>
+Nov 20 22:49:03 mail postfix/qmgr[2499]: 233A2200E7: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 22:49:03 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:49:03 mail postfix/local[2582]: 233A2200E7: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:49:03 mail postfix/qmgr[2499]: 233A2200E7: removed
+Nov 20 22:49:03 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:49:03 mail postfix/smtpd[2579]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:49:03 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:49:03 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:49:03 mail postfix/smtpd[2579]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:49:03 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:49:03 mail postfix/postfix-script[2695]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:49:03 mail postfix/postfix-script[2728]: the Postfix mail system is running: PID: 2496
+Nov 20 22:50:01 mail postfix/postfix-script[2816]: the Postfix mail system is running: PID: 2496
+Nov 20 22:50:02 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/smtpd[2579]: 8D604200E7: client=unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/cleanup[2581]: 8D604200E7: message-id=<cardeal-ana-b42e91d93bf844c78970525b2558b078@cardeal.local>
+Nov 20 22:50:02 mail postfix/qmgr[2499]: 8D604200E7: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 22:50:02 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:50:02 mail postfix/local[2582]: 8D604200E7: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:50:02 mail postfix/qmgr[2499]: 8D604200E7: removed
+Nov 20 22:50:02 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/smtpd[2579]: ADE32200E7: client=unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/cleanup[2581]: ADE32200E7: message-id=<cardeal-bruno-90256768807b495ab7ff5148312ca65e@cardeal.local>
+Nov 20 22:50:02 mail postfix/qmgr[2499]: ADE32200E7: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 22:50:02 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:50:02 mail postfix/local[2582]: ADE32200E7: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:50:02 mail postfix/qmgr[2499]: ADE32200E7: removed
+Nov 20 22:50:02 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/smtpd[2579]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:50:02 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:50:02 mail postfix/smtpd[2579]: connect from unknown[192.168.50.100]
+Nov 20 22:50:02 mail postfix/smtpd[2579]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:50:02 mail postfix/smtpd[2579]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:50:03 mail postfix/postfix-script[2940]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:50:03 mail postfix/postfix-script[2973]: the Postfix mail system is running: PID: 2496
+Nov 20 22:50:10 mail postfix/postfix-script[3034]: stopping the Postfix mail system
+Nov 20 22:50:10 mail postfix/master[2496]: terminating on signal 15
+Nov 20 22:50:46 mail postfix/master[972]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 22:50:48 mail postfix/postfix-script[1022]: the Postfix mail system is running: PID: 972
+Nov 20 22:50:49 mail postfix/postfix-script[1076]: the Postfix mail system is running: PID: 972
+Nov 20 22:50:51 mail postfix/smtpd[1091]: connect from unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/smtpd[1091]: 40EFD200F1: client=unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/cleanup[1093]: 40EFD200F1: message-id=<cardeal-ana-f7f214fad49544a1a65c7bf6daa20477@cardeal.local>
+Nov 20 22:50:51 mail postfix/qmgr[974]: 40EFD200F1: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 22:50:51 mail postfix/smtpd[1091]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:50:51 mail postfix/local[1094]: 40EFD200F1: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:50:51 mail postfix/qmgr[974]: 40EFD200F1: removed
+Nov 20 22:50:51 mail postfix/smtpd[1091]: connect from unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/smtpd[1091]: 66D37200ED: client=unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/cleanup[1093]: 66D37200ED: message-id=<cardeal-bruno-bb629f91bbba4ff3b365ab73a31385ee@cardeal.local>
+Nov 20 22:50:51 mail postfix/qmgr[974]: 66D37200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 22:50:51 mail postfix/smtpd[1091]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:50:51 mail postfix/local[1094]: 66D37200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:50:51 mail postfix/qmgr[974]: 66D37200ED: removed
+Nov 20 22:50:51 mail postfix/smtpd[1091]: connect from unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/smtpd[1091]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:50:51 mail postfix/smtpd[1091]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:50:51 mail postfix/smtpd[1091]: connect from unknown[192.168.50.100]
+Nov 20 22:50:51 mail postfix/smtpd[1091]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:50:51 mail postfix/smtpd[1091]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:50:52 mail postfix/postfix-script[1207]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:50:52 mail postfix/postfix-script[1240]: the Postfix mail system is running: PID: 972
+Nov 20 22:51:00 mail postfix/postfix-script[1992]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:51:02 mail postfix/postfix-script[2204]: stopping the Postfix mail system
+Nov 20 22:51:02 mail postfix/master[972]: terminating on signal 15
+Nov 20 22:51:02 mail postfix/master[2332]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 22:51:02 mail postfix/postfix-script[2345]: the Postfix mail system is running: PID: 2332
+Nov 20 22:51:05 mail postfix/postfix-script[2402]: the Postfix mail system is running: PID: 2332
+Nov 20 22:51:06 mail postfix/smtpd[2416]: connect from unknown[192.168.50.100]
+Nov 20 22:51:06 mail postfix/smtpd[2416]: D599A200ED: client=unknown[192.168.50.100]
+Nov 20 22:51:06 mail postfix/cleanup[2418]: D599A200ED: message-id=<cardeal-ana-d7a6aee4181443ecb46ea46f11878a9f@cardeal.local>
+Nov 20 22:51:06 mail postfix/qmgr[2335]: D599A200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 22:51:06 mail postfix/smtpd[2416]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:51:06 mail postfix/local[2419]: D599A200ED: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:51:06 mail postfix/qmgr[2335]: D599A200ED: removed
+Nov 20 22:51:07 mail postfix/smtpd[2416]: connect from unknown[192.168.50.100]
+Nov 20 22:51:07 mail postfix/smtpd[2416]: 06891200ED: client=unknown[192.168.50.100]
+Nov 20 22:51:07 mail postfix/cleanup[2418]: 06891200ED: message-id=<cardeal-bruno-a33f9edce170411bb2c42031a598c1eb@cardeal.local>
+Nov 20 22:51:07 mail postfix/qmgr[2335]: 06891200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 22:51:07 mail postfix/smtpd[2416]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 22:51:07 mail postfix/local[2419]: 06891200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 22:51:07 mail postfix/qmgr[2335]: 06891200ED: removed
+Nov 20 22:51:07 mail postfix/smtpd[2416]: connect from unknown[192.168.50.100]
+Nov 20 22:51:07 mail postfix/smtpd[2416]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:51:07 mail postfix/smtpd[2416]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:51:07 mail postfix/smtpd[2416]: connect from unknown[192.168.50.100]
+Nov 20 22:51:07 mail postfix/smtpd[2416]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 22:51:07 mail postfix/smtpd[2416]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 22:51:07 mail postfix/postfix-script[2533]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 22:51:07 mail postfix/postfix-script[2566]: the Postfix mail system is running: PID: 2332
+Nov 20 22:51:57 mail postfix/postfix-script[2621]: stopping the Postfix mail system
+Nov 20 22:51:57 mail postfix/master[2332]: terminating on signal 15
+Nov 20 23:01:50 mail postfix/master[960]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 23:01:54 mail postfix/postfix-script[1023]: the Postfix mail system is running: PID: 960
+Nov 20 23:01:55 mail postfix/postfix-script[1064]: the Postfix mail system is running: PID: 960
+Nov 20 23:01:57 mail postfix/smtpd[1078]: connect from unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/smtpd[1078]: 9CE23200F8: client=unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/cleanup[1080]: 9CE23200F8: message-id=<cardeal-ana-36bc433650a54cabbe7de456c71fb8c4@cardeal.local>
+Nov 20 23:01:57 mail postfix/qmgr[962]: 9CE23200F8: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:01:57 mail postfix/smtpd[1078]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:01:57 mail postfix/local[1081]: 9CE23200F8: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:01:57 mail postfix/qmgr[962]: 9CE23200F8: removed
+Nov 20 23:01:57 mail postfix/smtpd[1078]: connect from unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/smtpd[1078]: C165E200F6: client=unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/cleanup[1080]: C165E200F6: message-id=<cardeal-bruno-870da6dacc45405b83204e830e654dc7@cardeal.local>
+Nov 20 23:01:57 mail postfix/qmgr[962]: C165E200F6: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:01:57 mail postfix/smtpd[1078]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:01:57 mail postfix/local[1081]: C165E200F6: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:01:57 mail postfix/qmgr[962]: C165E200F6: removed
+Nov 20 23:01:57 mail postfix/smtpd[1078]: connect from unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/smtpd[1078]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:01:57 mail postfix/smtpd[1078]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:01:57 mail postfix/smtpd[1078]: connect from unknown[192.168.50.100]
+Nov 20 23:01:57 mail postfix/smtpd[1078]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:01:57 mail postfix/smtpd[1078]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:01:58 mail postfix/postfix-script[1195]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:01:58 mail postfix/postfix-script[1228]: the Postfix mail system is running: PID: 960
+Nov 20 23:02:40 mail postfix/postfix-script[1990]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:02:42 mail postfix/postfix-script[2207]: stopping the Postfix mail system
+Nov 20 23:02:42 mail postfix/master[960]: terminating on signal 15
+Nov 20 23:02:42 mail postfix/master[2330]: daemon started -- version 3.10.13, configuration /etc/postfix
+Nov 20 23:02:42 mail postfix/postfix-script[2343]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:45 mail postfix/postfix-script[2385]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:46 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:46 mail postfix/smtpd[2399]: B5D92200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:46 mail postfix/cleanup[2401]: B5D92200ED: message-id=<cardeal-ana-67b767f1b26e47f5b205b56032aba5bf@cardeal.local>
+Nov 20 23:02:46 mail postfix/qmgr[2332]: B5D92200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:02:46 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:46 mail postfix/local[2402]: B5D92200ED: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:46 mail postfix/qmgr[2332]: B5D92200ED: removed
+Nov 20 23:02:46 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:46 mail postfix/smtpd[2399]: D9020200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:46 mail postfix/cleanup[2401]: D9020200ED: message-id=<cardeal-bruno-9f89e5cb4848448981188f2b423e38dd@cardeal.local>
+Nov 20 23:02:46 mail postfix/qmgr[2332]: D9020200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:02:46 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:46 mail postfix/local[2402]: D9020200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:46 mail postfix/qmgr[2332]: D9020200ED: removed
+Nov 20 23:02:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:47 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:47 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:47 mail postfix/postfix-script[2515]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:02:47 mail postfix/postfix-script[2548]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:49 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:49 mail postfix/smtpd[2399]: C1EF7200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:49 mail postfix/cleanup[2401]: C1EF7200ED: message-id=<cardeal-ana-f50ede407c824c7492e2a595853850a9@cardeal.local>
+Nov 20 23:02:49 mail postfix/qmgr[2332]: C1EF7200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:02:49 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:49 mail postfix/local[2402]: C1EF7200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:49 mail postfix/qmgr[2332]: C1EF7200ED: removed
+Nov 20 23:02:49 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:49 mail postfix/smtpd[2399]: E2332200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:49 mail postfix/cleanup[2401]: E2332200ED: message-id=<cardeal-bruno-be3607e19c604fb1bef109261d5f63ae@cardeal.local>
+Nov 20 23:02:49 mail postfix/qmgr[2332]: E2332200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:02:49 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:49 mail postfix/local[2402]: E2332200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:49 mail postfix/qmgr[2332]: E2332200ED: removed
+Nov 20 23:02:50 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:50 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:50 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:50 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:50 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:50 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:51 mail postfix/postfix-script[2637]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:52 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/smtpd[2399]: 5887F200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/cleanup[2401]: 5887F200ED: message-id=<cardeal-ana-6824745c36614adbb94b28db191ebf6c@cardeal.local>
+Nov 20 23:02:52 mail postfix/qmgr[2332]: 5887F200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:02:52 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:52 mail postfix/local[2402]: 5887F200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:52 mail postfix/qmgr[2332]: 5887F200ED: removed
+Nov 20 23:02:52 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/smtpd[2399]: 7B4C7200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/cleanup[2401]: 7B4C7200ED: message-id=<cardeal-bruno-e420eab05dcd40328d0e30f2e12d7e31@cardeal.local>
+Nov 20 23:02:52 mail postfix/qmgr[2332]: 7B4C7200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:02:52 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:52 mail postfix/local[2402]: 7B4C7200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:52 mail postfix/qmgr[2332]: 7B4C7200ED: removed
+Nov 20 23:02:52 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:52 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:52 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:52 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:52 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:54 mail postfix/postfix-script[2778]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:55 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/smtpd[2399]: 819A5200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/cleanup[2401]: 819A5200ED: message-id=<cardeal-ana-b0e0fd85494d4b6aa1160deadaa4cd5b@cardeal.local>
+Nov 20 23:02:55 mail postfix/qmgr[2332]: 819A5200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:02:55 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:55 mail postfix/local[2402]: 819A5200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:55 mail postfix/qmgr[2332]: 819A5200ED: removed
+Nov 20 23:02:55 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/smtpd[2399]: A438D200ED: client=unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/cleanup[2401]: A438D200ED: message-id=<cardeal-bruno-b7da302d35d2419da1dacff817d76838@cardeal.local>
+Nov 20 23:02:55 mail postfix/qmgr[2332]: A438D200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:02:55 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:02:55 mail postfix/local[2402]: A438D200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:02:55 mail postfix/qmgr[2332]: A438D200ED: removed
+Nov 20 23:02:55 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:55 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:55 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:02:55 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:02:55 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:02:56 mail postfix/postfix-script[2902]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:02:56 mail postfix/postfix-script[2935]: the Postfix mail system is running: PID: 2330
+Nov 20 23:02:58 mail postfix/postfix-script[3004]: the Postfix mail system is running: PID: 2330
+Nov 20 23:03:03 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/smtpd[2399]: 4E829200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/cleanup[2401]: 4E829200ED: message-id=<cardeal-ana-2e392e77aae744da80808bb468d6b36f@cardeal.local>
+Nov 20 23:03:03 mail postfix/qmgr[2332]: 4E829200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:03:03 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:03 mail postfix/local[2402]: 4E829200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:03 mail postfix/qmgr[2332]: 4E829200ED: removed
+Nov 20 23:03:03 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/smtpd[2399]: 70202200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/cleanup[2401]: 70202200ED: message-id=<cardeal-bruno-548a43a7c0a24cd382135f89831dce5f@cardeal.local>
+Nov 20 23:03:03 mail postfix/qmgr[2332]: 70202200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:03:03 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:03 mail postfix/local[2402]: 70202200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:03 mail postfix/qmgr[2332]: 70202200ED: removed
+Nov 20 23:03:03 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:03 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:03:03 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:03 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:03 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:03:36 mail postfix/postfix-script[3083]: the Postfix mail system is running: PID: 2330
+Nov 20 23:03:38 mail postfix/postfix-script[3123]: the Postfix mail system is running: PID: 2330
+Nov 20 23:03:39 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/smtpd[2399]: A34E2200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/cleanup[2401]: A34E2200ED: message-id=<cardeal-ana-b67bfb6726a64a858ef052920ec44da2@cardeal.local>
+Nov 20 23:03:39 mail postfix/qmgr[2332]: A34E2200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:03:39 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:39 mail postfix/local[2402]: A34E2200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:39 mail postfix/qmgr[2332]: A34E2200ED: removed
+Nov 20 23:03:39 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/smtpd[2399]: C3B65200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/cleanup[2401]: C3B65200ED: message-id=<cardeal-bruno-d1d4235d04aa4ef7ad6d364374ed9bb0@cardeal.local>
+Nov 20 23:03:39 mail postfix/qmgr[2332]: C3B65200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:03:39 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:39 mail postfix/local[2402]: C3B65200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:39 mail postfix/qmgr[2332]: C3B65200ED: removed
+Nov 20 23:03:39 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:39 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:03:39 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:39 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:39 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:03:40 mail postfix/postfix-script[3247]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:03:40 mail postfix/postfix-script[3280]: the Postfix mail system is running: PID: 2330
+Nov 20 23:03:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/smtpd[2399]: 328C7200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/cleanup[2401]: 328C7200ED: message-id=<cardeal-ana-b172c2f8cf94498cb6162cc873ec0966@cardeal.local>
+Nov 20 23:03:47 mail postfix/qmgr[2332]: 328C7200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:03:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:47 mail postfix/local[2402]: 328C7200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:47 mail postfix/qmgr[2332]: 328C7200ED: removed
+Nov 20 23:03:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/smtpd[2399]: 557FD200ED: client=unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/cleanup[2401]: 557FD200ED: message-id=<cardeal-bruno-4f510dc950b541d2b77f6e2b91752943@cardeal.local>
+Nov 20 23:03:47 mail postfix/qmgr[2332]: 557FD200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:03:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:03:47 mail postfix/local[2402]: 557FD200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:03:47 mail postfix/qmgr[2332]: 557FD200ED: removed
+Nov 20 23:03:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:03:47 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:03:47 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:03:47 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:04:57 mail postfix/postfix-script[3388]: the Postfix mail system is running: PID: 2330
+Nov 20 23:04:59 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/smtpd[2399]: 3522E200ED: client=unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/cleanup[2401]: 3522E200ED: message-id=<cardeal-ana-40bb96fa2dfe4baabcc074ef3a20c7f3@cardeal.local>
+Nov 20 23:04:59 mail postfix/qmgr[2332]: 3522E200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:04:59 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:04:59 mail postfix/local[2402]: 3522E200ED: to=<bruno@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:04:59 mail postfix/qmgr[2332]: 3522E200ED: removed
+Nov 20 23:04:59 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/smtpd[2399]: 55AA2200ED: client=unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/cleanup[2401]: 55AA2200ED: message-id=<cardeal-bruno-be73e9960a0b4e95af1c16a82087f5a6@cardeal.local>
+Nov 20 23:04:59 mail postfix/qmgr[2332]: 55AA2200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:04:59 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:04:59 mail postfix/local[2402]: 55AA2200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:04:59 mail postfix/qmgr[2332]: 55AA2200ED: removed
+Nov 20 23:04:59 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:04:59 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:04:59 mail postfix/smtpd[2399]: connect from unknown[192.168.50.100]
+Nov 20 23:04:59 mail postfix/smtpd[2399]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:04:59 mail postfix/smtpd[2399]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:05:00 mail postfix/postfix-script[3512]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:05:00 mail postfix/postfix-script[3545]: the Postfix mail system is running: PID: 2330
+Nov 20 23:06:21 mail postfix/postfix-script[3633]: the Postfix mail system is running: PID: 2330
+Nov 20 23:06:36 mail postfix/postfix-script[3692]: the Postfix mail system is running: PID: 2330
+Nov 20 23:06:38 mail postfix/postfix-script[3732]: the Postfix mail system is running: PID: 2330
+Nov 20 23:06:39 mail postfix/smtpd[3734]: connect from unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/smtpd[3734]: 3D302200ED: client=unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/cleanup[3735]: 3D302200ED: message-id=<cardeal-ana-7ef35f8ad7b547dc847006aa5339bacf@cardeal.local>
+Nov 20 23:06:39 mail postfix/qmgr[2332]: 3D302200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:06:39 mail postfix/smtpd[3734]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:06:39 mail postfix/local[3736]: 3D302200ED: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:06:39 mail postfix/qmgr[2332]: 3D302200ED: removed
+Nov 20 23:06:39 mail postfix/smtpd[3734]: connect from unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/smtpd[3734]: 5EE32200ED: client=unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/cleanup[3735]: 5EE32200ED: message-id=<cardeal-bruno-78eaff17b0e640f187f7f76429c54384@cardeal.local>
+Nov 20 23:06:39 mail postfix/qmgr[2332]: 5EE32200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:06:39 mail postfix/smtpd[3734]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:06:39 mail postfix/local[3736]: 5EE32200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0.01/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:06:39 mail postfix/qmgr[2332]: 5EE32200ED: removed
+Nov 20 23:06:39 mail postfix/smtpd[3734]: connect from unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/smtpd[3734]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:06:39 mail postfix/smtpd[3734]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:06:39 mail postfix/smtpd[3734]: connect from unknown[192.168.50.100]
+Nov 20 23:06:39 mail postfix/smtpd[3734]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:06:39 mail postfix/smtpd[3734]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:06:40 mail postfix/postfix-script[3847]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:06:40 mail postfix/postfix-script[3880]: the Postfix mail system is running: PID: 2330
+Nov 20 23:09:36 mail postfix/postfix-script[3957]: the Postfix mail system is running: PID: 2330
+Nov 20 23:09:39 mail postfix/postfix-script[3998]: the Postfix mail system is running: PID: 2330
+Nov 20 23:09:39 mail postfix/smtpd[4000]: connect from unknown[192.168.50.100]
+Nov 20 23:09:39 mail postfix/smtpd[4000]: B9406200ED: client=unknown[192.168.50.100]
+Nov 20 23:09:39 mail postfix/cleanup[4002]: B9406200ED: message-id=<cardeal-ana-2c6385d1e0e74c4eaf625dd676bb5b6d@cardeal.local>
+Nov 20 23:09:39 mail postfix/qmgr[2332]: B9406200ED: from=<ana@cardeal.local>, size=569, nrcpt=1 (queue active)
+Nov 20 23:09:39 mail postfix/smtpd[4000]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:09:39 mail postfix/local[4003]: B9406200ED: to=<bruno@cardeal.local>, relay=local, delay=0.02, delays=0.01/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:09:39 mail postfix/qmgr[2332]: B9406200ED: removed
+Nov 20 23:09:39 mail postfix/smtpd[4000]: connect from unknown[192.168.50.100]
+Nov 20 23:09:39 mail postfix/smtpd[4000]: DC363200ED: client=unknown[192.168.50.100]
+Nov 20 23:09:39 mail postfix/cleanup[4002]: DC363200ED: message-id=<cardeal-bruno-588781315b3d4faa99f79ac0e059eba9@cardeal.local>
+Nov 20 23:09:39 mail postfix/qmgr[2332]: DC363200ED: from=<bruno@cardeal.local>, size=571, nrcpt=1 (queue active)
+Nov 20 23:09:39 mail postfix/smtpd[4000]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+Nov 20 23:09:39 mail postfix/local[4003]: DC363200ED: to=<ana@cardeal.local>, relay=local, delay=0.01, delays=0/0/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Nov 20 23:09:39 mail postfix/qmgr[2332]: DC363200ED: removed
+Nov 20 23:09:40 mail postfix/smtpd[4000]: connect from unknown[192.168.50.100]
+Nov 20 23:09:40 mail postfix/smtpd[4000]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 550 5.1.1 <inexistente@cardeal.local>: Recipient address rejected: User unknown in local recipient table; from=<ana@cardeal.local> to=<inexistente@cardeal.local> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:09:40 mail postfix/smtpd[4000]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:09:40 mail postfix/smtpd[4000]: connect from unknown[192.168.50.100]
+Nov 20 23:09:40 mail postfix/smtpd[4000]: NOQUEUE: reject: RCPT from unknown[192.168.50.100]: 554 5.7.1 <destinatario@example.org>: Relay access denied; from=<ana@cardeal.local> to=<destinatario@example.org> proto=ESMTP helo=<cardeal-cli>
+Nov 20 23:09:40 mail postfix/smtpd[4000]: disconnect from unknown[192.168.50.100] ehlo=1 mail=1 rcpt=0/1 quit=1 commands=3/4
+Nov 20 23:09:40 mail postfix/postfix-script[4115]: warning: not owned by root: /var/spool/postfix/etc/resolv.conf
+Nov 20 23:09:40 mail postfix/postfix-script[4148]: the Postfix mail system is running: PID: 2330

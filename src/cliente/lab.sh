@@ -7,24 +7,15 @@ if [[ $(cat /etc/cardeal-role 2>/dev/null) != cliente ]]; then
 fi
 
 case "${1:-ajuda}" in
-    testar)
+    testar|verificar)
         printf 'Ambiente: VM cliente. Verificando suas funções de rede...\n'
-        if sudo -n grep -qx '1.0.0' /etc/cardeal/version 2>/dev/null; then
-            exec sudo -n bash /opt/cardeal/src/testes/verificar-laboratorio.sh
-        fi
-        sudo -n bash /opt/cardeal/src/testes/testar-rede.sh
-        if sudo -n test -f /etc/cardeal/version; then
-            sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
-        fi
+        exec sudo -n bash /opt/cardeal/src/testes/verificar-laboratorio.sh
         ;;
     testar-intranet)
         exec sudo -n bash /opt/cardeal/src/testes/testar-intranet.sh
         ;;
     testar-email)
         exec sudo -n bash /opt/cardeal/src/testes/testar-email.sh
-        ;;
-    verificar)
-        exec sudo -n bash /opt/cardeal/src/testes/verificar-laboratorio.sh
         ;;
     status)
         hostname

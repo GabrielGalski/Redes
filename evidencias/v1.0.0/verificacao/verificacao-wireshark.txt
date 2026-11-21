@@ -1,0 +1,19 @@
+dhcp.pcapng: Wireshark GUI=true; quadros=5; resultado=APROVADO
+File name:           /tmp/cardeal-wireshark-h59cvap5/dhcp.pcapng
+File type:           Wireshark/... - pcapng
+Number of packets:   5
+
+dns.pcapng: Wireshark GUI=true; quadros=12; resultado=APROVADO
+File name:           /tmp/cardeal-wireshark-h59cvap5/dns.pcapng
+File type:           Wireshark/... - pcapng
+Number of packets:   12
+
+http.pcapng: Wireshark GUI=true; quadros=10; resultado=APROVADO
+File name:           /tmp/cardeal-wireshark-h59cvap5/http.pcapng
+File type:           Wireshark/... - pcapng
+Number of packets:   10
+
+email.pcapng: Wireshark GUI=true; quadros=171; resultado=APROVADO
+File name:           /tmp/cardeal-wireshark-h59cvap5/email.pcapng
+File type:           Wireshark/... - pcapng
+Number of packets:   171

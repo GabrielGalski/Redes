@@ -1,0 +1,3 @@
+OK: DHCP DORA e consulta/resposta DNS capturados e conferidos.
+OK: handshake TCP completo, GET, Host e HTTP 200; URL reconstruída: http://www.cardeal.local/
+OK: iniciador TCP, banner SMTP, EHLO/MAIL/RCPT/DATA e comunicação IMAP identificados.

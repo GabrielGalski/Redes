@@ -1,66 +1,0 @@
-Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
-no label, UUID=2cc191c3-15ff-48b3-83fb-1bda56880307
-Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
-Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
-Get:3 https://deb.debian.org/debian trixie InRelease [140 kB]
-Get:4 https://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
-Get:5 https://deb.debian.org/debian trixie-backports InRelease [54.0 kB]
-Get:6 https://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
-Get:7 https://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
-Get:8 https://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
-Get:9 https://deb.debian.org/debian trixie-backports/main amd64 Packages [300 kB]
-Get:10 https://deb.debian.org/debian-security trixie-security/main amd64 Packages [300 kB]
-Fetched 10.6 MB in 38s (280 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-curl is already the newest version (8.14.1-2+deb13u7).
-ca-certificates is already the newest version (20250419+deb13u1).
-The following additional packages will be installed:
-  dns-root-data
-Suggested packages:
-  bind9-doc ufw
-The following NEW packages will be installed:
-  bind9 bind9-dnsutils bind9-utils dns-root-data
-0 upgraded, 4 newly installed, 0 to remove and 4 not upgraded.
-Need to get 618 kB of archives.
-After this operation, 2213 kB of additional disk space will be used.
-Get:1 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
-Get:2 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
-Get:3 https://deb.debian.org/debian-security trixie-security/main amd64 bind9-utils amd64 1:9.20.30-1~deb13u1 [187 kB]
-Get:4 https://deb.debian.org/debian-security trixie-security/main amd64 bind9 amd64 1:9.20.30-1~deb13u1 [258 kB]
-Get:5 https://deb.debian.org/debian-security trixie-security/main amd64 bind9-dnsutils amd64 1:9.20.30-1~deb13u1 [167 kB]
-Get:6 https://deb.debian.org/debian trixie/main amd64 dns-root-data all 2025080400~deb13u1 [5948 B]
-Fetched 618 kB in 2s (305 kB/s)
-Selecting previously unselected package bind9-utils.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24424 files and directories currently installed.)
-Preparing to unpack .../bind9-utils_1%3a9.20.30-1~deb13u1_amd64.deb ...
-Unpacking bind9-utils (1:9.20.30-1~deb13u1) ...
-Selecting previously unselected package dns-root-data.
-Preparing to unpack .../dns-root-data_2025080400~deb13u1_all.deb ...
-Unpacking dns-root-data (2025080400~deb13u1) ...
-Selecting previously unselected package bind9.
-Preparing to unpack .../bind9_1%3a9.20.30-1~deb13u1_amd64.deb ...
-Unpacking bind9 (1:9.20.30-1~deb13u1) ...
-Selecting previously unselected package bind9-dnsutils.
-Preparing to unpack .../bind9-dnsutils_1%3a9.20.30-1~deb13u1_amd64.deb ...
-Unpacking bind9-dnsutils (1:9.20.30-1~deb13u1) ...
-Setting up dns-root-data (2025080400~deb13u1) ...
-Setting up bind9-utils (1:9.20.30-1~deb13u1) ...
-Setting up bind9 (1:9.20.30-1~deb13u1) ...
-wrote key file "/etc/bind/rndc.key"
-named-resolvconf.service is a disabled or a static unit, not starting it.
-Created symlink '/etc/systemd/system/bind9.service' → '/usr/lib/systemd/system/named.service'.
-Created symlink '/etc/systemd/system/multi-user.target.wants/named.service' → '/usr/lib/systemd/system/named.service'.
-Setting up bind9-dnsutils (1:9.20.30-1~deb13u1) ...
-Processing triggers for man-db (2.13.1-1) ...
-zone cardeal.local/IN: loaded serial 2026110501
-OK
-zone 50.168.192.in-addr.arpa/IN: loaded serial 2026110501
-OK
-Synchronizing state of named.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
-Executing: /usr/lib/systemd/systemd-sysv-install enable named
-active
-192.168.50.10
-DNS interno e encaminhamento externo configurados.

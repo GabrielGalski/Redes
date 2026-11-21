@@ -1,6 +1,6 @@
 # Estado da preparação — 01/11/2026
 
-> Registro histórico. A preparação e a implementação da rede básica foram concluídas e validadas em 05/11/2026. Consulte o [estado atual da rodada 1](../v0.1.0/STATUS.md).
+> Registro histórico. A preparação e a implementação da rede básica foram concluídas e validadas em 05/11/2026. Consulte o [aceite da rede](../v0.1.0/STATUS.md).
 
 **Preparação parcial: instalação administrativa pendente.**
 

@@ -1,0 +1,17 @@
+{
+  "cliente_iniciador_tcp": "192.168.50.100",
+  "servidor": "192.168.50.10",
+  "smtp_stream": "0",
+  "quadros": {
+    "SYN_SMTP": "1",
+    "banner_220": "4",
+    "EHLO": "6",
+    "MAIL": "9",
+    "RCPT": "11",
+    "DATA": "13",
+    "primeiro_IMAP_cliente": "27",
+    "primeiro_IMAP_servidor": "29",
+    "FETCH_IMAP": "60"
+  },
+  "nota": "Captura didática contém autenticação IMAP fictícia pública; não contém credenciais SMB."
+}

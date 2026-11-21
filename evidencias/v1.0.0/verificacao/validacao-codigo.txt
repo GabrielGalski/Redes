@@ -1,0 +1,9 @@
+Validação em 20/11/2026: APROVADA.
+Python: nove módulos com sintaxe e referências globais válidas.
+Bash: vinte scripts aprovados em bash -n e ShellCheck.
+CLI: 21 comandos públicos preservados.
+Manifestos APT consistentes por máquina; sem dependências adicionais.
+Payload: versão única, sem bytecode; substituição do código preserva dados e configurações locais.
+Aceites: rede, HTTP, SMB, SMTP/IMAP, rejeições, persistência, falhas e reconstrução aprovados.
+Capturas: DHCP/DNS/HTTP/SMTP/IMAP analisados e quatro arquivos abertos no Wireshark.
+Vínculos locais da documentação: válidos.

@@ -1,10 +1,10 @@
 {
   "arquivos": {
     "aceite-cardeal/ana-para-bruno.txt": {
-      "bytes": 73,
+      "bytes": 81,
       "gid": 1001,
       "modo": "0o660",
-      "sha256": "69587c5d7772a6fdaf9c4bed465f3c18785e4e476c178c29764894df6241bb37",
+      "sha256": "24ed4aab0621f6903f2613da747cabf768298cba11cff6b1ead0292bdead9416",
       "uid": 1001
     }
   },
@@ -27,37 +27,37 @@
   "email": {
     "ana": [
       {
-        "bytes": 661,
+        "bytes": 668,
         "gid": 1001,
-        "message_id": "<cardeal-bruno-06456f2c5fe64f2f96d8ccbbe1c500ab@cardeal.local>",
+        "message_id": "<cardeal-bruno-24df481347374689873836ed6a23608c@cardeal.local>",
         "modo": "0o600",
-        "sha256": "82c309cc27fed7897951c7be03f838da015a0e74d33ad0f12be984b2339e5e7a",
+        "sha256": "b94e2db4934a7c15ce25816b036e80958057ff58acbbe055ffee733a33bb9579",
         "uid": 1001
       },
       {
-        "bytes": 661,
+        "bytes": 668,
         "gid": 1001,
-        "message_id": "<cardeal-bruno-306c2336b49e4f40b945cf5ad1a1fb64@cardeal.local>",
+        "message_id": "<cardeal-bruno-9d4ed818cd0243a1a25c08aa215a3b66@cardeal.local>",
         "modo": "0o600",
-        "sha256": "39402036062987d8be26b8c1e63c999e83bf97c60a0d6c48ae4ad327445b2d4e",
+        "sha256": "34d209ecf1cd7c9860cdeaacaed5d4dac173353095a137079bcdf9dc08f90b87",
         "uid": 1001
       }
     ],
     "bruno": [
       {
-        "bytes": 661,
+        "bytes": 668,
         "gid": 1001,
-        "message_id": "<cardeal-ana-c35699ab15e94ca491f14b73730f2ac1@cardeal.local>",
+        "message_id": "<cardeal-ana-181a28f54f6048debda17d3fb14a7ad1@cardeal.local>",
         "modo": "0o600",
-        "sha256": "4202acb51b6b24cb679d17be65a88fb4d9bd98691f4a55c437df893632ea7816",
+        "sha256": "fbc413e2646bdd72501471fe98d2abfea0db945c8f7bc6c72f2ec641a5bb7101",
         "uid": 1002
       },
       {
-        "bytes": 661,
+        "bytes": 668,
         "gid": 1001,
-        "message_id": "<cardeal-ana-c4293fa3ff4e448e842b368ce7f03953@cardeal.local>",
+        "message_id": "<cardeal-ana-6acc2beb5656456a8b511cccc3a3de54@cardeal.local>",
         "modo": "0o600",
-        "sha256": "dfdf32e507716e9b75a6408015739fd5e765dcb4ad6e33c4bfd56a01e42e4361",
+        "sha256": "5f13c7bb80856086e75f95cc63bacd79e84f6eb272c307961551ad5beca7abf9",
         "uid": 1002
       }
     ]

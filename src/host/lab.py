@@ -20,9 +20,9 @@ import tempfile
 import time
 
 try:
-    from . import sprint3
+    from . import validacao
 except ImportError:
-    import sprint3
+    import validacao
 
 ROOT = Path(__file__).resolve().parents[2]
 VMROOT = Path(os.environ.get("CARDEAL_VM_ROOT", ROOT / "vms")).resolve()
@@ -72,7 +72,7 @@ def config():
     values.setdefault("LAB_DNS_FORWARDER", "10.0.2.3")
     network = ipaddress.IPv4Network(values["LAB_SUBNET"])
     if network.prefixlen != 24:
-        raise ValueError("Esta rodada aceita LAN /24.")
+        raise ValueError("A LAN deve usar prefixo /24.")
     for key in ("LAB_GATEWAY_IP", "LAB_SERVER_IP", "LAB_DNS_IP", "LAB_DHCP_START", "LAB_DHCP_END"):
         if ipaddress.IPv4Address(values[key]) not in network:
             raise ValueError(f"{key} deve pertencer à LAN.")
@@ -302,7 +302,7 @@ def seed(role, folder):
     secret_file.write_text(json.dumps(passwords, indent=2) + "\n")
     secret_file.chmod(0o600)
     password_hash = run(["openssl", "passwd", "-6", "-stdin"], input=password + "\n", capture=True).stdout.strip()
-    metadata = {"instance-id": "cardeal-r1-" + role, "local-hostname": vm_name(role)}
+    metadata = {"instance-id": "cardeal-" + role, "local-hostname": vm_name(role)}
     user = {"hostname": vm_name(role), "manage_etc_hosts": True, "ssh_pwauth": False, "disable_root": True,
             "users": [{"name": CFG["LAB_SSH_ADMIN_USER"], "shell": "/bin/bash", "sudo": "ALL=(ALL) NOPASSWD:ALL",
                        "lock_passwd": False, "hashed_passwd": password_hash, "ssh_authorized_keys": [public]}],
@@ -374,7 +374,7 @@ def start(role):
 
 def stop(role):
     info = check_owned(role)
-    if info.get("VMState") == '"poweroff"':
+    if info.get("VMState") in {'"poweroff"', '"aborted"'}:
         return
     vbox("controlvm", vm_name(role), "acpipowerbutton")
     deadline = time.monotonic() + 120
@@ -388,14 +388,35 @@ def stop(role):
 def payload():
     path = RUNTIME / "payload.tar.gz"
     with tarfile.open(path, "w:gz") as archive:
-        for name in ("src", "templates", "config/packages", "config/lab.env.example", "config/email-demo.json"):
-            archive.add(ROOT / name, arcname=name)
+        for name in ("src", "templates", "config/packages", "config/lab.env.example", "config/email-demo.json", "VERSION"):
+            archive.add(ROOT / name, arcname=name,
+                        filter=lambda entry: None if "__pycache__" in Path(entry.name).parts else entry)
         content = "\n".join(f"{k}={shlex.quote(v)}" for k, v in CFG.items()) + "\n"
         entry = tarfile.TarInfo("config/lab.env")
         entry.size = len(content.encode())
         entry.mode = 0o600
         archive.addfile(entry, io.BytesIO(content.encode()))
     return path
+
+
+def configure_guest(role, components, bundle, *, bootstrap=False):
+    """Substitui o código gerenciado na VM e aplica as configurações solicitadas."""
+    check_owned(role)
+    run(["scp", "-F", SSH_CONFIG.relative_to(ROOT), bundle,
+         f"{alias(role, bootstrap)}:/tmp/cardeal-payload.tar.gz"])
+    ssh(role, "sudo -n mkdir -p /opt/cardeal && "
+              "sudo -n tar --recursive-unlink -xzf /tmp/cardeal-payload.tar.gz -C /opt/cardeal",
+        bootstrap=bootstrap)
+    for component in components:
+        script = f"/opt/cardeal/src/{role}/configurar-{component}.sh"
+        path = EVIDENCE / f"configuracao-{role}-{component}.txt"
+        print(f"Configurando {component} em {vm_name(role)}; log: {path.relative_to(ROOT)}", flush=True)
+        with path.open("w") as output:
+            result = ssh(role, "sudo -n bash " + shlex.quote(script), bootstrap=bootstrap,
+                         stdout=output, stderr=subprocess.STDOUT, check=False)
+        if result.returncode:
+            raise RuntimeError(f"Falha na configuração de {component} em {role}:\n"
+                               + "\n".join(path.read_text().splitlines()[-30:]))
 
 
 def provision():
@@ -407,14 +428,7 @@ def provision():
         role_bootstrap = is_bootstrap and (role == "gateway" or vm_info(role).get("nic2") == '"nat"')
         wait_ssh(role, bootstrap=role_bootstrap)
         ssh(role, "cloud-init status --wait", bootstrap=role_bootstrap)
-        run(["scp", "-F", SSH_CONFIG.relative_to(ROOT), bundle, f"{alias(role, role_bootstrap)}:/tmp/cardeal-payload.tar.gz"])
-        command = "sudo -n mkdir -p /opt/cardeal && sudo -n tar -xzf /tmp/cardeal-payload.tar.gz -C /opt/cardeal && sudo -n bash /opt/cardeal/src/" + role + "/configurar-r1.sh"
-        print(f"Configurando {vm_name(role)}...", flush=True)
-        with (EVIDENCE / f"provisionamento-{role}.txt").open("w") as log:
-            result = ssh(role, command, bootstrap=role_bootstrap, stdout=log, stderr=subprocess.STDOUT, check=False)
-        if result.returncode:
-            tail = (EVIDENCE / f"provisionamento-{role}.txt").read_text().splitlines()[-25:]
-            raise RuntimeError("Falha no provisionamento " + role + ":\n" + "\n".join(tail))
+        configure_guest(role, ("rede",), bundle, bootstrap=role_bootstrap)
     # O lease é obtido na VM; não se assume que o primeiro endereço será .100.
     client_bootstrap = vm_info("cliente").get("nic2") == '"nat"'
     ip_json = ssh("cliente", "ip -j -4 address show dev enp0s3", bootstrap=client_bootstrap, capture=True).stdout
@@ -446,23 +460,14 @@ def status():
         print("Cliente:", state()["client_ip"], "| acesso: ./lab.sh cliente")
 
 
-def test_network():
+def test_lab():
     wait_ready()
     for role in ROLES:
         info = check_owned(role)
         (EVIDENCE / f"virtualbox-{role}.txt").write_text("\n".join(f"{k}={v}" for k, v in info.items()) + "\n")
         if role != "gateway" and (info.get("nic1") != '"intnet"' or info.get("nic2") != '"none"'):
             raise RuntimeError("Cliente/servidor com interface externa adicional.")
-    if state().get("email_configured"):
-        sprint3.verify(sys.modules[__name__])
-        return
-    with (EVIDENCE / "teste-rede.txt").open("w") as output:
-        result = ssh("cliente", "sudo -n bash /opt/cardeal/src/testes/testar-rede.sh", stdout=output, stderr=subprocess.STDOUT, check=False)
-    print((EVIDENCE / "teste-rede.txt").read_text(), end="")
-    if result.returncode:
-        raise RuntimeError("Teste funcional do cliente reprovado.")
-    if state().get("intranet_configured"):
-        test_intranet()
+    validacao.verify(sys.modules[__name__])
 
 
 def intranet_credentials():
@@ -486,45 +491,34 @@ def intranet_credentials():
     return credentials
 
 
-def update_intranet(*, run_tests=True):
+def update_services(*, run_tests=True):
+    """Aplica intranet e correio, preservando credenciais e dados existentes."""
     if state().get("phase") != "ready":
         raise RuntimeError("Execute ./lab.sh preparar antes da atualização.")
     wait_ready(applications=False)
     credentials = json.dumps(intranet_credentials()) + "\n"
     bundle = payload()
+    # Sincronizar o código do gateway; sua configuração de rede já está aplicada.
+    configure_guest("gateway", (), bundle)
     for role in ("servidor", "cliente"):
         check_owned(role)
-        run(["scp", "-F", SSH_CONFIG.relative_to(ROOT), bundle, f"{alias(role)}:/tmp/cardeal-payload.tar.gz"])
         ssh(role, "sudo -n install -d -m 700 /etc/cardeal && "
                   "sudo -n sh -c 'umask 077; cat > /etc/cardeal/intranet.json'", input=credentials)
-        command = "sudo -n mkdir -p /opt/cardeal && sudo -n tar -xzf /tmp/cardeal-payload.tar.gz -C /opt/cardeal && " \
-                  "sudo -n bash /opt/cardeal/src/" + role + "/configurar-r2.sh"
-        path = EVIDENCE / f"provisionamento-r2-{role}.txt"
-        print(f"Aplicando Web/SMB em {vm_name(role)}; acompanhe {path.relative_to(ROOT)}...", flush=True)
-        with path.open("w") as output:
-            result = ssh(role, command, stdout=output, stderr=subprocess.STDOUT, check=False)
-        if result.returncode:
-            raise RuntimeError("Falha na atualização " + role + ":\n" + "\n".join(path.read_text().splitlines()[-30:]))
+        configure_guest(role, ("intranet", "email"), bundle)
     data = state()
     data["intranet_configured"] = True
+    data["email_configured"] = True
     save_state(data)
     if run_tests:
-        test_network()
+        test_lab()
 
 
 def intranet_inventory():
     return json.loads(ssh("servidor", "sudo -n python3 /opt/cardeal/src/testes/inventario-intranet.py", capture=True).stdout)
 
 
-def update_all(*, run_tests=True):
-    update_intranet(run_tests=False)
-    sprint3.update(sys.modules[__name__])
-    if run_tests:
-        test_network()
-
-
 def test_persistence():
-    test_network()
+    test_lab()
     before = intranet_inventory()
     if not before["arquivos"]:
         raise RuntimeError("Aceite de persistência requer arquivos existentes.")
@@ -541,17 +535,17 @@ def test_persistence():
     if before != after_restart:
         raise RuntimeError("Dados, contas ou permissões mudaram após reinício; conferir inventários.")
     print("OK: reinício preservou arquivos, SHA-256, proprietários, permissões e contas.", flush=True)
-    test_network()
+    test_lab()
     # Conferir antes de qualquer teste que possa reenviar o arquivo de demonstração.
     before_reapply = intranet_inventory()
     (EVIDENCE / "inventario-antes-reaplicacao.json").write_text(json.dumps(before_reapply, indent=2, ensure_ascii=False) + "\n")
-    update_all(run_tests=False)
+    update_services(run_tests=False)
     after_reapply = intranet_inventory()
     (EVIDENCE / "inventario-pos-reaplicacao.json").write_text(json.dumps(after_reapply, indent=2, ensure_ascii=False) + "\n")
     if before_reapply != after_reapply:
         raise RuntimeError("Reaplicação alterou arquivos, contas ou permissões; conferir inventários.")
     print("OK: reaplicação preservou arquivos, SHA-256, proprietários, permissões e contas únicas.", flush=True)
-    test_network()
+    test_lab()
     (EVIDENCE / "persistencia.json").write_text(json.dumps({"reinicio": "APROVADO", "reaplicacao": "APROVADO",
         "comparacao": "conteúdo SHA-256, tamanho, UID/GID, modos, contas Unix/Samba, grupo e mensagens Maildir",
         "verificado_antes_de_reenviar_arquivo": True}, indent=2, ensure_ascii=False) + "\n")
@@ -741,7 +735,7 @@ def test_gateway_failure():
             print(report, end="")
             if result.stdout.strip() != "0":
                 raise RuntimeError("Teste de perda/retorno do gateway reprovado.")
-            test_network()
+            test_lab()
             return
         time.sleep(2)
     raise TimeoutError("Cliente não concluiu o teste do gateway; o gateway foi religado.")
@@ -758,7 +752,7 @@ def prepare():
     base = download()
     create_vms(base)
     provision()
-    update_all()
+    update_services()
 
 
 def main():
@@ -792,7 +786,7 @@ def main():
             stop(role)
         for role in ROLES:
             start(role)
-        test_network()
+        test_lab()
     elif args.command == "cliente":
         if state().get("phase") != "ready":
             raise RuntimeError("Execute ./lab.sh preparar antes do acesso ao cliente.")
@@ -801,21 +795,21 @@ def main():
         tty = ["-t"] if sys.stdin.isatty() else ["-T"]
         os.execvpe("ssh", ["ssh", *tty, "-F", str(SSH_CONFIG.relative_to(ROOT)), "cardeal-cli"], ENV)
     elif args.command == "testar":
-        test_network()
+        test_lab()
     elif args.command == "atualizar":
-        update_all()
+        update_services()
     elif args.command == "verificar":
-        test_network()
+        test_lab()
     elif args.command == "testar-email":
-        sprint3.test_email(sys.modules[__name__])
+        validacao.test_email(sys.modules[__name__])
     elif args.command == "capturar-email":
-        sprint3.capture_email(sys.modules[__name__])
+        validacao.capture_email(sys.modules[__name__])
     elif args.command == "testar-sem-wan":
-        sprint3.test_wan(sys.modules[__name__])
+        validacao.test_wan(sys.modules[__name__])
     elif args.command == "testar-detector":
-        sprint3.test_detector(sys.modules[__name__])
+        validacao.test_detector(sys.modules[__name__])
     elif args.command == "reconstruir":
-        sprint3.reconstruct(sys.modules[__name__])
+        validacao.reconstruct(sys.modules[__name__])
     elif args.command == "testar-intranet":
         wait_ready()
         test_intranet()
@@ -828,13 +822,13 @@ def main():
         if state().get("intranet_configured"):
             capture_http()
         if state().get("email_configured"):
-            sprint3.capture_email(sys.modules[__name__])
+            validacao.capture_email(sys.modules[__name__])
     elif args.command == "analisar":
         analyze_packets()
         if (ROOT / "wireshark/http.pcapng").exists():
             analyze_http()
         if (ROOT / "wireshark/email.pcapng").exists():
-            sprint3.analyze_email(sys.modules[__name__])
+            validacao.analyze_email(sys.modules[__name__])
     elif args.command == "testar-falha":
         test_gateway_failure()
     else:

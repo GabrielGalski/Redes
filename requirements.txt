@@ -5,12 +5,11 @@
 # Este arquivo documenta pacotes APT e pré-requisitos externos, não pacotes Python.
 # As dependências transitivas serão resolvidas pelo APT.
 # Versões: usar atualizações da distribuição e registrar as versões instaladas.
-# Detalhes de função, gratuidade e licenças: docs/FERRAMENTAS.md.
-# Rodada 1: src/host/lab.py orquestra VMs com imagem Debian oficial e seed NoCloud.
-# Rodada 2: Apache/Samba/nftables no servidor e smbclient no cliente; sem novos pacotes no host.
-# Rodada 3: Postfix/Dovecot no servidor, swaks no cliente e exportação local do relatório.
+# Orquestração: src/host/lab.py, imagem Debian oficial e seed NoCloud.
+# Servidor: DNS, Apache/Samba, Postfix/Dovecot e firewall.
+# Cliente: consultas, transferências SMB, envio SMTP e leitura IMAP.
 # Listas executáveis por máquina: config/packages/*.txt.
-# Instalação e verificação: docs/PREPARACAO_DO_AMBIENTE.md.
+# Instalação e verificação: README.md.
 
 # ============================================================
 # 1. HOSPEDEIRO — Ubuntu 26.04 LTS
@@ -157,4 +156,3 @@ wireshark-common
 # não exigem Node.js, pip, banco SQL ou hospedagem contratada.
 # Python 3 do sistema é usado na orquestração local, sem pacotes pip.
 # Todos os componentes selecionados têm uso gratuito no laboratório local.
-# Opcionais não adotados estão separados em docs/FERRAMENTAS.md.

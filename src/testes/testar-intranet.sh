@@ -27,13 +27,14 @@ echo 'OK: página Cardeal e CSS retornam HTTP 200 pelo nome.'
 
 echo '=== Arquivo de Ana para Bruno por SMB autenticado ==='
 getent ahostsv4 "files.$LAB_DOMAIN" | grep -F "$LAB_SERVER_IP"
-printf 'Cardeal Ltda — aceite v0.2.0\nArquivo enviado por Ana e lido por Bruno.\n' > origem.txt
-# Antes de escrever, conferir o arquivo de uma execução anterior, se existir.
+# Reutilizar o conteúdo existente preserva o arquivo nas reaplicações.
 if smbclient "$SHARE" "${SMB_OPTIONS[@]}" -A "$BRUNO" -c 'get aceite-cardeal/ana-para-bruno.txt anterior.txt' > anterior.log 2>&1; then
-    cmp origem.txt anterior.txt
-    echo 'OK: arquivo anterior permanece acessível e íntegro.'
+    [[ -s anterior.txt ]]
+    cp anterior.txt origem.txt
+    echo 'OK: arquivo anterior permanece acessível.'
 else
     grep -F 'NT_STATUS_OBJECT_NAME_NOT_FOUND' anterior.log >/dev/null || { cat anterior.log; exit 1; }
+    printf 'Cardeal Ltda — arquivo compartilhado\nArquivo enviado por Ana e lido por Bruno.\n' > origem.txt
     echo 'Primeira execução: arquivo de aceite ainda não existe.'
 fi
 smbclient "$SHARE" "${SMB_OPTIONS[@]}" -A "$ANA" -c 'put origem.txt aceite-cardeal/ana-para-bruno.txt'

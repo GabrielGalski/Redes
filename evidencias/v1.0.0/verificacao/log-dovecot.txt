@@ -1,0 +1,280 @@
+Nov 07 23:20:38 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 07 23:20:42 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5256, session=<ktdA+rdf7JfAqDJk>
+Nov 07 23:20:42 imap(bruno)<5256><ktdA+rdf7JfAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:20:42 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5263, session=<xIxB+rdf8JfAqDJk>
+Nov 07 23:20:42 imap(bruno)<5263><xIxB+rdf8JfAqDJk>: Info: Disconnected: Logged out in=55 out=1674 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=723
+Nov 07 23:21:47 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5365, session=<GCsi/rdfQKPAqDJk>
+Nov 07 23:21:47 imap(bruno)<5365><GCsi/rdfQKPAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:21:47 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5367, session=<f8Ai/rdfTqPAqDJk>
+Nov 07 23:21:47 imap(bruno)<5367><f8Ai/rdfTqPAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:21:47 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5369, session=<J/Ak/rdfWKPAqDJk>
+Nov 07 23:21:47 imap(ana)<5369><J/Ak/rdfWKPAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:21:47 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5371, session=<OMol/rdfYqPAqDJk>
+Nov 07 23:21:47 imap(ana)<5371><OMol/rdfYqPAqDJk>: Info: Disconnected: Logged out in=55 out=1625 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:22:44 master: Warning: Time moved forward by 2.304017 seconds - adjusting timeouts.
+Nov 07 23:23:19 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5600, session=<1qGgA7hfLK3AqDJk>
+Nov 07 23:23:19 imap(bruno)<5600><1qGgA7hfLK3AqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:23:19 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5602, session=<HSShA7hfOK3AqDJk>
+Nov 07 23:23:19 imap(bruno)<5602><HSShA7hfOK3AqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:23:19 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5604, session=<upWiA7hfPq3AqDJk>
+Nov 07 23:23:19 imap(ana)<5604><upWiA7hfPq3AqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:23:19 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5606, session=<VhmjA7hfQK3AqDJk>
+Nov 07 23:23:19 imap(ana)<5606><VhmjA7hfQK3AqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:23:23 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5826, session=<2mrfA7hfUK3AqDJk>
+Nov 07 23:23:23 imap(bruno)<5826><2mrfA7hfUK3AqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:23:23 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5828, session=<q+XfA7hfUq3AqDJk>
+Nov 07 23:23:23 imap(bruno)<5828><q+XfA7hfUq3AqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:23:23 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5830, session=<kFfhA7hfWK3AqDJk>
+Nov 07 23:23:23 imap(ana)<5830><kFfhA7hfWK3AqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:23:24 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=5832, session=<w9ThA7hfXq3AqDJk>
+Nov 07 23:23:24 imap(ana)<5832><w9ThA7hfXq3AqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:23:32 master: Warning: Killed with signal 15 (by pid=6016 uid=0 code=kill)
+Nov 07 23:24:14 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 07 23:24:22 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1094, session=<5VhXB7hfVMzAqDJk>
+Nov 07 23:24:22 imap(bruno)<1094><5VhXB7hfVMzAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:24:22 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1096, session=<RQNYB7hfZMzAqDJk>
+Nov 07 23:24:22 imap(bruno)<1096><RQNYB7hfZMzAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:24:22 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1098, session=<kX5ZB7hfbMzAqDJk>
+Nov 07 23:24:22 imap(ana)<1098><kX5ZB7hfbMzAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:24:22 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1100, session=<FgZaB7hffMzAqDJk>
+Nov 07 23:24:22 imap(ana)<1100><FgZaB7hffMzAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:24:33 master: Warning: Killed with signal 15 (by pid=2202 uid=0 code=kill)
+Nov 07 23:24:33 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 07 23:24:36 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2426, session=<+YY6CLhfnqvAqDJk>
+Nov 07 23:24:36 imap(bruno)<2426><+YY6CLhfnqvAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:24:36 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2428, session=<IxY7CLhfoqvAqDJk>
+Nov 07 23:24:36 imap(bruno)<2428><IxY7CLhfoqvAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:24:37 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2430, session=<WIc8CLhfrKvAqDJk>
+Nov 07 23:24:37 imap(ana)<2430><WIc8CLhfrKvAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:24:37 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2432, session=<zAc9CLhfrqvAqDJk>
+Nov 07 23:24:37 imap(ana)<2432><zAc9CLhfrqvAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:25:13 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2674, session=<u09hCrhfQqHAqDJk>
+Nov 07 23:25:13 imap(bruno)<2674><u09hCrhfQqHAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:25:13 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2676, session=<qdRhCrhfTKHAqDJk>
+Nov 07 23:25:13 imap(bruno)<2676><qdRhCrhfTKHAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:25:13 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2678, session=<609jCrhfUKHAqDJk>
+Nov 07 23:25:13 imap(ana)<2678><609jCrhfUKHAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:25:13 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2680, session=<gNhjCrhfVqHAqDJk>
+Nov 07 23:25:13 imap(ana)<2680><gNhjCrhfVqHAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:25:54 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2793, session=<VKfTDLhfxqzAqDJk>
+Nov 07 23:25:54 imap(bruno)<2793><VKfTDLhfxqzAqDJk>: Info: Disconnected: Logged out in=128 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:25:54 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2795, session=<gyzUDLhf1KzAqDJk>
+Nov 07 23:25:54 imap(bruno)<2795><gyzUDLhf1KzAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:25:54 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2797, session=<mJTVDLhf5KzAqDJk>
+Nov 07 23:25:54 imap(ana)<2797><mJTVDLhf5KzAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:25:54 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2799, session=<VxfWDLhf7KzAqDJk>
+Nov 07 23:25:54 imap(ana)<2799><VxfWDLhf7KzAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:26:02 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2979, session=<4kJVDbhfKOTAqDJk>
+Nov 07 23:26:02 imap(bruno)<2979><4kJVDbhfKOTAqDJk>: Info: Disconnected: Logged out in=128 out=925 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:26:02 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2981, session=<DMhVDbhfLuTAqDJk>
+Nov 07 23:26:02 imap(bruno)<2981><DMhVDbhfLuTAqDJk>: Info: Disconnected: Logged out in=55 out=1634 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:26:02 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2983, session=<sl1XDbhfMuTAqDJk>
+Nov 07 23:26:02 imap(ana)<2983><sl1XDbhfMuTAqDJk>: Info: Disconnected: Logged out in=130 out=924 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:26:02 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2985, session=<cdpXDbhfPuTAqDJk>
+Nov 07 23:26:02 imap(ana)<2985><cdpXDbhfPuTAqDJk>: Info: Disconnected: Logged out in=55 out=1633 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:12 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3058, session=<lcKCEbhffpbAqDJk>
+Nov 07 23:27:12 imap(bruno)<3058><lcKCEbhffpbAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:12 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3060, session=<3j+DEbhfjJbAqDJk>
+Nov 07 23:27:12 imap(bruno)<3060><3j+DEbhfjJbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:12 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3062, session=<zLGEEbhfmpbAqDJk>
+Nov 07 23:27:12 imap(ana)<3062><zLGEEbhfmpbAqDJk>: Info: Disconnected: Logged out in=130 out=925 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:12 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3064, session=<gC6FEbhfnpbAqDJk>
+Nov 07 23:27:12 imap(ana)<3064><gC6FEbhfnpbAqDJk>: Info: Disconnected: Logged out in=55 out=1634 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:16 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3291, session=<VKi8EbhfrJbAqDJk>
+Nov 07 23:27:16 imap(bruno)<3291><VKi8EbhfrJbAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:16 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3293, session=<jyq9EbhftpbAqDJk>
+Nov 07 23:27:16 imap(bruno)<3293><jyq9EbhftpbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:16 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3295, session=<Hpu+EbhfxpbAqDJk>
+Nov 07 23:27:16 imap(ana)<3295><Hpu+EbhfxpbAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:16 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3297, session=<CyC/Ebhf0pbAqDJk>
+Nov 07 23:27:16 imap(ana)<3297><CyC/Ebhf0pbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:19 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3425, session=<9DzsEbhf2JbAqDJk>
+Nov 07 23:27:19 imap(bruno)<3425><9DzsEbhf2JbAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:19 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3427, session=<DcPsEbhf6JbAqDJk>
+Nov 07 23:27:19 imap(bruno)<3427><DcPsEbhf6JbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:27:19 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3429, session=<YTzuEbhf9pbAqDJk>
+Nov 07 23:27:19 imap(ana)<3429><YTzuEbhf9pbAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:27:19 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3431, session=<TbzuEbhf/pbAqDJk>
+Nov 07 23:27:19 imap(ana)<3431><TbzuEbhf/pbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:28:59 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3761, session=<rXfaF7hfXsXAqDJk>
+Nov 07 23:28:59 imap(bruno)<3761><rXfaF7hfXsXAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:28:59 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3763, session=<xAvbF7hfbsXAqDJk>
+Nov 07 23:28:59 imap(bruno)<3763><xAvbF7hfbsXAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:28:59 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3765, session=<aYXcF7hfdMXAqDJk>
+Nov 07 23:28:59 imap(ana)<3765><aYXcF7hfdMXAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:28:59 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3767, session=<sQrdF7hffMXAqDJk>
+Nov 07 23:28:59 imap(ana)<3767><sQrdF7hffMXAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:30:23 master: Warning: Killed with signal 15 (by pid=3932 uid=0 code=kill)
+Nov 07 23:40:48 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 07 23:40:54 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1084, session=<Op95QrhfTM3AqDJk>
+Nov 07 23:40:54 imap(bruno)<1084><Op95QrhfTM3AqDJk>: Info: Disconnected: Logged out in=128 out=936 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:40:54 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1086, session=<rU56QrhfWs3AqDJk>
+Nov 07 23:40:54 imap(bruno)<1086><rU56QrhfWs3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:40:54 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1088, session=<2bZ7QrhfZs3AqDJk>
+Nov 07 23:40:54 imap(ana)<1088><2bZ7QrhfZs3AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:40:54 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1090, session=<tjl8QrhfaM3AqDJk>
+Nov 07 23:40:54 imap(ana)<1090><tjl8QrhfaM3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:41:34 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1314, session=<tn3dRLhfuIbAqDJk>
+Nov 07 23:41:34 imap(bruno)<1314><tn3dRLhfuIbAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:41:34 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1317, session=<vBDeRLhfyIbAqDJk>
+Nov 07 23:41:34 imap(bruno)<1317><vBDeRLhfyIbAqDJk>: Info: Disconnected: Logged out in=56 out=1646 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 07 23:41:34 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1323, session=<bO7gRLhf1IbAqDJk>
+Nov 07 23:41:34 imap(ana)<1323><bO7gRLhf1IbAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 07 23:41:34 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1332, session=<dIfhRLhf5IbAqDJk>
+Nov 07 23:41:34 imap(ana)<1332><dIfhRLhf5IbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 08 01:21:38 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1718, session=<m/DDqrlffKjAqDJk>
+Nov 08 01:21:38 imap(bruno)<1718><m/DDqrlffKjAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 08 01:21:38 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1720, session=<1nrEqrlfiKjAqDJk>
+Nov 08 01:21:38 imap(bruno)<1720><1nrEqrlfiKjAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 08 01:21:38 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1722, session=<dBTGqrlfELjAqDJk>
+Nov 08 01:21:38 imap(ana)<1722><dBTGqrlfELjAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 08 01:21:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1724, session=<8qnGqrlfGrjAqDJk>
+Nov 08 01:21:39 imap(ana)<1724><8qnGqrlfGrjAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 08 01:24:15 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1957, session=<G4cXtLlfQNLAqDJk>
+Nov 08 01:24:15 imap(bruno)<1957><G4cXtLlfQNLAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 08 01:24:15 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1959, session=<NR0YtLlfSNLAqDJk>
+Nov 08 01:24:15 imap(bruno)<1959><NR0YtLlfSNLAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 08 01:24:15 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1961, session=<FK0ZtLlfVNLAqDJk>
+Nov 08 01:24:15 imap(ana)<1961><FK0ZtLlfVNLAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 08 01:24:15 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1963, session=<B1IatLlfWNLAqDJk>
+Nov 08 01:24:15 imap(ana)<1963><B1IatLlfWNLAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 08 12:01:48 master: Warning: Time moved forward by 8.589030 seconds - adjusting timeouts.
+Nov 20 22:42:51 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 22:44:25 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1117, session=<TYJu/LxgHp3AqDJk>
+Nov 20 22:44:25 imap(bruno)<1117><TYJu/LxgHp3AqDJk>: Info: Disconnected: Logged out in=128 out=936 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:44:25 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1119, session=<4TZv/LxgLp3AqDJk>
+Nov 20 22:44:25 imap(bruno)<1119><4TZv/LxgLp3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:44:25 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1121, session=<ZbFw/LxgOp3AqDJk>
+Nov 20 22:44:25 imap(ana)<1121><ZbFw/LxgOp3AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:44:25 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1123, session=<ADpx/LxgQJ3AqDJk>
+Nov 20 22:44:25 imap(ana)<1123><ADpx/LxgQJ3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:48:58 master: Warning: Killed with signal 15 (by pid=2362 uid=0 code=kill)
+Nov 20 22:48:58 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 22:49:03 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2586, session=<eY35DL1gGtLAqDJk>
+Nov 20 22:49:03 imap(bruno)<2586><eY35DL1gGtLAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:49:03 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2588, session=<GyX6DL1gKtLAqDJk>
+Nov 20 22:49:03 imap(bruno)<2588><GyX6DL1gKtLAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:49:03 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2590, session=<hqX7DL1gONLAqDJk>
+Nov 20 22:49:03 imap(ana)<2590><hqX7DL1gONLAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:49:03 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2592, session=<Oij8DL1gQNLAqDJk>
+Nov 20 22:49:03 imap(ana)<2592><Oij8DL1gQNLAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:50:02 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2831, session=<YJeGEL1gdoDAqDJk>
+Nov 20 22:50:02 imap(bruno)<2831><YJeGEL1gdoDAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:50:02 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2833, session=<JhqHEL1ghoDAqDJk>
+Nov 20 22:50:02 imap(bruno)<2833><JhqHEL1ghoDAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:50:02 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2835, session=<IZuIEL1glIDAqDJk>
+Nov 20 22:50:02 imap(ana)<2835><IZuIEL1glIDAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:50:02 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2837, session=<YSGJEL1gloDAqDJk>
+Nov 20 22:50:02 imap(ana)<2837><YSGJEL1gloDAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:50:10 master: Warning: Killed with signal 15 (by pid=3021 uid=0 code=kill)
+Nov 20 22:50:46 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 22:50:51 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1098, session=<P5RtE71g8OPAqDJk>
+Nov 20 22:50:51 imap(bruno)<1098><P5RtE71g8OPAqDJk>: Info: Disconnected: Logged out in=128 out=936 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:50:51 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1100, session=<lVJuE71gAOTAqDJk>
+Nov 20 22:50:51 imap(bruno)<1100><lVJuE71gAOTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:50:51 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1102, session=<adRvE71gDuTAqDJk>
+Nov 20 22:50:51 imap(ana)<1102><adRvE71gDuTAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:50:51 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1104, session=<f2NwE71gGuTAqDJk>
+Nov 20 22:50:51 imap(ana)<1104><f2NwE71gGuTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:51:02 master: Warning: Killed with signal 15 (by pid=2198 uid=0 code=kill)
+Nov 20 22:51:02 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 22:51:06 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2423, session=<Jr9bFL1gDp3AqDJk>
+Nov 20 22:51:06 imap(bruno)<2423><Jr9bFL1gDp3AqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:51:06 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2425, session=<D2tcFL1gEp3AqDJk>
+Nov 20 22:51:06 imap(bruno)<2425><D2tcFL1gEp3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:51:07 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2427, session=<UvpdFL1gHJ3AqDJk>
+Nov 20 22:51:07 imap(ana)<2427><UvpdFL1gHJ3AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 22:51:07 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2429, session=<g35eFL1gKJ3AqDJk>
+Nov 20 22:51:07 imap(ana)<2429><g35eFL1gKJ3AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 22:51:57 master: Warning: Killed with signal 15 (by pid=2609 uid=0 code=kill)
+Nov 20 23:01:49 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 23:01:57 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1085, session=<y6IlO71g1LPAqDJk>
+Nov 20 23:01:57 imap(bruno)<1085><y6IlO71g1LPAqDJk>: Info: Disconnected: Logged out in=128 out=936 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:01:57 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1087, session=<mVgmO71g2rPAqDJk>
+Nov 20 23:01:57 imap(bruno)<1087><mVgmO71g2rPAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:01:57 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1089, session=</u4nO71g4LPAqDJk>
+Nov 20 23:01:57 imap(ana)<1089></u4nO71g4LPAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:01:57 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=1091, session=<0ngoO71g7LPAqDJk>
+Nov 20 23:01:57 imap(ana)<1091><0ngoO71g7LPAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:42 master: Warning: Killed with signal 15 (by pid=2196 uid=0 code=kill)
+Nov 20 23:02:42 master: Info: Dovecot v2.4.1-4 (7d8c0e5759) starting up for imap (core dumps disabled)
+Nov 20 23:02:46 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2406, session=<n98SPr1gXuTAqDJk>
+Nov 20 23:02:46 imap(bruno)<2406><n98SPr1gXuTAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:46 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2408, session=<SncTPr1gbOTAqDJk>
+Nov 20 23:02:46 imap(bruno)<2408><SncTPr1gbOTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:46 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2410, session=<if8UPr1gcOTAqDJk>
+Nov 20 23:02:46 imap(ana)<2410><if8UPr1gcOTAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:46 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2412, session=<ooMVPr1ggOTAqDJk>
+Nov 20 23:02:46 imap(ana)<2412><ooMVPr1ggOTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:49 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2592, session=<TFtBPr1gjOTAqDJk>
+Nov 20 23:02:49 imap(bruno)<2592><TFtBPr1gjOTAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:49 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2594, session=<9uJBPr1gluTAqDJk>
+Nov 20 23:02:49 imap(bruno)<2594><9uJBPr1gluTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:49 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2596, session=<bFlDPr1gpuTAqDJk>
+Nov 20 23:02:49 imap(ana)<2596><bFlDPr1gpuTAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:49 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2598, session=<FuNDPr1gtuTAqDJk>
+Nov 20 23:02:50 imap(ana)<2598><FuNDPr1gtuTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:52 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2659, session=<nppoPr1guuTAqDJk>
+Nov 20 23:02:52 imap(bruno)<2659><nppoPr1guuTAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:52 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2661, session=<5CdpPr1gwOTAqDJk>
+Nov 20 23:02:52 imap(bruno)<2661><5CdpPr1gwOTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:52 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2663, session=<GbRqPr1gzuTAqDJk>
+Nov 20 23:02:52 imap(ana)<2663><GbRqPr1gzuTAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:52 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2665, session=<0j1rPr1g0uTAqDJk>
+Nov 20 23:02:52 imap(ana)<2665><0j1rPr1g0uTAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:55 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2793, session=<QOuYPr1gAL7AqDJk>
+Nov 20 23:02:55 imap(bruno)<2793><QOuYPr1gAL7AqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:55 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2795, session=<KHaZPr1gEL7AqDJk>
+Nov 20 23:02:55 imap(bruno)<2795><KHaZPr1gEL7AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:02:55 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2797, session=<dAKbPr1gFr7AqDJk>
+Nov 20 23:02:55 imap(ana)<2797><dAKbPr1gFr7AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:02:55 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=2799, session=<VI2bPr1gHr7AqDJk>
+Nov 20 23:02:55 imap(ana)<2799><VI2bPr1gHr7AqDJk>: Info: Disconnected: Logged out in=56 out=1646 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:03 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3019, session=<cMMPP71gLr7AqDJk>
+Nov 20 23:03:03 imap(bruno)<3019><cMMPP71gLr7AqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:03 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3021, session=<nUoQP71gOL7AqDJk>
+Nov 20 23:03:03 imap(bruno)<3021><nUoQP71gOL7AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:03 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3023, session=<ptsRP71gSL7AqDJk>
+Nov 20 23:03:03 imap(ana)<3023><ptsRP71gSL7AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:03 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3025, session=<t2kSP71gUr7AqDJk>
+Nov 20 23:03:03 imap(ana)<3025><t2kSP71gUr7AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3138, session=<ImY6Qb1gsKHAqDJk>
+Nov 20 23:03:39 imap(bruno)<3138><ImY6Qb1gsKHAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3140, session=<ROk6Qb1gtKHAqDJk>
+Nov 20 23:03:39 imap(bruno)<3140><ROk6Qb1gtKHAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3142, session=<0WA8Qb1gwKHAqDJk>
+Nov 20 23:03:39 imap(ana)<3142><0WA8Qb1gwKHAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3144, session=<1+s8Qb1gyqHAqDJk>
+Nov 20 23:03:39 imap(ana)<3144><1+s8Qb1gyqHAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:47 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3324, session=<9W6tQb1gBKnAqDJk>
+Nov 20 23:03:47 imap(bruno)<3324><9W6tQb1gBKnAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:47 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3326, session=<a/ytQb1gFKnAqDJk>
+Nov 20 23:03:47 imap(bruno)<3326><a/ytQb1gFKnAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:03:47 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3328, session=<I5SvQb1gJKnAqDJk>
+Nov 20 23:03:47 imap(ana)<3328><I5SvQb1gJKnAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:03:47 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3330, session=<8RywQb1gMqnAqDJk>
+Nov 20 23:03:47 imap(ana)<3330><8RywQb1gMqnAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:04:59 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3403, session=<Oi74Rb1gjtzAqDJk>
+Nov 20 23:04:59 imap(bruno)<3403><Oi74Rb1gjtzAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:04:59 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3405, session=<0rf4Rb1gntzAqDJk>
+Nov 20 23:04:59 imap(bruno)<3405><0rf4Rb1gntzAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:04:59 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3407, session=<UTH6Rb1gpNzAqDJk>
+Nov 20 23:04:59 imap(ana)<3407><UTH6Rb1gpNzAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:04:59 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3409, session=<Ibn6Rb1gqNzAqDJk>
+Nov 20 23:04:59 imap(ana)<3409><Ibn6Rb1gqNzAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:06:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3738, session=<eJTuS71gYLbAqDJk>
+Nov 20 23:06:39 imap(bruno)<3738><eJTuS71gYLbAqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:06:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3740, session=<nBzvS71gZLbAqDJk>
+Nov 20 23:06:39 imap(bruno)<3740><nBzvS71gZLbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:06:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3742, session=<s6jwS71gcrbAqDJk>
+Nov 20 23:06:39 imap(ana)<3742><s6jwS71gcrbAqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:06:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=3744, session=<Li/xS71gfrbAqDJk>
+Nov 20 23:06:39 imap(ana)<3744><Li/xS71gfrbAqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:09:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=4006, session=<NOiwVr1goM/AqDJk>
+Nov 20 23:09:39 imap(bruno)<4006><NOiwVr1goM/AqDJk>: Info: Disconnected: Logged out in=128 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:09:39 imap-login: Info: Logged in: user=<bruno>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=4008, session=<Q4exVr1gsM/AqDJk>
+Nov 20 23:09:39 imap(bruno)<4008><Q4exVr1gsM/AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674
+Nov 20 23:09:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=4010, session=<GhezVr1gvM/AqDJk>
+Nov 20 23:09:39 imap(ana)<4010><GhezVr1gvM/AqDJk>: Info: Disconnected: Logged out in=130 out=928 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+Nov 20 23:09:39 imap-login: Info: Logged in: user=<ana>, method=PLAIN, rip=192.168.50.100, lip=192.168.50.10, mpid=4012, session=<9aGzVr1gyM/AqDJk>
+Nov 20 23:09:39 imap(ana)<4012><9aGzVr1gyM/AqDJk>: Info: Disconnected: Logged out in=56 out=1638 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=1 body_bytes=674

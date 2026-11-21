@@ -22,9 +22,7 @@ getent ahostsv4 "www.$LAB_DOMAIN"
 echo 'OK: DNS interno continua disponível na LAN sem o gateway.'
 bash "$PROJECT_ROOT/src/testes/testar-rede.sh" --sem-internet
 bash "$PROJECT_ROOT/src/testes/testar-intranet.sh"
-if [[ $(cat /etc/cardeal/version 2>/dev/null) == 1.0.0 ]]; then
-    bash "$PROJECT_ROOT/src/testes/testar-email.sh"
-fi
+bash "$PROJECT_ROOT/src/testes/testar-email.sh"
 if ping -c 1 -W 1 "$LAB_GATEWAY_IP" >/dev/null 2>&1; then
     echo 'Gateway retornou antes do fim dos testes LAN.'
     exit 1

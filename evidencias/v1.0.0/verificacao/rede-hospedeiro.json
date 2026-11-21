@@ -1,0 +1,6 @@
+{
+  "sem_alteracoes": true,
+  "verificacao": "interfaces, endereços estáveis IPv4/IPv6, rotas IPv4 e configuração resolv.conf",
+  "antes_sha256": "cc6939715ff3033b02247435ca47f91f80ec58df2f62544c222a5652574939e6",
+  "depois_sha256": "cc6939715ff3033b02247435ca47f91f80ec58df2f62544c222a5652574939e6"
+}

@@ -2,15 +2,15 @@
   {
     "remetente": "ana@cardeal.local",
     "destinatario": "bruno@cardeal.local",
-    "message_id": "<cardeal-ana-c4293fa3ff4e448e842b368ce7f03953@cardeal.local>",
-    "queue_id": "BFDC821094",
+    "message_id": "<cardeal-ana-181a28f54f6048debda17d3fb14a7ad1@cardeal.local>",
+    "queue_id": "EE6B721035",
     "imap_uid": "2"
   },
   {
     "remetente": "bruno@cardeal.local",
     "destinatario": "ana@cardeal.local",
-    "message_id": "<cardeal-bruno-06456f2c5fe64f2f96d8ccbbe1c500ab@cardeal.local>",
-    "queue_id": "E339A21083",
+    "message_id": "<cardeal-bruno-9d4ed818cd0243a1a25c08aa215a3b66@cardeal.local>",
+    "queue_id": "1E5D121024",
     "imap_uid": "2"
   }
 ]

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Registra recursos e versões reais dos convidados e das ferramentas do hospedeiro."""
 from concurrent.futures import ThreadPoolExecutor
+import json
+from pathlib import Path
 import shlex
 import shutil
 import lab
@@ -19,7 +21,7 @@ def collect(role):
 with ThreadPoolExecutor(max_workers=3) as pool:
     list(pool.map(collect, lab.ROLES))
 (lab.EVIDENCE/'vmstat-host.txt').write_text(lab.run(['vmstat','1','5'],capture=True).stdout)
-host = (lab.Path('/etc/os-release')).read_text()
+host = Path('/etc/os-release').read_text()
 host += lab.run(['uname','-a'],capture=True).stdout
 host += lab.run(['VBoxManage','--version'],capture=True).stdout
 for command in (['tshark','--version'], ['pandoc','--version'], ['firefox','--version'], ['git','--version']):
@@ -30,7 +32,7 @@ shutil.copyfile(lab.EVIDENCE/'reconstrucao/imagem-debian.json', lab.EVIDENCE/'im
 for name in ('postfix','dovecot'):
     result = lab.ssh('servidor', f'sudo -n cat /var/log/{name}.log', capture=True)
     (lab.EVIDENCE/f'log-{name}.txt').write_text(result.stdout)
-messages = lab.json.loads((lab.EVIDENCE/'mensagens-capturadas.json').read_text())
+messages = json.loads((lab.EVIDENCE/'mensagens-capturadas.json').read_text())
 mail_log = (lab.EVIDENCE/'log-postfix.txt').read_text()
 for item in messages:
     if not any(item['queue_id'] in line and 'status=sent' in line for line in mail_log.splitlines()):

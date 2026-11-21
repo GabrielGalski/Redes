@@ -40,7 +40,7 @@ render() {
     printf '%s\n' "$text" > "$output"
 }
 
-install_r1_packages() {
+install_packages() {
     local package
     local missing=()
     export DEBIAN_FRONTEND=noninteractive
@@ -61,7 +61,7 @@ install_r1_packages() {
         fi
     done
     if [[ ${#missing[@]} == 0 ]]; then
-        echo 'Dependências desta etapa já instaladas.'
+        echo 'Dependências solicitadas já instaladas.'
         return
     fi
     apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update

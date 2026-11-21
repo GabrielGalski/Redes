@@ -25,6 +25,7 @@ with tempfile.TemporaryDirectory(prefix='cardeal-wireshark-') as directory:
             raise RuntimeError('Leitura gráfica incompleta: '+name)
         output.append(f'{name}.pcapng: Wireshark GUI=true; quadros={len(frames)}; resultado=APROVADO\n'+metadata)
 text = '\n'.join(output)
-evidence = ROOT/'evidencias'/('v'+(ROOT/'VERSION').read_text().strip())
+evidence = Path(os.environ.get('CARDEAL_EVIDENCE', ROOT/'evidencias'/('v'+(ROOT/'VERSION').read_text().strip())))
+evidence.mkdir(parents=True, exist_ok=True)
 (evidence/'verificacao-wireshark.txt').write_text(text)
 print(text)

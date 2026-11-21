@@ -2,14 +2,14 @@
 
 Planejamento baseado no enunciado acadêmico `Trabalho Infraestrutura.pdf`, mantido apenas como arquivo local.
 
-- [Plano de implementação](docs/PLANO_DE_IMPLEMENTACAO.md): requisitos, topologia, endereçamento, sequência de execução, testes, capturas e entregas.
-- [Plano de sprints](sprints.md): três entregas funcionais cumulativas, versões, tarefas e critérios de aceite.
-- [Ferramentas e gratuidade](docs/FERRAMENTAS.md): inventário completo da stack escolhida, pacotes, instalação por máquina, licenças e compatibilidade.
+- [Relatório da infraestrutura](logs/relatorio/relatorio.md): requisitos, topologia, serviços, protocolos e resultados.
+- [Aceite funcional](evidencias/v1.0.0/STATUS.md): comprovações de rede, aplicações, persistência e reconstrução.
 - [Requisitos de sistema](requirements.txt): ferramentas e pacotes agrupados por hospedeiro e VM, incluindo os componentes da instalação base.
 - [Configuração de exemplo](config/lab.env.example): parâmetros de rede, recursos e acesso administrativo previstos.
-- [Preparação do ambiente](docs/PREPARACAO_DO_AMBIENTE.md): instalação, simulação e verificação das dependências do hospedeiro e das VMs.
 
-Entrega **v1.0.0**: rede básica, intranet Web, SMB autenticado e correio interno SMTP/IMAP. A Sprint 3 foi aprovada localmente em **07/11/2026**; o [aceite final](evidencias/v1.0.0/STATUS.md) apresenta as comprovações. O [relatório consolidado](logs/relatorio/relatorio.md) reúne a infraestrutura e as respostas ao enunciado. As etapas anteriores foram publicadas nos commits `de1cebb` (rede) e `60fc6a8` (Web/SMB), com evidências preservadas por versão.
+Versão **1.0.0**: DHCP, DNS, gateway/NAT, intranet Web, SMB autenticado e correio interno SMTP/IMAP. O [aceite funcional](evidencias/v1.0.0/STATUS.md) apresenta as comprovações e o [relatório](logs/relatorio/relatorio.md) reúne a infraestrutura e as respostas ao enunciado.
+
+A [verificação completa de 20/11/2026](evidencias/v1.0.0/verificacao/STATUS.md) confirma operação, preservação de dados, recuperação de falhas e reconstrução.
 
 A proposta usa **VirtualBox + três VMs Debian 13 sem interface gráfica**, executadas no Ubuntu 26.04 LTS atual. O conjunto atende ao laboratório local sem serviços pagos, assinatura, cartão de crédito ou cotas de SaaS. A RAM das VMs precisa ser validada com os serviços em execução.
 
@@ -96,7 +96,7 @@ vms/
 ├── .virtualbox/              # catálogo VirtualBox exclusivo deste projeto
 ├── .ssh/                    # configuração e chaves SSH do laboratório
 ├── .runtime/                # arquivos auxiliares da automação
-├── reconstrucao-r3/          # VMs novas usadas na validação da entrega final
+├── validacao/                # VMs independentes usadas no teste de reconstrução
 └── lab-state.json            # identificação das VMs e IP descoberto do cliente
 ```
 
@@ -174,10 +174,12 @@ Essa conexão abre o terminal dentro do Debian cliente. O acesso HTTP/SMB/e-mail
 | --- | --- |
 | [config/lab.env.example](config/lab.env.example) e `config/lab.env` local | Nomes, sub-rede, IPs, pool DHCP, recursos e portas de administração. |
 | [src/host/lab.py](src/host/lab.py) | Criação dos discos/VMs, adaptadores NAT/internos, remoção do NAT temporário, catálogo e acesso SSH. |
-| [src/gateway/configurar-r1.sh](src/gateway/configurar-r1.sh) | Aplica WAN/LAN, encaminhamento IPv4, NAT/firewall e Kea dentro do gateway. |
-| [src/servidor/configurar-r1.sh](src/servidor/configurar-r1.sh) e [configurar-r2.sh](src/servidor/configurar-r2.sh) | Rede estática/DNS e serviços Web/SMB/firewall dentro do servidor. |
-| [src/cliente/configurar-r1.sh](src/cliente/configurar-r1.sh) e [configurar-r2.sh](src/cliente/configurar-r2.sh) | DHCP/resolução e ferramentas para acessar os serviços dentro do cliente. |
-| [src/servidor/configurar-r3.sh](src/servidor/configurar-r3.sh) e [templates/email/](templates/email/) | Postfix, Dovecot 2.4, Maildir e portas de correio no firewall do servidor. |
+| [src/gateway/configurar-rede.sh](src/gateway/configurar-rede.sh) | Aplica WAN/LAN, encaminhamento IPv4, NAT/firewall e Kea dentro do gateway. |
+| [src/servidor/configurar-rede.sh](src/servidor/configurar-rede.sh) | Aplica IP estático e DNS. |
+| [src/servidor/configurar-intranet.sh](src/servidor/configurar-intranet.sh) | Configura Apache, Samba, usuários e permissões. |
+| [src/servidor/configurar-email.sh](src/servidor/configurar-email.sh) | Configura Postfix, Dovecot, Maildir e portas de correio. |
+| [src/cliente/](src/cliente/) | Configura DHCP, ferramentas e credenciais para acessar os serviços. |
+| [src/host/validacao.py](src/host/validacao.py) | Coordena aceites, captura de e-mail, falhas controladas e reconstrução. |
 | [templates/networkd/](templates/networkd/) | Configurações persistentes das interfaces dos convidados. |
 | [templates/gateway/](templates/gateway/), [templates/dhcp/](templates/dhcp/) e [templates/dns/](templates/dns/) | Regras do gateway, opções DHCP e zonas DNS. |
 
@@ -205,7 +207,7 @@ As credenciais de e-mail em [config/email-demo.json](config/email-demo.json) sã
 
 ## Reconstrução e entrega do trabalho
 
-`./lab.sh reconstruir` desliga temporariamente as três VMs originais, cria `cardeal-r3-gw`, `cardeal-r3-srv` e `cardeal-r3-cli` da imagem Debian base e usa a LAN separada `cardeal-r3-validacao`. O provisionamento ocorre por papel, com no máximo três VMs ligadas durante a validação. Ao terminar, as VMs de validação são desligadas e as originais voltam a ficar disponíveis. Os resultados ficam em `evidencias/v1.0.0/reconstrucao/`; a confirmação efetiva está no aceite final.
+`./lab.sh reconstruir` desliga temporariamente as três VMs originais, cria `cardeal-validacao-gw`, `cardeal-validacao-srv` e `cardeal-validacao-cli` em `vms/validacao/` e usa a LAN separada `cardeal-validacao`. O provisionamento ocorre por papel, com no máximo três VMs ligadas durante a validação. Ao terminar, as VMs de validação são desligadas e as originais voltam a ficar disponíveis. Os resultados ficam em `evidencias/v1.0.0/reconstrucao/`. Se o estado dessa validação já existir, o comando o preserva e recusa recriá-lo.
 
 A instalação do SO é automatizada por imagem oficial e NoCloud. Em outro Ubuntu, a instalação administrativa das dependências do hospedeiro continua necessária, conforme a seção de preparação. Os discos e as credenciais locais não acompanham o Git nem o pacote da entrega.
 
@@ -257,14 +259,12 @@ A página, a pasta e o correio estão na LAN das VMs. O Ubuntu acessa a administ
 ├── README.md
 ├── lab.sh                    # criar, iniciar, acessar e verificar o laboratório
 ├── VERSION                   # versão funcional validada
-├── sprints.md                # evolução funcional em três versões
 ├── requirements.txt          # inventário de ferramentas e pacotes de sistema
 ├── .gitignore
 ├── config/
 │   ├── lab.env.example       # parâmetros de referência, sem senhas
 │   ├── email-demo.json       # credenciais fictícias públicas para a captura
 │   └── packages/             # manifestos APT por máquina
-├── docs/                     # planejamento e ferramentas
 ├── src/
 │   ├── common/               # funções de leitura/verificação de pacotes
 │   ├── instalar-dependencias-vm.sh
@@ -284,14 +284,14 @@ A página, a pasta e o correio estão na LAN das VMs. O Ubuntu acessa a administ
 ├── topologia/                # fonte DOT e diagramas gerados
 ├── wireshark/                # capturas pcapng
 ├── evidencias/               # logs, resultados e inventários
-├── logs/                     # execução e relatório da rodada
+├── logs/                     # registros de rede, intranet e laboratório
 ├── vms/                      # VMs e catálogo locais, ignorados pelo Git
 ├── isos/                     # imagem Debian e disco base locais, ignorados
 ├── secrets/                  # credenciais locais, ignoradas pelo Git
 └── entrega/                  # pacote e hashes locais, ignorados pelo Git
 ```
 
-Os diretórios reservados contêm `.gitkeep` para serem preservados no Git. A primeira rodada adiciona orquestração em `src/host/lab.py`, configuração dos convidados em `src/gateway/`, `src/servidor/` e `src/cliente/`, templates e testes funcionais em `src/testes/`. `docs/` e `sprints.md` permanecem ignorados pelo Git.
+O controlador `src/host/lab.py` administra VMs e aplica configurações. `src/host/validacao.py` verifica o laboratório. Os scripts dos convidados estão separados por papel e usam os nomes `configurar-rede.sh`, `configurar-intranet.sh` e `configurar-email.sh`. A aplicação dos serviços envia o código uma vez por VM e preserva dados e credenciais existentes. Os testes ficam em `src/testes/`.
 
 O `requirements.txt` contém dependências de sistema organizadas por máquina; sua instalação será feita pelos respectivos gerenciadores de pacotes. Bibliotecas transitivas serão resolvidas pelo APT. A configuração local está em `config/lab.env`, ignorada pelo Git.
 
@@ -305,4 +305,4 @@ sudo bash src/host/preparar-ambiente.sh --install
 bash src/host/preparar-ambiente.sh --check
 ```
 
-As dependências das VMs são instaladas separadamente, dentro de cada convidado Debian 13. Os detalhes estão no [guia de preparação](docs/PREPARACAO_DO_AMBIENTE.md).
+As dependências das VMs são instaladas separadamente dentro de cada convidado Debian 13, usando os scripts de configuração e os manifestos de `config/packages/`.
